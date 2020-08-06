@@ -1,5 +1,12 @@
 [
 {
+	"uri": "/artigos/",
+	"title": "Artigos 📑",
+	"tags": ["Tutoriais"],
+	"description": "Material coletado no dia a dia",
+	"content": " "
+},
+{
 	"uri": "/tutorials/devopstools/",
 	"title": "DevOps Tools",
 	"tags": ["azure"],
@@ -7,8 +14,15 @@
 	"content": " "
 },
 {
+	"uri": "/docs/",
+	"title": "Documentações ✍",
+	"tags": ["docs"],
+	"description": "Conceitos, apresentações, conteúdo em geral",
+	"content": " "
+},
+{
 	"uri": "/tutorials/",
-	"title": "Tutoriais ✍",
+	"title": "Tutoriais 🧑💻",
 	"tags": ["Tutoriais"],
 	"description": "Tutoriais diversos",
 	"content": " DevOps Tools  Conteudo relacionado a ferramenta Azure Devops\n "
@@ -33,6 +47,13 @@
 	"tags": [],
 	"description": "Contribuidores do Developer Portal",
 	"content": "Contribuidores Juan Enciso @jenciso\nMateus Abdala @MateusAbdala\n "
+},
+{
+	"uri": "/tags/docs/",
+	"title": "docs",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "/",
