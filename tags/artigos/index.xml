@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docs on Docs Planet</title>
-    <link>/tags/docs/</link>
-    <description>Recent content in docs on Docs Planet</description>
+    <title>artigos on Docs Planet</title>
+    <link>/tags/artigos/</link>
+    <description>Recent content in artigos on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/tags/docs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/artigos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>✍ Documentações</title>
-      <link>/docs/</link>
+      <title>📑 Artigos</title>
+      <link>/artigos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/</guid>
+      <guid>/artigos/</guid>
       <description> </description>
     </item>
     

@@ -1,12 +1,5 @@
 [
 {
-	"uri": "/artigos/",
-	"title": "Artigos 📑",
-	"tags": ["Tutoriais"],
-	"description": "Material coletado no dia a dia",
-	"content": " "
-},
-{
 	"uri": "/tutorials/devopstools/",
 	"title": "DevOps Tools",
 	"tags": ["azure"],
@@ -15,17 +8,38 @@
 },
 {
 	"uri": "/docs/",
-	"title": "Documentações ✍",
-	"tags": ["docs"],
+	"title": "✍ Documentações",
+	"tags": ["docs", "documentation"],
 	"description": "Conceitos, apresentações, conteúdo em geral",
 	"content": " "
 },
 {
 	"uri": "/tutorials/",
-	"title": "Tutoriais 💻",
+	"title": "💻 Tutoriais",
 	"tags": ["Tutoriais"],
 	"description": "Tutoriais diversos",
 	"content": " DevOps Tools  Conteudo relacionado a ferramenta Azure Devops\n "
+},
+{
+	"uri": "/artigos/",
+	"title": "📑 Artigos",
+	"tags": ["artigos", "articles"],
+	"description": "Material coletado no dia a dia",
+	"content": " "
+},
+{
+	"uri": "/tags/articles/",
+	"title": "articles",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/artigos/",
+	"title": "artigos",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "/tags/azure/",
@@ -61,6 +75,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Docs Planet O Docs Planet é um repostitorio de conteúdo de tutoriais sobre tecnologias usadas no mundo DevOps\n"
+},
+{
+	"uri": "/tags/documentation/",
+	"title": "documentation",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "/tags/",

@@ -11,16 +11,7 @@
     
     
     <item>
-      <title>Artigos 📑</title>
-      <link>/artigos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/artigos/</guid>
-      <description> </description>
-    </item>
-    
-    <item>
-      <title>Tutoriais 💻</title>
+      <title>💻 Tutoriais</title>
       <link>/tutorials/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

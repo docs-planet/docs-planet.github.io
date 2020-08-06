@@ -3,10 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/artigos/</loc>
-  </url>
-  
-  <url>
     <loc>/tutorials/devopstools/</loc>
   </url>
   
@@ -16,6 +12,18 @@
   
   <url>
     <loc>/tutorials/</loc>
+  </url>
+  
+  <url>
+    <loc>/artigos/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/articles/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/artigos/</loc>
   </url>
   
   <url>
@@ -36,6 +44,10 @@
   
   <url>
     <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/documentation/</loc>
   </url>
   
   <url>
