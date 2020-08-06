@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Docs Planet</title>
+    <link>/tags/git/</link>
+    <description>Recent content in git on Docs Planet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git - HandsOn</title>
+      <link>/tutorials/devopstools/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/devopstools/git/</guid>
+      <description>Intro Iremos trabalhar o seguinte tutorial: https://githowto.com
+ </description>
+    </item>
+    
+    <item>
+      <title>Git bash prompt</title>
+      <link>/tutorials/devopstools/git-bash-promt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/devopstools/git-bash-promt/</guid>
+      <description>Intro Para ter uma melhor visibilidade do que passa em nossos projetos que estão versionados quando estamos trabalhando de forma local, podemos usar ferramentas como é o caso de git-bash-prompt
+Instalação  Baixar o repositorio contendo o software  cd ~ git clone https://github.com/jenciso/bash-git-prompt.git .bash-git-prompt --depth=1 Adicionar algumas linhas dentro do arquivo .bashrc  GIT_PROMPT_ONLY_IN_REPO=0 GIT_PROMPT_THEME=Single_line_Minimalist source ~/.bash-git-prompt/gitprompt.sh Testando </description>
+    </item>
+    
+  </channel>
+</rss>

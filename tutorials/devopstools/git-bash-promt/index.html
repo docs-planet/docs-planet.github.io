@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.74.3" />
-    <meta name="description" content="Conteudo diverso de documentacao, tutoriais, dicas entre outros">
+    <meta name="description" content="Instalando o git bash prompt e melhorando nossa visibilidade">
 <meta name="author" content="Juan Enciso">
 
     <link rel="shortcut icon" href="https://www.unicred.com.br/favicon.ico" type="image/x-icon" />
 
-    <title>documentation :: Docs Planet</title>
+    <title>Git bash prompt :: Docs Planet</title>
 
     
     <link href="/css/nucleus.css?1596684818" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tags/documentation/">
+  <body class="" data-url="/tutorials/devopstools/git-bash-promt/">
     <nav id="sidebar" class="">
 
 
@@ -109,7 +109,7 @@
   
     
     <li data-nav-id="/tutorials/" title="💻 Tutoriais" class="dd-item 
-        
+        parent
         
         
         ">
@@ -138,7 +138,7 @@
   
     
     <li data-nav-id="/tutorials/devopstools/" title="DevOps Tools" class="dd-item 
-        
+        parent
         
         
         ">
@@ -193,8 +193,8 @@
   
     
     <li data-nav-id="/tutorials/devopstools/git-bash-promt/" title="Git bash prompt" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/tutorials/devopstools/git-bash-promt/">
@@ -285,6 +285,17 @@
               <div>
                 <div id="top-bar">
                 
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Editar esta página' href="https://github.com/docs-planet/website/edit/master/content/tutorials/devopstools/git-bash-promt/_index.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Editar esta página</span>
+                    </a>
+                  </div>
+                  
+                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -309,7 +320,13 @@
             
           
           
-            <a href='/'>Docs Planet</a> > <a href='/tags/'>Tags</a> > documentation
+            
+            
+          
+          
+            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/devopstools/'>DevOps Tools</a> > Git bash prompt
+          
+         
           
          
           
@@ -322,7 +339,13 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#instalação">Instalação</a></li>
+    <li><a href="#testando">Testando</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -334,12 +357,27 @@
         
         <div id="body-inner">
           
-            <h1>documentation</h1>
+            <h1>Git bash prompt</h1>
           
 
         
 
 
+<h2 id="intro">Intro</h2>
+<p>Para ter uma melhor visibilidade do que passa em nossos projetos que estão versionados quando estamos trabalhando de forma local, podemos usar ferramentas como é o caso de <a href="https://github.com/magicmonty/bash-git-prompt">git-bash-prompt</a></p>
+<h2 id="instalação">Instalação</h2>
+<ol>
+<li>Baixar o repositorio contendo o software</li>
+</ol>
+<pre><code class="language-console" data-lang="console">cd ~
+git clone https://github.com/jenciso/bash-git-prompt.git .bash-git-prompt --depth=1
+</code></pre><ol start="2">
+<li>Adicionar algumas linhas dentro do arquivo <code>.bashrc</code></li>
+</ol>
+<pre><code class="language-console" data-lang="console">GIT_PROMPT_ONLY_IN_REPO=0
+GIT_PROMPT_THEME=Single_line_Minimalist
+source ~/.bash-git-prompt/gitprompt.sh
+</code></pre><h2 id="testando">Testando</h2>
 
 
 <footer class=" footline" >
@@ -397,20 +435,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -426,6 +450,25 @@
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -443,6 +486,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -464,6 +508,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
