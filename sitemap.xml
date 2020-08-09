@@ -4,6 +4,12 @@
   
   <url>
     <loc>/tutorials/devopstools/</loc>
+    <lastmod>2020-08-09T08:41:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/devopstools/git/</loc>
+    <lastmod>2020-08-09T08:41:44+01:00</lastmod>
   </url>
   
   <url>
@@ -12,10 +18,26 @@
   
   <url>
     <loc>/tutorials/</loc>
+    <lastmod>2020-08-09T08:41:44+01:00</lastmod>
   </url>
   
   <url>
     <loc>/artigos/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-08-09T08:41:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/git/</loc>
+    <lastmod>2020-08-09T08:41:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-08-09T08:41:44+01:00</lastmod>
   </url>
   
   <url>
@@ -43,27 +65,11 @@
   </url>
   
   <url>
-    <loc>/</loc>
-  </url>
-  
-  <url>
     <loc>/tags/documentation/</loc>
   </url>
   
   <url>
-    <loc>/tags/git/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorials/devopstools/git/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorials/devopstools/git-bash-promt/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
+    <loc>/tutorials/devopstools/git-bash-prompt/</loc>
   </url>
   
   <url>
