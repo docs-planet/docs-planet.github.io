@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="description" content="Tutorial de GIT">
+<meta name="author" content="Juan Enciso">
+
+    <link rel="icon" href="/images/favicon.ico" type="image/png">
+
+    <title>Git Howto (Parte 1) :: Docs Planet</title>
+
+    
+    <link href="/css/nucleus.css?1597032979" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1597032979" rel="stylesheet">
+    <link href="/css/hybrid.css?1597032979" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1597032979" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1597032979" rel="stylesheet">
+    <link href="/css/auto-complete.css?1597032979" rel="stylesheet">
+    <link href="/css/theme.css?1597032979" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1597032979" rel="stylesheet">
+    
+    <link href="/css/theme-custom-docs.css?1597032979" rel="stylesheet">
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
+    
+    <script src="/js/jquery-3.3.1.min.js?1597032979"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/tutorials/devopstools/git-part1/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <td valign="top" align="left">
+   <img style="cursor:pointer" onclick="window.location='/'" alt="" src="/images/logo-planet.png">
+</td>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1597032979"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1597032979"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1597032979"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/docs/" title="Documentações" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/docs/">
+          ✍ Documentações
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/tutorials/" title="💻 Tutoriais" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/tutorials/">
+          💻 Tutoriais
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/tutorials/devopstools/" title="DevOps Tools" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/tutorials/devopstools/">
+          DevOps Tools
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/devopstools/git-part1/" title="Git Howto (Parte 1)" class="dd-item active">
+        <a href="/tutorials/devopstools/git-part1/">
+        Git (Parte 1)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/devopstools/git-part2/" title="Git Howto (Parte 2)" class="dd-item ">
+        <a href="/tutorials/devopstools/git-part2/">
+        Git (Parte 2)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/devopstools/git-bash-prompt/" title="Git bash prompt" class="dd-item ">
+        <a href="/tutorials/devopstools/git-bash-prompt/">
+        Git bash prompt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/artigos/" title="📑 Artigos" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/artigos/">
+          📑 Artigos
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>  </h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://jenciso.github.io/"><i class='fas fa-bookmark'></i> Autor</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/devopstools/git-part1.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/devopstools/'>DevOps Tools</a> > Git Howto (Parte 1)
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-prerequisitos">1. Prerequisitos</a></li>
+    <li><a href="#2-preparação">2. Preparação</a></li>
+    <li><a href="#3-criando-o-projeto-git">3. Criando o projeto git</a></li>
+    <li><a href="#4-conferindo-o-status-do-repositório">4. Conferindo o status do repositório</a></li>
+    <li><a href="#5-fazendo-modificações">5. Fazendo modificações</a></li>
+    <li><a href="#6-adicionando-modificações-ao-stage">6. Adicionando modificações ao stage</a></li>
+    <li><a href="#7-colocando-em-stage-e-fazendo-commits">7. Colocando em stage e fazendo commits</a></li>
+    <li><a href="#8-fazendo-commit-das-modificações">8. Fazendo commit das modificações</a></li>
+    <li><a href="#9-modificações-não-arquivos">9. Modificações, não arquivos</a></li>
+    <li><a href="#10-histórico">10. Histórico</a></li>
+    <li><a href="#11-aliases">11. Aliases</a></li>
+    <li><a href="#12-usando-versões-anteriores">12. Usando versões anteriores</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#13-adicionando-tags-a-versões">13. Adicionando tags a versões</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Git Howto (Parte 1)
+            </h1>
+          
+
+        
+
+
+
+<div class="notices note" ><p>Este tutorial esta baseado do seguinte documento: <a href="https://githowto.com">https://githowto.com</a></p>
+</div>
+
+<h2 id="1-prerequisitos">1. Prerequisitos</h2>
+<ul>
+<li>Instalar git-bash-prompt seguindo este <a href="/tutorials/devopstools/git-bash-prompt/">tutorial</a></li>
+<li>Ter uma estacao de trabalho Linux</li>
+</ul>
+<h2 id="2-preparação">2. Preparação</h2>
+<p>Configurando nome e endereço de e-mail</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global user.name <span style="color:#e6db74">&#34;Seu Nome Completo&#34;</span>
+git config --global user.email <span style="color:#e6db74">&#34;seu_email@sua_empresa.com&#34;</span>
+</code></pre></div><p>Opções de Instalação: términos de linhas (Linux):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global core.autocrlf input
+git config --global core.safecrlf warn
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/352499.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="3-criando-o-projeto-git">3. Criando o projeto git</h2>
+<p>Vamos a criar um repositório git &ldquo;hello&rdquo; e uma página hello.html com o seguinte conteúdo: &ldquo;Hello, World&rdquo;</p>
+<p>Crie uma página de &ldquo;Hello, World&rdquo; e inicialize o repositório</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mkdir hello <span style="color:#f92672">&amp;&amp;</span> cd hello
+echo <span style="color:#e6db74">&#34;Hello, World&#34;</span> &gt; hello.html
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git init
+</code></pre></div><p>Adicione a página ao repositório:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git add hello.html
+git commit -m <span style="color:#e6db74">&#34;First Commit&#34;</span>
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico01.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="4-conferindo-o-status-do-repositório">4. Conferindo o status do repositório</h2>
+<p>Use o comando git status para checar o estado atual do repositório.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git status
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico02.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="5-fazendo-modificações">5. Fazendo modificações</h2>
+<p>Modificar a página <code>hello.html</code> com o seguinte conteúdo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
+</code></pre></div><p>Conferindo o status:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git status
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico03.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Notar que:</p>
+<ul>
+<li>O git sabe que o arquivo <code>hello.html</code> foi modificado, mas essas modificações ainda não sofreram commit para o repositório.</li>
+<li>A mensagem de status oferece dicas sobre o que fazer em seguida. Se você quiser adicionar essas modificações para o repositório, use <code>git add</code>. Para desfazer as modificações use <code>git checkout</code>.</li>
+</ul>
+<h2 id="6-adicionando-modificações-ao-stage">6. Adicionando modificações ao stage</h2>
+<p>Mande o git adicionar as modificações ao stage. Confira o status</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add hello.html
+git status
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico04.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Observar:</p>
+<ul>
+<li>Modificações no <code>hello.html</code> foram adicionadas ao stage. Isso quer dizer que o git sabe da modificação, mas não é permanente no repositório. O próximo commit incluirá as modificações que estão no stage.</li>
+<li>Se você decidir não fazer commit da modificação, o comando status vai te lembrar que você pode usar o comando <code>git reset</code> para remover essas mudanças do stage.</li>
+</ul>
+<h2 id="7-colocando-em-stage-e-fazendo-commits">7. Colocando em stage e fazendo commits</h2>
+<p>Adicionar algo ao stage no git permite que você continue fazendo modificações no seu diretório de trabalho e, quando decidir que quer interagir com o controle de versão, permite que guarde as mudanças em pequenos commits.</p>
+<p>Pense que você editou três arquivos (a. html, b. html e c. html). Depois disso você tem que fazer commit de todas as modificações para que as mudanças em <code>a.html</code> e <code>b.html</code> sejam um único commit, enquanto as mudanças em <code>c.html</code>, que não são lógicamente relacionadas com as duas outras mudanças nos outros dois arquivos, sejam enviadas em um commit diferente.</p>
+<p>Em teoria, você pode fazer o seguinte:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git add a.html
+git add b.html
+git commit -m <span style="color:#e6db74">&#34;Changes for a and b&#34;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git add c.html
+git commit -m <span style="color:#e6db74">&#34;Unrelated change to c&#34;</span>
+</code></pre></div><p>Separando a adição ao stage e o commit, você pode customizar o que vai em cada commit.</p>
+<h2 id="8-fazendo-commit-das-modificações">8. Fazendo commit das modificações</h2>
+<p>Na hora de executar o comando <code>git commit</code> vamos omitor o uso do flag <code>-m</code>, desta forma entramos na edição interativa de comentários para o commit. O git ira abrir o editor configurado a partir desta lista (em ordem de prioridade)</p>
+<ul>
+<li>Variável de ambiente GIT_EDITOR</li>
+<li>Definição de configuração core.editor</li>
+<li>Variável de ambiente VISUAL</li>
+<li>Variável de ambiente EDITOR</li>
+</ul>
+<p>No me caso meu editor é &lsquo;vi&rsquo;. Caso deseje modificar seu editor de forma permanente, edite o arquivo <code>~/.gitconfig</code></p>
+<p>Logo de executar o commit, iremos colocar como comentario &ldquo;Added h1 tag&rdquo;</p>
+<p>
+    <asciinema-player
+        src="/casts/git-basico05.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="9-modificações-não-arquivos">9. Modificações, não arquivos</h2>
+<p>O git trabalha com as modificações, não com os arquivos.</p>
+<ul>
+<li>Primeira mudança: Adicionando tags padrão de páginas e executando <code>git add hello.html</code>. O novo conteúdo para o arquivo: <code>hello.html</code> será:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="display:block;width:100%;background-color:#3c3d38">&lt;<span style="color:#f92672">html</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38">  &lt;<span style="color:#f92672">body</span>&gt;
+</span>    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">  &lt;/<span style="color:#f92672">body</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38">&lt;/<span style="color:#f92672">html</span>&gt;
+</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add hello.html
+</code></pre></div><ul>
+<li>Segunda mudança: Adicione os headers do HTML. Agora adicione os headers (<head> section) na página</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">  &lt;<span style="color:#f92672">head</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38">  &lt;/<span style="color:#f92672">head</span>&gt;
+</span>  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>Agora excute:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git status
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico06.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:1:12"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Note que o arquivo <code>hello.html</code> está listado duas vezes no status.</p>
+<ul>
+<li>A primeira mudança (a adição das tags padrão) está no stage e pronta para um commit.</li>
+<li>A segunda mudança (adição dos headers) não está no stage.</li>
+</ul>
+<p>Se você fizesse um commit agora, os headers não teriam sido salvos no repositório.</p>
+<ul>
+<li>Commit: Faça um commit das mudanças que estão no stage (as tags padrão) e então confira novamente o status.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git commit -m <span style="color:#e6db74">&#34;Added standard HTML page tags&#34;</span>
+git status
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico07.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:11"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>O comando status diz que o arquivo hello.html tem modificações não gravadas, mas não está mais em buffer.</p>
+<ul>
+<li>Adicionando a segunda modificação: Adicione a segunda modificação ao stage, depois execute o comando <code>git status</code></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add .
+git status
+git commit -m <span style="color:#e6db74">&#34;Added HTML header&#34;</span>
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico08.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:14"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="10-histórico">10. Histórico</h2>
+<p>Usaremos o comando <code>git log</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico09.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:04"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Histórico em uma linha:</p>
+<pre><code>git log --pretty=oneline
+</code></pre><p>Controlando a exibição de entradas</p>
+<pre><code>git log --pretty=oneline --max-count=2
+git log --pretty=oneline --since='5 minutes ago'
+git log --pretty=oneline --until='5 minutes ago'
+git log --pretty=oneline --author=&lt;your name&gt;
+git log --pretty=oneline --all
+</code></pre><p>Para rever as modificações feitas na última semana</p>
+<pre><code>git log --all --pretty=format:&quot;%h %cd %s (%an)&quot; --since='7 days ago'
+</code></pre><p>Um formato bacana</p>
+<pre><code>git log --pretty=format:&quot;%h %ad | %s%d [%an]&quot; --graph --date=short
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico10.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Vamos olhar os detalhes:</p>
+<ul>
+<li>&ndash;pretty=&rdquo;&hellip;&rdquo; define o formato da saída</li>
+<li>%h é o hash abreviado do commit</li>
+<li>%d mostra decorações do commit (ex.: head de branches ou tags)</li>
+<li>%ad é a data do commit</li>
+<li>%s é o comentário</li>
+<li>%an é o nome do autor =</li>
+<li>&ndash;graph fala para o git mostrar a árvore de commits no formato de um gráfico de ASCII</li>
+<li>&ndash;date=short mantém o formato de data pequeno e simples</li>
+</ul>
+<p>Então, toda vez que você quiser ver um log, você terá que digitar muito. Felizmente, nós aprenderemos sobre aliases na próxima lição.</p>
+<h2 id="11-aliases">11. Aliases</h2>
+<p>Adicione as seguintes linhas no arquivo <code>~/.gitconfig</code></p>
+<pre><code class="language-properties" data-lang="properties">[alias]
+        co = checkout
+        ci = commit
+        st = status
+        br = branch
+        hist = log --pretty=format:\&quot;%h %ad | %s%d [%an]\&quot; --graph --date=short
+        type = cat-file -t
+        dump = cat-file -p
+</code></pre><p>Agora execute:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git st
+git hist
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico11.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="12-usando-versões-anteriores">12. Usando versões anteriores</h2>
+<h4 id="conseguindo-os-hashes-das-versões-anteriores">Conseguindo os hashes das versões anteriores</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git hist
+</code></pre></div><p>O resultado será:</p>
+<p>
+    <asciinema-player
+        src="/casts/git-basico12.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:05"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Confira a data do log e encontre o hash do primeiro commit. Você vai achar ele na última linha do git hist Use o código (os seus 7 primeiros caracteres são suficientes) no comando abaixo. Depois disso, cheque o conteúdo do arquivo hello.html.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout &lt;hash&gt;
+cat hello.html
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico13.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="voltando-para-a-versão-mais-atual-no-branch-master">Voltando para a versão mais atual no branch master</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout master
+cat hello.html
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico14.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>‘master’ é o nome do branch padrão. Ao entrar em um branch pelo seu nome, você vai para a sua versão mais atual.</p>
+<h2 id="13-adicionando-tags-a-versões">13. Adicionando tags a versões</h2>
+<p>Vamos chamar a versão atual do nosso programa &ldquo;Hello&rdquo; de versão 1 (v1).</p>
+<h4 id="criando-a-tag-do-primeiro">Criando a tag do primeiro</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git tag v1
+</code></pre></div><h4 id="tags-em-versões-antigas">Tags em versões antigas</h4>
+<p>Vamos adicionar uma tag à versão anterior da nossa atual versão com o nome <code>v1-beta</code>. Nós vamos usar a notação ^ indicando “o pai de v1”.
+Se a notação <code>v1^</code> gera problemas, tente usar <code>v1~1</code> para referenciar a mesma versão. Essa notação significa “a primeira versão antes de v1”.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout v1^
+cat hello.html
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico15.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:20"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Essa é a versão com as tags <code>&lt;html&gt;</code> e <code>&lt;body&gt;</code>, mas sem <code>&lt;head&gt;</code>. Vamos fazer dessa a versão <code>v1-beta</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git tag v1-beta
+</code></pre></div><h4 id="acessando-através-do-nome-da-tag">Acessando através do nome da tag</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout v1
+git checkout v1-beta
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico16.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:20"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="vendo-tags-com-o-comando-tag">Vendo tags com o comando tag</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git tag
+</code></pre></div><h4 id="vendo-tags-nos-logs">Vendo tags nos logs</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git hist master --all
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico17.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:20"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Você pode ver as tags (v1 e v1-beta) listadas no log juntamente com o nome do branch (master). O HEAD mostra o commit em que você está atualmente (v1-beta).</p>
+
+
+<footer class="footline">
+	
+	    <i class='fas fa-user'></i> <a href="mailto:juan.enciso@gmail.com">Juan Enciso</a>  <i class='fas fa-calendar'></i> 09/08/2020
+	    </div>
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1597032979"></script>
+    <script src="/js/perfect-scrollbar.min.js?1597032979"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1597032979"></script>
+    <script src="/js/jquery.sticky.js?1597032979"></script>
+    <script src="/js/featherlight.min.js?1597032979"></script>
+    <script src="/js/highlight.pack.js?1597032979"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1597032979"></script>
+    <script src="/js/learn.js?1597032979"></script>
+    <script src="/js/hugo-learn.js?1597032979"></script>
+
+    <link href="/mermaid/mermaid.css?1597032979" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1597032979"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+
+    <script src="/js/asciinema-player.js"></script>
+
+  </body>
+</html>
+

@@ -6,21 +6,32 @@
     <description>Recent content in git on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Git howto</title>
-      <link>/tutorials/devopstools/git/</link>
+      <title>Git Howto (Parte 1)</title>
+      <link>/tutorials/devopstools/git-part1/</link>
       <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tutorials/devopstools/git/</guid>
-      <description>Este tutorial esta baseado no seguinte tutorial https://githowto.com
+      <guid>/tutorials/devopstools/git-part1/</guid>
+      <description>Este tutorial esta baseado do seguinte documento: https://githowto.com
  1. Prerequisitos  Instalar git-bash-prompt seguindo este tutorial Ter uma estacao de trabalho Linux  2. Preparação Configurando nome e endereço de e-mail
 git config --global user.name &amp;#34;Seu Nome Completo&amp;#34; git config --global user.email &amp;#34;seu_email@sua_empresa.com&amp;#34; Opções de Instalação: términos de linhas (Linux):
 git config --global core.autocrlf input git config --global core.safecrlf warn   3. Criando o projeto git Vamos a criar um repositório git &amp;ldquo;hello&amp;rdquo; e uma página hello.</description>
+    </item>
+    
+    <item>
+      <title>Git Howto (Parte 2)</title>
+      <link>/tutorials/devopstools/git-part2/</link>
+      <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/devopstools/git-part2/</guid>
+      <description>Este tutorial é a continuação do tutorial Git (Part 1)
+ 14. Descartando mudanças locais (antes do stage) Acessando o branch Master Verifique que você esta no último commit do branch master antes de continuar.
+git checkout master Mude o hello.html Acontece de você modificar o arquivo no seu diretório de trabalho local e às vezes querer descartar as mudanças que você fez commit. É aqui que o comando checkout vai te ajudar.</description>
     </item>
     
     <item>

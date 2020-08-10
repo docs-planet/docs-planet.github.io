@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.74.3" />
-    <meta name="description" content="Conceitos, apresentações, conteúdo em geral">
+    <meta name="description" content="Tutorial de GIT">
 <meta name="author" content="Juan Enciso">
 
     <link rel="icon" href="/images/favicon.ico" type="image/png">
 
-    <title>Documentações :: Docs Planet</title>
+    <title>Git Howto (Parte 2) :: Docs Planet</title>
 
     
     <link href="/css/nucleus.css?1597032979" rel="stylesheet">
@@ -25,6 +25,8 @@
     
     
     
+    <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
+    
     <script src="/js/jquery-3.3.1.min.js?1597032979"></script>
 
     <style>
@@ -39,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/docs/">
+  <body class="" data-url="/tutorials/devopstools/git-part2/">
     <nav id="sidebar" class="">
 
 
@@ -84,8 +86,8 @@
   
     
     <li data-nav-id="/docs/" title="Documentações" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/docs/">
@@ -108,7 +110,7 @@
   
     
     <li data-nav-id="/tutorials/" title="💻 Tutoriais" class="dd-item 
-        
+        parent
         
         
         ">
@@ -137,7 +139,7 @@
   
     
     <li data-nav-id="/tutorials/devopstools/" title="DevOps Tools" class="dd-item 
-        
+        parent
         
         
         ">
@@ -184,7 +186,7 @@
  
   
     
-      <li data-nav-id="/tutorials/devopstools/git-part2/" title="Git Howto (Parte 2)" class="dd-item ">
+      <li data-nav-id="/tutorials/devopstools/git-part2/" title="Git Howto (Parte 2)" class="dd-item active">
         <a href="/tutorials/devopstools/git-part2/">
         Git (Parte 2)
         
@@ -297,7 +299,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/docs/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/devopstools/git-part2.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -324,7 +326,19 @@
             
           
           
-            <a href='/'>Docs Planet</a> > Documentações
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/devopstools/'>DevOps Tools</a> > Git Howto (Parte 2)
+          
+        
+          
+        
           
         
           
@@ -335,7 +349,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#14-descartando-mudanças-locais-antes-do-stage">14. Descartando mudanças locais (antes do stage)</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#15-descartando-mudanças-no-stage-antes-do-commit">15. Descartando mudanças no stage (antes do commit)</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -348,7 +371,7 @@
           
             <h1>
               
-              Documentações
+              Git Howto (Parte 2)
             </h1>
           
 
@@ -356,39 +379,81 @@
 
 
 
-	<p><img src="/images/undraw_my_documents_ym8x.png?width=300px" alt=""></p>
+<div class="notices note" ><p>Este tutorial é a continuação do tutorial <a href="../git-part1">Git (Part 1)</a></p>
+</div>
+
+<h2 id="14-descartando-mudanças-locais-antes-do-stage">14. Descartando mudanças locais (antes do stage)</h2>
+<h4 id="acessando-o-branch-master">Acessando o branch Master</h4>
+<p>Verifique que você esta no último commit do branch master antes de continuar.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout master
+</code></pre></div><h4 id="mude-o-hellohtml">Mude o hello.html</h4>
+<p>Acontece de você modificar o arquivo no seu diretório de trabalho local e às vezes querer descartar as mudanças que você fez commit. É aqui que o comando checkout vai te ajudar.</p>
+<p>Faça mudanças ao arquivo hello.html na forma de um comentário indesejado.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#f92672">html</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  &lt;<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  &lt;/<span style="color:#f92672">head</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  &lt;<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>    <span style="color:#75715e">&lt;!-- This is a bad comment.  We want to revert it. --&gt;</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  &lt;/<span style="color:#f92672">body</span>&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>Confira o status</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git status
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico18.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="desfazendo-as-mudanças-no-diretório-de-trabalho">Desfazendo as mudanças no diretório de trabalho</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat hello.html
+git checkout hello.html
+git status
+cat hello.html
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico19.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>O comando status mostra que não existem mudanças que não estão no stage no repositório de trabalho. E o “comentário ruim” não está mais no arquivo.</p>
+<h2 id="15-descartando-mudanças-no-stage-antes-do-commit">15. Descartando mudanças no stage (antes do commit)</h2>
 
 
-
-
-
-
-
-<ul class="children children-h4">
+<footer class="footline">
 	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-
-	
-</ul>
-
-
-
-
-
-
-
-
-
-<footer class=" footline" >
+	    <i class='fas fa-user'></i> <a href="mailto:juan.enciso@gmail.com">Juan Enciso</a>  <i class='fas fa-calendar'></i> 10/08/2020
+	    </div>
 	
 </footer>
 
@@ -423,6 +488,74 @@
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -442,66 +575,6 @@
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -570,5 +643,8 @@
     
 
 
+    <script src="/js/asciinema-player.js"></script>
+
   </body>
 </html>
+
