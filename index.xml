@@ -6,7 +6,7 @@
     <description>Recent content on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Aug 2020 08:41:44 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,12 +14,13 @@
     <item>
       <title>Git howto</title>
       <link>/tutorials/devopstools/git/</link>
-      <pubDate>Sun, 09 Aug 2020 08:41:44 +0100</pubDate>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/devopstools/git/</guid>
-      <description>Intro Iremos trabalhar o seguinte tutorial: https://githowto.com
-  Attachments   Rosenberg - Comunicación no violenta.pdf  (1091 kb)   What Is Antifa_ Trump Wants to Declare It a Terror Group - The New York Times.pdf  (154 kb)    A notice disclaimer
-   Is this learn theme rocks ?   Yes !.   </description>
+      <description>Este tutorial esta baseado no seguinte tutorial https://githowto.com
+ 1. Prerequisitos  Instalar git-bash-prompt seguindo este tutorial Ter uma estacao de trabalho Linux  2. Preparação Configurando nome e endereço de e-mail
+git config --global user.name &amp;#34;Seu Nome Completo&amp;#34; git config --global user.email &amp;#34;seu_email@sua_empresa.com&amp;#34; Opções de Instalação: términos de linhas (Linux):
+git config --global core.autocrlf input git config --global core.safecrlf warn   3. Criando o projeto git Vamos a criar um repositório git &amp;ldquo;hello&amp;rdquo; e uma página hello.</description>
     </item>
     
     <item>
