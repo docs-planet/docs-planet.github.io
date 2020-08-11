@@ -9,25 +9,25 @@
 
     <link rel="icon" href="/images/favicon.ico" type="image/png">
 
-    <title>Git Howto (Parte 2) :: Docs Planet</title>
+    <title>Git (Parte 2) :: Docs Planet</title>
 
     
-    <link href="/css/nucleus.css?1597109874" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1597109874" rel="stylesheet">
-    <link href="/css/hybrid.css?1597109874" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1597109874" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1597109874" rel="stylesheet">
-    <link href="/css/auto-complete.css?1597109874" rel="stylesheet">
-    <link href="/css/theme.css?1597109874" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1597109874" rel="stylesheet">
+    <link href="/css/nucleus.css?1597117460" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1597117460" rel="stylesheet">
+    <link href="/css/hybrid.css?1597117460" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1597117460" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1597117460" rel="stylesheet">
+    <link href="/css/auto-complete.css?1597117460" rel="stylesheet">
+    <link href="/css/theme.css?1597117460" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1597117460" rel="stylesheet">
     
-    <link href="/css/theme-custom-docs.css?1597109874" rel="stylesheet">
+    <link href="/css/theme-custom-docs.css?1597117460" rel="stylesheet">
     
     
     
     <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
     
-    <script src="/js/jquery-3.3.1.min.js?1597109874"></script>
+    <script src="/js/jquery-3.3.1.min.js?1597117460"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1597109874"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1597109874"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1597117460"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1597117460"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1597109874"></script>
+<script type="text/javascript" src="/js/search.js?1597117460"></script>
 
     
   </div>
@@ -85,13 +85,13 @@
  
   
     
-    <li data-nav-id="/docs/" title="Documentações" class="dd-item 
+    <li data-nav-id="/docs/" title="Docs" class="dd-item 
         
         
         
         ">
       <a href="/docs/">
-          ✍ Documentações
+          ✍ Docs
           
       </a>
       
@@ -165,7 +165,7 @@
  
   
     
-      <li data-nav-id="/tutorials/devopstools/git-part1/" title="Git Howto (Parte 1)" class="dd-item ">
+      <li data-nav-id="/tutorials/devopstools/git-part1/" title="Git (Parte 1)" class="dd-item ">
         <a href="/tutorials/devopstools/git-part1/">
         Git (Parte 1)
         
@@ -186,7 +186,7 @@
  
   
     
-      <li data-nav-id="/tutorials/devopstools/git-part2/" title="Git Howto (Parte 2)" class="dd-item active">
+      <li data-nav-id="/tutorials/devopstools/git-part2/" title="Git (Parte 2)" class="dd-item active">
         <a href="/tutorials/devopstools/git-part2/">
         Git (Parte 2)
         
@@ -334,7 +334,7 @@
             
           
           
-            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/devopstools/'>DevOps Tools</a> > Git Howto (Parte 2)
+            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/devopstools/'>DevOps Tools</a> > Git (Parte 2)
           
         
           
@@ -356,7 +356,48 @@
         <li></li>
       </ul>
     </li>
-    <li><a href="#15-descartando-mudanças-no-stage-antes-do-commit">15. Descartando mudanças no stage (antes do commit)</a></li>
+    <li><a href="#15-descartando-mudanças-no-stage-antes-do-commit">15. Descartando mudanças no stage (antes do commit)</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#16-desfazendo-commits">16. Desfazendo commits</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#17-removendo-um-commit-de-um-branch">17. Removendo um commit de um branch</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#18-removendo-a-tag-oops">18. Removendo a tag oops</a></li>
+    <li><a href="#19-mudando-commits">19. Mudando commits</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#20-movendo-arquivos">20. Movendo arquivos</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#21-mais-informação-sobre-a-estrutura">21. Mais informação sobre a estrutura</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#22-dentro-do-git-diretório-git">22. Dentro do Git: diretório .git</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#23-dentro-do-git-trabalhando-diretamente-com-objetos-do-git">23. Dentro do Git: Trabalhando diretamente com objetos do git</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#24-criando-um-branch">24. Criando um Branch</a></li>
   </ul>
 </nav>
     </div>
@@ -371,7 +412,7 @@
           
             <h1>
               
-              Git Howto (Parte 2)
+              Git (Parte 2)
             </h1>
           
 
@@ -389,14 +430,14 @@
 </code></pre></div><h4 id="mude-o-hellohtml">Mude o hello.html</h4>
 <p>Acontece de você modificar o arquivo no seu diretório de trabalho local e às vezes querer descartar as mudanças que você fez commit. É aqui que o comando checkout vai te ajudar.</p>
 <p>Faça mudanças ao arquivo hello.html na forma de um comentário indesejado.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#f92672">html</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  &lt;<span style="color:#f92672">head</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  &lt;/<span style="color:#f92672">head</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  &lt;<span style="color:#f92672">body</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
-<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>    <span style="color:#75715e">&lt;!-- This is a bad comment.  We want to revert it. --&gt;</span>
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  &lt;/<span style="color:#f92672">body</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>&lt;/<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#75715e">&lt;!-- This is a bad comment.  We want to revert it. --&gt;</span>
+</span>  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>Confira o status</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git status
 </code></pre></div><p>
@@ -448,6 +489,647 @@ cat hello.html
 
 <p>O comando status mostra que não existem mudanças que não estão no stage no repositório de trabalho. E o “comentário ruim” não está mais no arquivo.</p>
 <h2 id="15-descartando-mudanças-no-stage-antes-do-commit">15. Descartando mudanças no stage (antes do commit)</h2>
+<h4 id="edite-o-arquivo-e-adicione-as-mudanças-ao-stage">Edite o arquivo e adicione as mudanças ao stage</h4>
+<p>Faça mudanças ao arquivo <code>hello.html</code> na forma de um comentário indesejado.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#75715e">&lt;!-- This is an unwanted but staged comment --&gt;</span>
+</span>  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>E logo adicione o arquivo ao stage.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add hello.html
+git status
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico20.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="revertendo-a-zona-de-buffer">Revertendo a zona de buffer</h4>
+<p>Felizmente, o status informado nos mostra exatamente o que devemos fazer para cancelar mudanças no stage.</p>
+<pre><code>git reset HEAD hello.html
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico21.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>O comando <code>reset</code> retorna a zona do buffer para HEAD. Isso limpa a zona do buffer das mudanças que nós acabamos de adicionar ao stage.</p>
+<p>O comando <code>reset</code> (padrão) não altera o diretório de trabalho. Logo, o diretório de trabalho ainda tem os comentários indesejados. Nós podemos usar o comando checkout do tutorial anterior para remover as mudanças do repositório de trabalho.</p>
+<h4 id="mudando-para-a-versão-do-commit">Mudando para a versão do commit</h4>
+<pre><code>git checkout hello.html
+git status
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico22.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Nosso diretório de trabalho está limpo novamente.</p>
+<h2 id="16-desfazendo-commits">16. Desfazendo commits</h2>
+<p>Algumas vezes você percebe que os novos commits estão errados e você quer desfazê-los. Existem várias maneiras de resolver esse problema, mas nós usamos a mais segura aqui.</p>
+<p>Para desfazer o commit, vamos criar um novo commit desfazendo as modificações não desejadas.</p>
+<h4 id="edite-o-arquivo-e-faça-um-commit">Edite o arquivo e faça um commit</h4>
+<p>Substitua o arquivo <code>hello.html</code> com o seguinte.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#75715e">&lt;!-- This is an unwanted but committed change --&gt;</span>
+</span>  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><pre><code>git add hello.html
+git commit -m &quot;Oops, we didn't want this commit&quot;
+</code></pre><h4 id="faça-um-commit-com-as-novas-modificações-que-desfazem-as-modificações-anteriores">Faça um commit com as novas modificações que desfazem as modificações anteriores</h4>
+<p>Para desfazer o commit, precisamos criar um commit que deleta as modificações feitas pelo commit indesejado.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git revert HEAD
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico23.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Voce tb poderia haver usado o comando <code>git revert HEAD --no-edit</code>. O comando <code>--no-edit</code> pode ser ignorado. Ele era desnecessário para gerar as informações de saída sem abrir o editor.</p>
+<h4 id="confira-o-log">Confira o log</h4>
+<pre><code>git hist
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico24.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:06"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>A seguir vamos olhar a técnica que pode ser usada para remover o último commit do histórico do repositório.</p>
+<h2 id="17-removendo-um-commit-de-um-branch">17. Removendo um commit de um branch</h2>
+<p><code>Revert</code> é um comando poderoso da seção anterior que te permite cancelar quaisquer commits para um repositório. Apesar disso, tanto os commits originais quanto os cancelados permanecem visíveis no histórico do branch (quando usamos o comando <code>git log</code>).</p>
+<p>Frequentemente depois que um commit é feito percebemos que ele era um erro. Seria legal ter um comando de desfazer que permitisse deletar o commit incorreto imediatamente. Esse comando preveniria a aparição de um commit indesejado no histórico do <code>git log</code>.</p>
+<h4 id="o-comando-reset">O comando reset</h4>
+<p>Nós já usamos o comando reset para equiparar o buffer zone e o commit selecionado (commit HEAD foi usado na lição anterior).</p>
+<p>Quando uma referência a um commit é dada (Exemplo: um branch, hash, ou tag name), o comando reset vai&hellip;</p>
+<ol>
+<li>Sobrescrever o branch atual para que ele aponte para o commit correto</li>
+<li>Opcionalmente resetar o buffer zone para que ele satisfazer o commit especificado</li>
+<li>Opcionalmente resetar o dirétorio de trabalho para que ele equipare-se ao commit especificado</li>
+</ol>
+<h4 id="cheque-nosso-histórico">Cheque nosso histórico</h4>
+<pre><code>git hist
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico25.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:06"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Nós vemos que os dois últimos commits desse branch são &ldquo;Oops&rdquo; and &ldquo;Revert Oops&rdquo;. Vamos removê-los com o comando reset.</p>
+<h4 id="marque-esse-branch-primeiro">Marque esse branch primeiro</h4>
+<p>Vamos marcar nosso último commit com tag, para que possamos achá-lo após remover commits.</p>
+<pre><code>git tag oops
+</code></pre><h4 id="resete-o-commit-para-o-oops-anterior">Resete o commit para o Oops anterior</h4>
+<p>No log de histórico (veja acima), o commit com tag «v1» está fazendo commit sobre um commit anterior incorreto. Vamos resetar o branch para aquele ponto. Como o branch tem uma tag, podemos usar o nome da tag no comando reset (se não possuir uma tag, podemos usar o valor hash).</p>
+<pre><code>git reset --hard v1
+git hist
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico26.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:06"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="nada-é-perdido-para-sempre">Nada é perdido para sempre</h4>
+<p>O que acontece com os commits errados? Eles ainda estão no repositório. Na verdade, ainda podemos nos referir a eles. No início da lição, criamos a tag «oops» para o commit cancelado. Vamos dar uma olhada em all (todos) commits.</p>
+<pre><code>git hist --all
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico27.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:06"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Podemos ver que os commits errados não foram embora. Eles não estão listados mais no branch master mas ainda permanecem no repositório. Eles ainda estariam no repositório caso não tivéssemos colocado uma tag neles, mas só poderíamos referenciá-los por seus nomes hash. Commits não referenciados continuam no repositório até que um software garbage collection é acionado pelo sistema.</p>
+<h4 id="perigos-de-resetar">Perigos de resetar</h4>
+<p>Resets em branches locais geralmente são inofensivos. As consequências de quaisquer &ldquo;acidentes&rdquo; podem ser revertidos usando um commit apropriado.</p>
+<p>Apesar disso, outros usuários que compartilham o branch podem ficar confusos se o branch compartilhado fica armazenado em repositórios remotos.</p>
+<h2 id="18-removendo-a-tag-oops">18. Removendo a tag oops</h2>
+<p>A tag oops já fez o seu trabalho. Vamos removê-la e permitir que o garbage collector delete o commit referenciado.</p>
+<pre><code>git tag -d oops
+git hist --all
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico28.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:13"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="19-mudando-commits">19. Mudando commits</h2>
+<h4 id="mude-a-página-e-faça-um-commit">Mude a página e faça um commit</h4>
+<p>Coloque um comentário de autor na página.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">&lt;!-- Author: Juan Enciso --&gt;</span>
+</span>&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><pre><code>git add hello.html
+git commit -m &quot;Add an author comment&quot;
+</code></pre><h4 id="oops-precisa-do-e-mail">Oops&hellip; precisa do e-mail</h4>
+<p>Depois de fazer o commit, você percebe que todo bom comentário deveria incluir o e-mail do autor. Edite a página hello para fornecer um e-mail.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">&lt;!-- Author: Juan Enciso (juan.enciso@gmail.com) --&gt;</span>
+</span>&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><h4 id="mude-o-commit-anterior">Mude o commit anterior</h4>
+<p>Nós não queremos criar outro commit apenas para o e-mail. Vamos mudar o commit anterior e adicionar o endereço de e-mail.</p>
+<pre><code>git add hello.html
+git commit --amend -m &quot;Add an author/email comment&quot;
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico29.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:1:14"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="olhar-o-histórico">Olhar o histórico</h4>
+<pre><code>git hist
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico30.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:4"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>O novo commit &ldquo;author/email&rdquo; substitui o commit original &ldquo;author&rdquo;. O mesmo pode ser obtido usando o comando <code>reset</code> no branch e fazendo novamente o commit com as mudanças.</p>
+<h2 id="20-movendo-arquivos">20. Movendo arquivos</h2>
+<h4 id="mova-o-arquivo-hellohtml-para-a-pasta-lib">Mova o arquivo hello.html para a pasta lib.</h4>
+<p>Agora criaremos a estrutura do nosso repositório. Vamos mover a página no diretório lib</p>
+<pre><code>mkdir lib
+git mv hello.html lib
+git status
+</code></pre><p>Movendo arquivos com git, nós notificamos o git sobre duas coisas</p>
+<ol>
+<li>O arquivo hello.html foi deletado.</li>
+<li>O arquivo lib/hello.html foi criado.</li>
+</ol>
+<p>Ambos os fatos vão para stage imediatamente e ficam prontos para o commit. O comando git status reporta que o arquivo foi movido.</p>
+<h4 id="mais-um-jeito-de-mover-arquivos">Mais um jeito de mover arquivos</h4>
+<p>Um fato positivo sobre o git é que você não precisa se lembrar de controle de versão no momento em que você faz o commit do código. O que poderia acontecer se nós estivéssemos usando a linha de comando do sistema operacional ao invés do comando git para mover arquivos?</p>
+<p>O próximo set de comandos é idêntico às nossas últimas ações. É necessário mais trabalho para o mesmo resultado.</p>
+<p>Nós podemos fazer:</p>
+<pre><code>mkdir lib
+mv hello.html lib
+git add lib/hello.html
+git rm hello.html
+</code></pre><h4 id="faça-commit-do-novo-diretório">Faça commit do novo diretório</h4>
+<p>Vamos fazer commit dessa mudança.</p>
+<pre><code>git commit -m &quot;Moved hello.html to lib&quot;
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico31.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:17"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="21-mais-informação-sobre-a-estrutura">21. Mais informação sobre a estrutura</h2>
+<h4 id="adicionando-indexhtml">Adicionando index.html</h4>
+<p>Vamos adicionar um arquivo <code>index.html</code> ao nosso repositório. O arquivo a seguir é perfeito para esse propósito.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lib/hello.html&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span> /&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>Adicione o arquivo e faça um commit.</p>
+<pre><code>git add index.html
+git commit -m &quot;Added index.html.&quot;
+</code></pre><p>Agora quando você abrir <code>index.html</code>, você deverá ver uma parte da página hello em uma pequena janela.</p>
+<p>
+    <asciinema-player
+        src="/casts/git-basico32.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<pre><code>firefox index.html
+</code></pre><p><img src="https://i.imgur.com/FHxL1jk.png" alt=""></p>
+<h2 id="22-dentro-do-git-diretório-git">22. Dentro do Git: diretório .git</h2>
+<h4 id="o-diretório-git">O diretório .git</h4>
+<p>Essa é uma pasta especial onde todas as coisas do git estão. Vamos explorar o diretório.</p>
+<p>
+    <asciinema-player
+        src="/casts/git-basico33.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:17"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="banco-de-dados-de-objetos">Banco de Dados de Objetos</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ls -C .git/objects/&lt;dir&gt;
+</code></pre></div><p>Você deve ver várias pastas nomeadas com dois caracteres. As duas primeiras letras do hash sha1 do objeto armazenado no git são o nome dos seus diretórios.</p>
+<p>Vamos dar uma olhada em uma das pastas nomeadas com dois caracteres. Devem ter arquivos com nomes de 38 caracteres. Esses arquivos cont&amp;ecute;m os objetos armazenados no git. Eles são comprimidos e encriptados, então é impossível ver seu conteúdo diretamente. Vamos dar uma olhada melhor no diretório Git.</p>
+<p>
+    <asciinema-player
+        src="/casts/git-basico34.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:17"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="arquivo-config">Arquivo Config</h4>
+<pre><code>cat .git/config
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico35.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:17"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="branches-e-tags">Branches e tags</h4>
+<pre><code>ls .git/refs
+ls .git/refs/heads
+ls .git/refs/tags
+cat .git/refs/tags/v1
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico36.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:23"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Arquivos no subdiretório de tags devem ser familiares pra você. Cada arquivo corresponde a tag anteriormente criada usando o comando git tag. Seu conteúdo não é nada mais que um hash de um commit associado à tag.</p>
+<p>A pasta heads é quase idêntica e é usada não para tags, mas para branches. No momento, nós só temos um branch e tudo que você vê nessa pasta é um branch master.</p>
+<h4 id="arquivo-head">Arquivo HEAD</h4>
+<pre><code>cat .git/HEAD
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico37.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:23"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Existe uma referência para o branch atual no arquivo HEAD. Nesse momento, ela tem que ser para o branch master.</p>
+<h2 id="23-dentro-do-git-trabalhando-diretamente-com-objetos-do-git">23. Dentro do Git: Trabalhando diretamente com objetos do git</h2>
+<h4 id="procurando-pelo-último-commit">Procurando pelo último commit</h4>
+<pre><code>git hist --max-count=1
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico38.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:23"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="exibição-do-último-commit">Exibição do último commit</h4>
+<p>Com a hash SHA1, tal como acima&hellip;</p>
+<pre><code>git cat-file -t &lt;hash&gt;
+git cat-file -p &lt;hash&gt;
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico39.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:26"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="busca-em-árvore">Busca em árvore</h4>
+<p>Nós podemos exibir a árvore referenciada no commit. Isso deveria ser uma descrição do arquivo no nosso projeto (para um commit específico). Use a hash SHA1 da string da árvore listada acima.</p>
+<pre><code>git cat-file -p &lt;treehash&gt;
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico40.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:23"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="exibir-diretório-da-lib-e-exibir-o-arquivo-hellohtml">Exibir diretório da lib e Exibir o arquivo hello.html</h4>
+<pre><code>git cat-file -p &lt;libhash&gt;
+git cat-file -p &lt;hellohash&gt;
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico41.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:29"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>E aí está. Objetos árvores, objetos de commits e objetos blob são exibidos diretamente do repositório do git. E isso é tudo que tem - árvores, blobs e commits.</p>
+<h4 id="explore-você-mesmo">Explore você mesmo</h4>
+<p>O repositório git pode ser explorado manualmente. Tente achar manualmente o arquivo hello.html original do primeiro commit com ajuda da hash SHA1 referenciada no último commit.</p>
+<h2 id="24-criando-um-branch">24. Criando um Branch</h2>
 
 
 <footer class="footline">
@@ -624,19 +1306,19 @@ cat hello.html
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1597109874"></script>
-    <script src="/js/perfect-scrollbar.min.js?1597109874"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1597109874"></script>
-    <script src="/js/jquery.sticky.js?1597109874"></script>
-    <script src="/js/featherlight.min.js?1597109874"></script>
-    <script src="/js/highlight.pack.js?1597109874"></script>
+    <script src="/js/clipboard.min.js?1597117460"></script>
+    <script src="/js/perfect-scrollbar.min.js?1597117460"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1597117460"></script>
+    <script src="/js/jquery.sticky.js?1597117460"></script>
+    <script src="/js/featherlight.min.js?1597117460"></script>
+    <script src="/js/highlight.pack.js?1597117460"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1597109874"></script>
-    <script src="/js/learn.js?1597109874"></script>
-    <script src="/js/hugo-learn.js?1597109874"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1597117460"></script>
+    <script src="/js/learn.js?1597117460"></script>
+    <script src="/js/hugo-learn.js?1597117460"></script>
 
-    <link href="/mermaid/mermaid.css?1597109874" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1597109874"></script>
+    <link href="/mermaid/mermaid.css?1597117460" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1597117460"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
