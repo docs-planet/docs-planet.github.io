@@ -6,7 +6,7 @@
     <description>Recent content on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -32,6 +32,18 @@ git config --global core.autocrlf input git config --global core.safecrlf warn  
       <description>Este tutorial é a continuação do tutorial Git (Part 1)
  14. Descartando mudanças locais (antes do stage) Acessando o branch Master Verifique que você esta no último commit do branch master antes de continuar.
 git checkout master Mude o hello.html Acontece de você modificar o arquivo no seu diretório de trabalho local e às vezes querer descartar as mudanças que você fez commit. É aqui que o comando checkout vai te ajudar.</description>
+    </item>
+    
+    <item>
+      <title>Git (Parte 3)</title>
+      <link>/tutorials/devopstools/git-part3/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/devopstools/git-part3/</guid>
+      <description>Este tutorial é a continuação do tutorial Git (Part 2)
+ 24. Criando um Branch Vamos nomear o nosso novo branch como «style».
+git checkout -b style git status Nota:
+ git checkout -b &amp;lt;branch name&amp;gt; é o atalho de git branch &amp;lt;branch name&amp;gt; seguido por git checkout &amp;lt;branch name&amp;gt; Note que o comando git status avisa que você está no branch style.  Adicione o arquivo style.css touch lib/style.</description>
     </item>
     
     <item>
