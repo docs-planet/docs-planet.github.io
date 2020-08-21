@@ -58,5 +58,14 @@ git checkout -b style git status Nota:
  git checkout -b &amp;lt;branch name&amp;gt; é o atalho de git branch &amp;lt;branch name&amp;gt; seguido por git checkout &amp;lt;branch name&amp;gt; Note que o comando git status avisa que você está no branch style.  Adicione o arquivo style.css touch lib/style.</description>
     </item>
     
+    <item>
+      <title>Gitflow</title>
+      <link>/tutorials/git/gitflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/git/gitflow/</guid>
+      <description>Intro Gitflow &amp;hellip;</description>
+    </item>
+    
   </channel>
 </rss>

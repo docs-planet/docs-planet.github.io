@@ -130,7 +130,21 @@
 	"title": "Git",
 	"tags": ["git"],
 	"description": "Diversos artigos sobre git",
-	"content": "Git Tutoriais  https://www.atlassian.com/git/tutorials https://try.github.io/ https://www.vogella.com/tutorials/Git/article.html  Gitflow  https://medium.com/@olivier.bossel/git-flow-the-right-way-to-go-f2a65c315818  "
+	"content": "Git - artigos  https://www.hostinger.com.br/tutoriais/git-branch/ https://www.xpertup.com/blog/technology/git-and-github-fundamentals/  Git Tutoriais  https://www.atlassian.com/git/tutorials https://try.github.io/ https://www.vogella.com/tutorials/Git/article.html  Git Merge  https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1  Gitflow  https://medium.com/@olivier.bossel/git-flow-the-right-way-to-go-f2a65c315818  "
+},
+{
+	"uri": "/tutorials/git/gitflow/",
+	"title": "Gitflow",
+	"tags": ["gitflow"],
+	"description": "Tutorial de Gitflow",
+	"content": "Intro Gitflow \u0026hellip;\n"
+},
+{
+	"uri": "/tags/gitflow/",
+	"title": "gitflow",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "/tags/tutoriais/",
