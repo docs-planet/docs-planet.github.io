@@ -95,7 +95,15 @@
   </url>
   
   <url>
+    <loc>/tags/links/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/tutoriais/</loc>
+  </url>
+  
+  <url>
+    <loc>/artigos/cors/</loc>
   </url>
   
 </urlset>

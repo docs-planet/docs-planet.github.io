@@ -39,7 +39,7 @@
 	"title": "📑 Artigos",
 	"tags": ["artigos", "articles"],
 	"description": "Material coletado no dia a dia",
-	"content": " Docker  Diversos artigos sobre docker\n Git  Diversos artigos sobre git\n "
+	"content": " Docker  Diversos artigos sobre docker\n Git  Diversos artigos sobre git\n Varios  Diversos\n "
 },
 {
 	"uri": "/tutorials/git/git-part3/",
@@ -130,7 +130,7 @@
 	"title": "Git",
 	"tags": ["git"],
 	"description": "Diversos artigos sobre git",
-	"content": "Git - artigos  https://www.hostinger.com.br/tutoriais/git-branch/ https://www.xpertup.com/blog/technology/git-and-github-fundamentals/  Git Tutoriais  https://www.atlassian.com/git/tutorials https://try.github.io/ https://www.vogella.com/tutorials/Git/article.html  Git Merge  https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1  Gitflow  https://medium.com/@olivier.bossel/git-flow-the-right-way-to-go-f2a65c315818  "
+	"content": "Git Artigos  https://www.hostinger.com.br/tutoriais/git-branch/ https://www.xpertup.com/blog/technology/git-and-github-fundamentals/ https://dev.to/usmslm102/git-cheat-sheet-4f5a  Git Tutoriais  https://www.atlassian.com/git/tutorials https://try.github.io/ https://www.vogella.com/tutorials/Git/article.html  Git Merge  https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1  Gitflow  https://medium.com/@olivier.bossel/git-flow-the-right-way-to-go-f2a65c315818  "
 },
 {
 	"uri": "/tutorials/git/gitflow/",
@@ -147,9 +147,23 @@
 	"content": ""
 },
 {
+	"uri": "/tags/links/",
+	"title": "links",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "/tags/tutoriais/",
 	"title": "Tutoriais",
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "/artigos/cors/",
+	"title": "Varios",
+	"tags": ["links"],
+	"description": "Diversos",
+	"content": "CORS  https://dev.to/lydiahallie/cs-visualized-cors-5b8h  "
 }]
