@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.74.3" />
-    <meta name="description" content="Conteudo diverso de documentacao, tutoriais, dicas entre outros">
+    <meta name="description" content="Instalando um git-bash-prompt para melhorar nossa visibilidade no git">
 <meta name="author" content="Juan Enciso">
 
     <link rel="icon" href="/images/favicon.ico" type="image/png">
 
-    <title>Categories :: Docs Planet</title>
+    <title>Git Bash Prompt :: Docs Planet</title>
 
     
     <link href="/css/nucleus.css?1597977842" rel="stylesheet">
@@ -25,6 +25,8 @@
     
     
     
+    <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
+    
     <script src="/js/jquery-3.3.1.min.js?1597977842"></script>
 
     <style>
@@ -39,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/tutorials/git/git-bash-prompt/">
     <nav id="sidebar" class="">
 
 
@@ -86,7 +88,7 @@
     
     
     <li data-nav-id="/tutorials/" title="💻 Tutoriais" class="dd-item 
-        
+        parent
         
         
         ">
@@ -118,7 +120,7 @@
     
     
     <li data-nav-id="/tutorials/git/" title="Git" class="dd-item 
-        
+        parent
         
         
         ">
@@ -126,7 +128,7 @@
           Git
           
             
-              <i class="fas fa-caret-right"></i>
+              <i class="fas fa-caret-down"></i>
             
           
           
@@ -149,7 +151,7 @@
  
   
     
-      <li data-nav-id="/tutorials/git/git-bash-prompt/" title="Git Bash Prompt" class="dd-item ">
+      <li data-nav-id="/tutorials/git/git-bash-prompt/" title="Git Bash Prompt" class="dd-item active">
         <a href="/tutorials/git/git-bash-prompt/">
         Git Bash Prompt
         
@@ -355,6 +357,17 @@
               <div>
                 <div id="top-bar">
                 
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/git/git-bash-prompt.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -375,7 +388,19 @@
             
           
           
-            <a href='/'>Docs Planet</a> > Categories
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/git/'>Git</a> > Git Bash Prompt
+          
+        
+          
+        
           
         
           
@@ -386,7 +411,13 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#instalação">Instalação</a></li>
+    <li><a href="#testando">Testando</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -399,30 +430,103 @@
           
             <h1>
               
-                taxonomy ::
-              
-              Categories
+              Git Bash Prompt
             </h1>
           
 
         
 
 
+<h2 id="intro">Intro</h2>
+<p>Para ter uma melhor visibilidade do que passa em nossos projetos que estão versionados quando estamos trabalhando de forma local, podemos usar ferramentas como é o caso de <a href="https://github.com/magicmonty/bash-git-prompt">git-bash-prompt</a></p>
+<h2 id="instalação">Instalação</h2>
+<p>Baixar o repositorio contendo o software</p>
+<pre><code class="language-console" data-lang="console">cd ~
+git clone https://github.com/jenciso/bash-git-prompt.git .bash-git-prompt --depth=1
+</code></pre><p>Adicionar algumas linhas dentro do arquivo <code>.bashrc</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">GIT_PROMPT_ONLY_IN_REPO<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+GIT_PROMPT_THEME<span style="color:#f92672">=</span>Single_line_Minimalist
+source ~/.bash-git-prompt/gitprompt.sh
+</code></pre></div><hr>
+<p>
+    <asciinema-player
+        src="/casts/351993.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="testando">Testando</h2>
+<p>Baixar qualquer repositorio git. Ex: <a href="https://github.com/jenciso/node-express-azure">https://github.com/jenciso/node-express-azure</a> e fazemos uma simples modificação</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/jenciso/node-express-azure
+cd node-express-azure
+rm README.md
+</code></pre></div><p>Agora podemos ver que estamos na branch <code>master</code> e o shell nos indica que temos um cambio em nosso repositorio.</p>
+<hr>
+<p>
+    <asciinema-player
+        src="/casts/351996.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
 
 
 
-<ul>
-	
-</ul>
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
         
         </div> 
         
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "docs-planet-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
       </div>
 
@@ -451,8 +555,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -469,6 +571,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -481,6 +584,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -497,6 +601,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -629,5 +736,8 @@
     
 
 
+    <script src="/js/asciinema-player.js"></script>
+
   </body>
 </html>
+

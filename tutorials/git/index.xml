@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docs Planet</title>
-    <link>/</link>
-    <description>Recent content on Docs Planet</description>
+    <title>Git on Docs Planet</title>
+    <link>/tutorials/git/</link>
+    <description>Recent content in Git on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tutorials/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -56,35 +56,6 @@ git checkout master Mude o hello.html Acontece de você modificar o arquivo no s
  24. Criando um Branch Vamos nomear o nosso novo branch como «style».
 git checkout -b style git status Nota:
  git checkout -b &amp;lt;branch name&amp;gt; é o atalho de git branch &amp;lt;branch name&amp;gt; seguido por git checkout &amp;lt;branch name&amp;gt; Note que o comando git status avisa que você está no branch style.  Adicione o arquivo style.css touch lib/style.</description>
-    </item>
-    
-    <item>
-      <title>Credits</title>
-      <link>/credits/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/credits/</guid>
-      <description>Contribuidores Juan Enciso @jenciso
-Mateus Abdala @MateusAbdala
- </description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>/artigos/docker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/artigos/docker/</guid>
-      <description>Docker Tutoriais  https://www.docker.com/101-tutorial https://docker-curriculum.com/ https://www.ionos.es/digitalguide/servidores/configuracion/tutorial-docker-instalacion-y-primeros-pasos/  </description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>/artigos/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/artigos/git/</guid>
-      <description>Git Tutoriais  https://www.atlassian.com/git/tutorials https://try.github.io/ https://www.vogella.com/tutorials/Git/article.html  Gitflow  https://medium.com/@olivier.bossel/git-flow-the-right-way-to-go-f2a65c315818  </description>
     </item>
     
   </channel>

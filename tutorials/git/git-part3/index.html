@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="description" content="Tutorial de GIT">
+<meta name="author" content="Juan Enciso">
+
+    <link rel="icon" href="/images/favicon.ico" type="image/png">
+
+    <title>Git (Parte 3) :: Docs Planet</title>
+
+    
+    <link href="/css/nucleus.css?1597977842" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1597977842" rel="stylesheet">
+    <link href="/css/hybrid.css?1597977842" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1597977842" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1597977842" rel="stylesheet">
+    <link href="/css/auto-complete.css?1597977842" rel="stylesheet">
+    <link href="/css/theme.css?1597977842" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1597977842" rel="stylesheet">
+    
+    <link href="/css/theme-custom-docs.css?1597977842" rel="stylesheet">
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
+    
+    <script src="/js/jquery-3.3.1.min.js?1597977842"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/tutorials/git/git-part3/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <td valign="top" align="left">
+   <img style="cursor:pointer" onclick="window.location='/'" alt="" src="/images/logo.png" width="100%">
+</td>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times" style="color:#e2e2e2;"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1597977842"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1597977842"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1597977842"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    
+    
+    <li data-nav-id="/tutorials/" title="💻 Tutoriais" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/tutorials/">
+          💻 Tutoriais
+          
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    
+    
+    <li data-nav-id="/tutorials/git/" title="Git" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/tutorials/git/">
+          Git
+          
+            
+              <i class="fas fa-caret-down"></i>
+            
+          
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/git/git-bash-prompt/" title="Git Bash Prompt" class="dd-item ">
+        <a href="/tutorials/git/git-bash-prompt/">
+        Git Bash Prompt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/git/git-part1/" title="Git (Parte 1)" class="dd-item ">
+        <a href="/tutorials/git/git-part1/">
+        Git (Parte 1)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/git/git-part2/" title="Git (Parte 2)" class="dd-item ">
+        <a href="/tutorials/git/git-part2/">
+        Git (Parte 2)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/git/git-part3/" title="Git (Parte 3)" class="dd-item active">
+        <a href="/tutorials/git/git-part3/">
+        Git (Parte 3)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    
+    
+    <li data-nav-id="/artigos/" title="📑 Artigos" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/artigos/">
+          📑 Artigos
+          
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/artigos/docker/" title="Docker" class="dd-item ">
+        <a href="/artigos/docker/">
+        Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/artigos/git/" title="Git" class="dd-item ">
+        <a href="/artigos/git/">
+        Git
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>  </h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://jenciso.github.io/"><i class='fas fa-bookmark'></i> Autor</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/git/git-part3.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/git/'>Git</a> > Git (Parte 3)
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#24-criando-um-branch">24. Criando um Branch</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#25-navegando-em-branches">25. Navegando em Branches</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#26-mudanças-no-branch-master">26. Mudanças no branch master</a></li>
+    <li><a href="#27-visualizando-os-diferentes-branches">27. Visualizando os diferentes branches</a></li>
+    <li><a href="#28-merging">28. Merging</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#29-criando-um-conflito">29. Criando um conflito</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#30-resolvendo-conflitos">30. Resolvendo conflitos</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#31-realocating-como-uma-alternativa-à-merge">31. Realocating como uma alternativa à merge</a></li>
+    <li><a href="#32-resetando-o-branch-style">32. Resetando o branch style</a></li>
+    <li><a href="#33-reset-do-branch-master">33. Reset do branch master</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#34-rebase">34. Rebase</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#35-merging-com-o-branch-master">35. Merging com o branch master</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#36-repositórios-múltiplos">36. Repositórios múltiplos</a></li>
+    <li><a href="#37-clonando-repositórios">37. Clonando repositórios</a></li>
+    <li><a href="#38-examine-o-repositório-clonado">38. Examine o repositório clonado</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#39-o-que-é-origin">39. O que é origin?</a></li>
+    <li><a href="#40-branches-remotos">40. Branches remotos</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#41-mudando-o-repositório-original">41. Mudando o repositório original</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#42-trazendo-modificações">42. Trazendo modificações</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#43-merging-as-modificações-baixadas">43. Merging as modificações baixadas</a></li>
+    <li><a href="#44-fazendo-pull-e-merge-de-modificações">44. Fazendo pull e merge de modificações</a></li>
+    <li><a href="#45-adicionando-um-branch-de-rastreamento">45. Adicionando um branch de rastreamento</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#46-repositórios-bare">46. Repositórios bare</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#47-adicionando-um-repositório-remoto">47. Adicionando um repositório remoto</a></li>
+    <li><a href="#48-submetendo-modificações">48. Submetendo modificações</a></li>
+    <li><a href="#49-removendo-modificações-comuns">49. Removendo modificações comuns</a></li>
+    <li><a href="#50-divulgando-o-seu-repositório">50. Divulgando o seu repositório</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Git (Parte 3)
+            </h1>
+          
+
+        
+
+
+
+<div class="notices note" ><p>Este tutorial é a continuação do tutorial <a href="../git-part2">Git (Part 2)</a></p>
+</div>
+
+<h2 id="24-criando-um-branch">24. Criando um Branch</h2>
+<p>Vamos nomear o nosso novo branch como «style».</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout -b style
+git status
+</code></pre></div><p>Nota:</p>
+<ul>
+<li><code>git checkout -b &lt;branch name&gt;</code> é o atalho de <code>git branch &lt;branch name&gt;</code> seguido por <code>git checkout &lt;branch name&gt;</code></li>
+<li>Note que o comando <code>git status</code> avisa que você está no branch style.</li>
+</ul>
+<h4 id="adicione-o-arquivo-stylecss">Adicione o arquivo style.css</h4>
+<pre><code>touch lib/style.css
+</code></pre><p>Arquivo <code>lib/style.css</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">h1</span> {
+  <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">red</span>;
+}
+</code></pre></div><p>Execute:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add lib/style.css
+git commit -m <span style="color:#e6db74">&#34;Added css stylesheet&#34;</span>
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico42.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="mude-a-página-principal">Mude a página principal</h4>
+<p>Atualize o arquivo <code>lib/hello.html</code> para usar o <code>style.css</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Author: Juan Enciso (juan.enciso@gmail.com) --&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">media</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;style.css&#34;</span> /&gt;
+</span>  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><pre><code>git add lib/hello.html
+git commit -m &quot;Hello uses style.css&quot;
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico43.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="mude-o-indexhtml">Mude o index.html</h4>
+<p>Atualice o arquivo <code>index.html</code> para que ele use <code>style.css</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">  &lt;<span style="color:#f92672">head</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38">    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">media</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lib/style.css&#34;</span> /&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38">  &lt;/<span style="color:#f92672">head</span>&gt;
+</span>  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lib/hello.html&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span> /&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><pre><code>git add index.html
+git commit -m &quot;Updated index.html&quot;
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico44.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="25-navegando-em-branches">25. Navegando em Branches</h2>
+<p>Agora o seu projeto possui dois branches:</p>
+<pre><code>git hist --all
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico45.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="trocando-para-o-branch-master">Trocando para o branch master</h4>
+<pre><code>git checkout master
+cat lib/hello.html
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico46.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="vamos-retornar-para-o-branch-do-style">Vamos retornar para o branch do style.</h4>
+<pre><code>git checkout style
+cat lib/hello.html
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico47.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="26-mudanças-no-branch-master">26. Mudanças no branch master</h2>
+<p>Enquanto você está mudando o branch style, alguém decide mexer na branch master. Ele adicionou um arquivo <code>README.md</code>.</p>
+<p>Crie um arquivo <code>README.md</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#75715e">## Tutorial
+</span><span style="color:#75715e"></span>
+This is the Hello World example from the git tutorial.
+</code></pre></div><p>Faça um commit das mudanças do arquivo README no branch master.</p>
+<pre><code>git checkout master
+git add README.md
+git commit -m &quot;Added README&quot;
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico48.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="27-visualizando-os-diferentes-branches">27. Visualizando os diferentes branches</h2>
+<p>Agora nós temos um repositório com dois branches diferentes. Para ver branches e suas diferenças, use o comando log como segue.</p>
+<pre><code>git hist --all
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico49.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Nós temos a oportunidade de ver o <code>--graph</code> do git hist em ação. Adicionando a opção <code>--graph</code> ao git log faz com que ele crie uma árvore de commits com a ajuda de caracteres ASCII simples. Nós vemos ambos os branches (style e master) e que o branch atual é o master HEAD. O arquivo <code>index.html</code> adicionado vai antes de ambos branches.</p>
+<p>A flag &ndash;all garante que nós vejamos todos os branches. Por padrão, apenas o branch atual é mostrado.</p>
+<h2 id="28-merging">28. Merging</h2>
+<h4 id="merging-em-um-único-branch">Merging em um único branch</h4>
+<p>Merge junta as modificações de dois branches em um. Vamos voltar para o branch style e fazer um merge dele com o master.</p>
+<pre><code>git checkout style
+git merge master
+git hist --all
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico50.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Pelo merge periodico entre os branches master e style, você pode acompanhar quaisquer mudanças ou modificações ocorridas para manter a compatibilidade das mudanças de estilo na linha principal.</p>
+<p>Porém, isso faz com que os gráficos de commits fiquem feios. Mais tarde vamos considerar a relocação como uma alternativa à fusão.</p>
+<h2 id="29-criando-um-conflito">29. Criando um conflito</h2>
+<h4 id="voltar-para-o-master-e-criar-o-conflito">Voltar para o master e criar o conflito</h4>
+<p>Volte para o branch master e faça as seguintes alterações:</p>
+<pre><code>git checkout master
+</code></pre><p>Arquivo <code>lib/hello.html</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Author: Juan Enciso (juan.enciso@gmail.com) --&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#75715e">&lt;!-- no style --&gt;</span>
+</span>  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World! Life is great!&lt;/<span style="color:#f92672">h1</span>&gt;
+</span>  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><pre><code>git add lib/hello.html
+git commit -m 'Life is great!'
+</code></pre><p>Visualize os branches</p>
+<pre><code>git hist --all
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico51.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Depois de um commit &ldquo;Added README&rdquo; o branch master foi feito um merge com o branch style, mas existe um commit aditional do master, que não foi feito um merge com o branch style.</p>
+<p>A última modificação feita no master entra em conflito com algumas mudanças do style. No próximo passo nós vamos resolver esse conflito.</p>
+<h2 id="30-resolvendo-conflitos">30. Resolvendo conflitos</h2>
+<h4 id="fazer-merge-do-branch-master-com-o-style">Fazer merge do branch master com o style</h4>
+<pre><code>git checkout style
+git merge master
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico52.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>A primeira seção e a versão do branch atual (style) head. A segunda seção é a versão do branch master.</p>
+<h4 id="resolução-do-conflito">Resolução do conflito</h4>
+<p>Você precisa resolver o conflito manualmente. Faça mudanças no <code>lib/hello.html</code> para alcançar o seguinte resultado.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Author: Juan Enciso (juan.enciso@gmail.com) --&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">media</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;style.css&#34;</span> /&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">h1</span>&gt;Hello, World! Life is great!&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>
+    <asciinema-player
+        src="/casts/git-basico53.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="merging-avançado">Merging avançado</h4>
+<p>Git não tem ferramentas gráficas de merging, mas aceita qualquer ferramenta de merge produzida por terceiros. (leia mais sobre essas <a href="https://stackoverflow.com/questions/137102/whats-the-best-visual-merge-tool-for-git">ferramentas no StackOverflow</a>.)</p>
+<h2 id="31-realocating-como-uma-alternativa-à-merge">31. Realocating como uma alternativa à merge</h2>
+<p>Vamos olhar para as diferenças entre realocating e merge. Para fazer isso, precisamos voltar no repositório no momento antes do primeiro merge e então repetir os mesmos passos realocando ao invés de fazer merge.</p>
+<p>Nós usaremos o comando reset para voltar o branch para um estado anterior.</p>
+<h2 id="32-resetando-o-branch-style">32. Resetando o branch style</h2>
+<p>Vamos para o branch style no ponto antes de darmos merge com o branch master. Podemos resetar o branch para qualquer commit. Na verdade, isso faz com que o ponteiro do branch aponte para qualquer commit contido na árvore.</p>
+<p>Aqui, queremos voltar no style branch para um ponto anterior ao merge com o master. Temos que encontrar o último commit antes do merge</p>
+<pre><code>git checkout style
+git hist
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico54.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>É um pouco difícil de ler, mas podemos perceber pelos dados que o commit Updated index.html foi o último no branch style anterior ao merging. Vamos resetar o style branch para esse commit.</p>
+<pre><code>git reset --hard &lt;hash&gt;
+git hist --all
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico55.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Agora no branch style não existem commits de merge no nosso histórico.</p>
+<h2 id="33-reset-do-branch-master">33. Reset do branch master</h2>
+<h4 id="resetando-branch-master">Resetando branch master</h4>
+<p>O modo interativo que adicionamos ao branch master se tornou uma mudança que conflita com as mudanças do branch style. Vamos reverter as mudanças do branch master para o ponto anterior à mudança conflitante. Isso nos permite demonstrar o comando rebase sem nos preocupar com conflitos.</p>
+<pre><code>git checkout master
+git hist
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico56.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>O commit &ldquo;Added README&rdquo; está imediatamente antes do modo interativo conflitante ser adicionado. Agora precisamos resetar o branch master para o commit &ldquo;Added README&rdquo; .</p>
+<pre><code>git reset --hard &lt;hash&gt;
+git hist --all
+</code></pre><p>Examine o log. Ele deve parecer como se tivéssemos retrocedido o repositório para um ponto no tempo anterior a qualquer merge.</p>
+<p>
+    <asciinema-player
+        src="/casts/git-basico57.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="34-rebase">34. Rebase</h2>
+<p>Então nós voltamos no histórico até antes do primeiro merge e queremos realocar as mudanças do master para o nosso branch style.</p>
+<p>Dessa vez nós vamos usar o comando rebase ao invés do merge.</p>
+<pre><code>git checkout style
+git rebase master
+git hist
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico58.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="merge-vs-rebase">Merge VS Rebase</h4>
+<p>O resultado do comando rebase parece muito com o do merge. O branch style atualmente contém todas as suas mudanças, além das mudanças do branch master. A árvore de commits, porém, está um pouco diferente. A árvore de commit do branch style foi reescrita para fazer o branch master parte do histórico de commits. Isso faz com que a cadeia de commits seja mais linear e legível.</p>
+<h4 id="quando-usar-rebase-quando-usar-merge">Quando usar rebase, quando usar merge?</h4>
+<p>Não use o comando rebase&hellip;</p>
+<ol>
+<li>Se o branch é público e compartilhado. Reescrever tais branches vai atrapalhar o trabalho de outros colegas.</li>
+<li>Quando o histórico exato de commits do branch é importante (porque o comando rebase reescreve o histórico de commits).</li>
+</ol>
+<p>Dadas as recomendações acima, eu prefiro usar rebase para branches locais e de curto prazo e merge para branches em repositórios públicos.</p>
+<h2 id="35-merging-com-o-branch-master">35. Merging com o branch master</h2>
+<p>Nós mantivemos nosso branch style atualizado em relação ao branch master (usando rebase), mas agora vamos fazer merge das modificações de volta no master.</p>
+<pre><code>git checkout master
+git merge style
+</code></pre><p>Já que o último commit do master é anterior ao o último commit do branch style, o git consegue fundir em modo de avanço rápido - simplesmente movendo o ponteiro do branch para frente, apontando para o mesmo commit que o branch style.</p>
+<p>Conflitos não surgem no fast-forward merge.</p>
+<p>
+    <asciinema-player
+        src="/casts/git-basico59.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h4 id="confira-os-logs">Confira os logs</h4>
+<pre><code>git hist
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico60.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Agora o style e o master são idênticos. Verifique:</p>
+<pre><code>git hist --all
+</code></pre><h2 id="36-repositórios-múltiplos">36. Repositórios múltiplos</h2>
+<p>Até agora só trabalhamos com um repositório git. Apesar disso, git é ótimo para trabalhar com vários repositórios. Os repositórios adicionais podem ser armazenados localmente ou acessados por conexão de rede.</p>
+<p>Na próxima seção iremos criar um novo repositório chamado &ldquo;cloned_hello&rdquo;. Nós iremos discutir como mover mudanças de um repositório para o outro, lidando com conflitos que possam surgir.</p>
+<p><img src="https://i.imgur.com/zuM9b2c.png" alt=""></p>
+<p>NOTA: Nós faremos mudanças em ambas as cópias do nosso repositório. Preste atenção no repositório em que você está em cada estágio das próximas lições.</p>
+<h2 id="37-clonando-repositórios">37. Clonando repositórios</h2>
+<p>Se você está trabalhando em grupo, é importante que você entenda os próximos 12 capítulos, porque você geralmente terá que trabalhar com repositórios clonados.</p>
+<pre><code>cd ..
+pwd
+git clone hello cloned_hello
+ls -ld hello cloned_hello
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico61.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="38-examine-o-repositório-clonado">38. Examine o repositório clonado</h2>
+<p>Visualizando o histórico do repositório</p>
+<pre><code>cd cloned_hello
+ls
+git hist --all
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico62.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Você verá uma lista de todos os commits no novo repositório, que deveriam ser iguais aos do repositório original. A única diferença deveria ser o nome dos branches.</p>
+<h4 id="branches-remotos">Branches remotos</h4>
+<p>Você verá um branch master (HEAD) no histórico. Você também verá branches com nomes estranhos (origin/master, origin/style e origin/HEAD). Nós falaremos deles depois.</p>
+<h2 id="39-o-que-é-origin">39. O que é origin?</h2>
+<pre><code>git remote
+git remote show origin
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico63.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Nós podemos ver que o “origin” do repositório remoto é o repositório <strong>hello</strong> original. Repositórios remotos são tipicamente guardados em uma máquina separada ou em um servidor centralizado. Porém, como podemos ver, eles também podem apontar para um repositório na mesma máquina. Não tem nada especial sobre o nome “origin”, mas existe uma convenção de usá-lo para o repositório primário central (se houver algum).</p>
+<h2 id="40-branches-remotos">40. Branches remotos</h2>
+<p>Vamos dar uma olhada nos branches do nosso repositório clonado.</p>
+<pre><code>git branch
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico64.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Como podemos ver, apenas o branch master está listado. Onde está o branch style? git branch lista apenas os branches locais, por padrão.</p>
+<h4 id="lista-dos-branches-remotos">Lista dos branches remotos</h4>
+<p>Para ver todos os branches, use o seguinte comando:</p>
+<pre><code>git branch -a
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico65.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>O Git lista todos os commits do repositório original, mas os branches do repositório remoto não são tratados como os locais. Se nós precisamos do nosso próprio branch style, teremos que criá-lo. Em um minuto você verá como isso é feito.</p>
+<h2 id="41-mudando-o-repositório-original">41. Mudando o repositório original</h2>
+<h4 id="faça-uma-mudança-no-repositório-original-hello">Faça uma mudança no repositório original hello</h4>
+<pre><code>cd ../hello
+</code></pre><p>Faça as seguintes mudanças no arquivo README:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#75715e">## Tutorial
+</span><span style="color:#75715e"></span>
+This is the Hello World example from the git tutorial.
+(changed in original)
+</code></pre></div><p>Agora adicione e faça commit dessas mudanças</p>
+<pre><code>git add README
+git commit -m &quot;Changed README in original repo&quot;
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico66.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Agora o repositório original tem mudanças mais recentes que não estão incluídas na versão clonada. Em seguida, vamos receber essas mudanças no repositório clonado.</p>
+<h2 id="42-trazendo-modificações">42. Trazendo modificações</h2>
+<pre><code>cd ../cloned_hello
+git fetch
+git hist --all
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico67.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Neste momento, o repositório contém todos os commits do repositório original. Porém, eles não estão integrados com os branchs locais do repositório clonado.</p>
+<p>Você vai ver o commit de nome “Changed README in original repo” no histórico. Perceba que o commit inclui “origin/master” e “origin/HEAD”.</p>
+<p>Agora vamos dar uma olhada no commit “Updated index.html”. Você vai ver que o branch master local aponta para esse commit, não para o commit que acabamos de trazer.</p>
+<p>Isso nos mostra que o comando “git fetch” vai trazer os novos commits do repositório remoto, mas não vai fundir eles com os branches locais.</p>
+<h4 id="cheque-o-readme">Cheque o README</h4>
+<p>Nós podemos mostrar que o arquivo README clonado não foi modificado.</p>
+<pre><code>cat README.md
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico68.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="43-merging-as-modificações-baixadas">43. Merging as modificações baixadas</h2>
+<p>Faça merge das modificações baixadas no branch master local e agora você deve ver as modificações no arquivo <code>README.md</code></p>
+<pre><code>git merge origin/master
+cat README.md
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico69.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="44-fazendo-pull-e-merge-de-modificações">44. Fazendo pull e merge de modificações</h2>
+<p>Não iremos passar por todo o processo de fazer e dar pull em uma mudança, mas queremos que vocês saibam que:</p>
+<pre><code>git pull
+</code></pre><p>é, na verdade, equivalente a fazer os seguintes passos:</p>
+<pre><code>git fetch
+git merge origin/master
+</code></pre><h2 id="45-adicionando-um-branch-de-rastreamento">45. Adicionando um branch de rastreamento</h2>
+<p>Branches que começam com remotes/origin pertencem ao repositório original. Perceba que, mesmo que você não tenha mais o branch styles, ele sabe que o branch está no repositório original.</p>
+<h4 id="adicione-um-branch-local-que-rastreia-um-branch-remoto">Adicione um branch local que rastreia um branch remoto.</h4>
+<pre><code>git branch --track style origin/style
+git branch -a
+git hist --max-count=2
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico70.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="46-repositórios-bare">46. Repositórios bare</h2>
+<p>Repositórios bare (sem o diretório de trabalho) são tipicamente usados para compartilhamento.</p>
+<h4 id="criando-um-repositório-bare">Criando um repositório bare</h4>
+<pre><code>cd ..
+git clone --bare hello hello.git
+ls -ld hello.git
+cd hello.git/
+ls -l
+</code></pre><p>Tipicamente, repositórios terminados em <code>.git</code> são bare. Como você pode ver, não existe nenhum diretório de trabalho no repositório <code>hello.git</code>. Na verdade, ele não é nada mais que o diretório .git de um repositório que não é bare.</p>
+<p>
+    <asciinema-player
+        src="/casts/git-basico71.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="47-adicionando-um-repositório-remoto">47. Adicionando um repositório remoto</h2>
+<p>Vamos adicionar o repositório <code>hello.git</code> ao nosso repositório original.</p>
+<pre><code>cd ..
+cd hello
+git remote add shared ../hello.git
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico72.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>NOTA: Nós estamos agora no repositório hello.</p>
+<h2 id="48-submetendo-modificações">48. Submetendo modificações</h2>
+<p>A partir de um repositório limpo, geralmente compartilhado em qualquer servidor de rede, precisamos enviar nossas modificações a outros repositórios. Comece criando uma modificação para ser enviada. Edite o arquivo <code>README.md</code> e faça um commit</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#75715e">## Tutorial
+</span><span style="color:#75715e"></span>
+This is the Hello World example from the git tutorial.
+(Changed in original and pushed to shared)
+</code></pre></div><pre><code>git checkout master
+git add README
+git commit -m &quot;Added shared comment to readme&quot;
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico73.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Agora envie as modificações para o repositório compartilhado.</p>
+<pre><code>git push shared master
+</code></pre><p>O repositório comum está recebendo nossas modificações enviadas. (Lembre-se, nós adicionamos ele como um repositório remoto na lição anterior).</p>
+<p>
+    <asciinema-player
+        src="/casts/git-basico74.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Nota: Tivemos que explicitamente especificar o branch master para submeter as mudanças. Isso pode ser configurado automaticamente, mas eu sempre esqueço o comando. Para fácil administração de seus branches remotos mude para «Git Remote Branch».</p>
+<h2 id="49-removendo-modificações-comuns">49. Removendo modificações comuns</h2>
+<p>Rapidamente mude para o repositório clonado e extraia as modificações recém enviadas ao repositório comum.</p>
+<pre><code>cd ../cloned_hello
+</code></pre><p>Nota: Estamos agora no repositório cloned_hello.</p>
+<p>Continue com &hellip;</p>
+<pre><code>git remote add shared ../hello.git
+git branch --track shared master
+git pull shared master
+cat README.md
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico75.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="50-divulgando-o-seu-repositório">50. Divulgando o seu repositório</h2>
+<p>Existem maneiras diferentes de compartilhar um repositório git na rede. Essa é a mais rápida.</p>
+<h4 id="execute-git-server">Execute git server</h4>
+<pre><code>cd .. 
+git daemon --verbose --export-all --base-path=.
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico76.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Agora, vá ao seu diretório de trabalho num terminal separado.</p>
+<pre><code>git clone git://localhost/hello.git network_hello
+cd network_hello
+ls
+</code></pre><p>
+    <asciinema-player
+        src="/casts/git-basico77.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Confira se seu vizinho usa git daemon. Troquem seus endereços IP e depois confiram se vocês podem pegar as alterações dos repositórios um do outro.</p>
+
+
+<footer class="footline">
+	
+	    <i class='fas fa-user'></i> <a href="mailto:juan.enciso@gmail.com">Juan Enciso</a>  <i class='fas fa-calendar'></i> 11/08/2020
+	    </div>
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1597977842"></script>
+    <script src="/js/perfect-scrollbar.min.js?1597977842"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1597977842"></script>
+    <script src="/js/jquery.sticky.js?1597977842"></script>
+    <script src="/js/featherlight.min.js?1597977842"></script>
+    <script src="/js/highlight.pack.js?1597977842"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1597977842"></script>
+    <script src="/js/learn.js?1597977842"></script>
+    <script src="/js/hugo-learn.js?1597977842"></script>
+
+    <link href="/mermaid/mermaid.css?1597977842" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1597977842"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+
+    <script src="/js/asciinema-player.js"></script>
+
+  </body>
+</html>
+

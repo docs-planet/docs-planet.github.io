@@ -11,12 +11,12 @@
     
     
     <item>
-      <title>DevOps Tools</title>
-      <link>/tutorials/devopstools/</link>
+      <title>Git</title>
+      <link>/tutorials/git/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tutorials/devopstools/</guid>
-      <description>DevopsTools </description>
+      <guid>/tutorials/git/</guid>
+      <description>GIT - Controle de Versão </description>
     </item>
     
   </channel>

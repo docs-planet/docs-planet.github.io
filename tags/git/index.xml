@@ -12,11 +12,23 @@
     
     
     <item>
+      <title>Git Bash Prompt</title>
+      <link>/tutorials/git/git-bash-prompt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/git/git-bash-prompt/</guid>
+      <description>Intro Para ter uma melhor visibilidade do que passa em nossos projetos que estão versionados quando estamos trabalhando de forma local, podemos usar ferramentas como é o caso de git-bash-prompt
+Instalação Baixar o repositorio contendo o software
+cd ~ git clone https://github.com/jenciso/bash-git-prompt.git .bash-git-prompt --depth=1 Adicionar algumas linhas dentro do arquivo .bashrc
+GIT_PROMPT_ONLY_IN_REPO=0 GIT_PROMPT_THEME=Single_line_Minimalist source ~/.bash-git-prompt/gitprompt.sh    Testando Baixar qualquer repositorio git. Ex: https://github.com/jenciso/node-express-azure e fazemos uma simples modificação</description>
+    </item>
+    
+    <item>
       <title>Git (Parte 1)</title>
-      <link>/tutorials/devopstools/git-part1/</link>
+      <link>/tutorials/git/git-part1/</link>
       <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tutorials/devopstools/git-part1/</guid>
+      <guid>/tutorials/git/git-part1/</guid>
       <description>Este tutorial esta baseado do seguinte documento: https://githowto.com
  1. Prerequisitos  Instalar git-bash-prompt seguindo este tutorial Ter uma estacao de trabalho Linux  2. Preparação Configurando nome e endereço de e-mail
 git config --global user.name &amp;#34;Seu Nome Completo&amp;#34; git config --global user.email &amp;#34;seu_email@sua_empresa.com&amp;#34; Opções de Instalação: términos de linhas (Linux):
@@ -25,10 +37,10 @@ git config --global core.autocrlf input git config --global core.safecrlf warn  
     
     <item>
       <title>Git (Parte 2)</title>
-      <link>/tutorials/devopstools/git-part2/</link>
+      <link>/tutorials/git/git-part2/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tutorials/devopstools/git-part2/</guid>
+      <guid>/tutorials/git/git-part2/</guid>
       <description>Este tutorial é a continuação do tutorial Git (Part 1)
  14. Descartando mudanças locais (antes do stage) Acessando o branch Master Verifique que você esta no último commit do branch master antes de continuar.
 git checkout master Mude o hello.html Acontece de você modificar o arquivo no seu diretório de trabalho local e às vezes querer descartar as mudanças que você fez commit. É aqui que o comando checkout vai te ajudar.</description>
@@ -36,10 +48,10 @@ git checkout master Mude o hello.html Acontece de você modificar o arquivo no s
     
     <item>
       <title>Git (Parte 3)</title>
-      <link>/tutorials/devopstools/git-part3/</link>
+      <link>/tutorials/git/git-part3/</link>
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tutorials/devopstools/git-part3/</guid>
+      <guid>/tutorials/git/git-part3/</guid>
       <description>Este tutorial é a continuação do tutorial Git (Part 2)
  24. Criando um Branch Vamos nomear o nosso novo branch como «style».
 git checkout -b style git status Nota:
@@ -47,15 +59,12 @@ git checkout -b style git status Nota:
     </item>
     
     <item>
-      <title>Git bash prompt</title>
-      <link>/tutorials/devopstools/git-bash-prompt/</link>
+      <title>Git</title>
+      <link>/artigos/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tutorials/devopstools/git-bash-prompt/</guid>
-      <description>Intro Para ter uma melhor visibilidade do que passa em nossos projetos que estão versionados quando estamos trabalhando de forma local, podemos usar ferramentas como é o caso de git-bash-prompt
-Instalação Baixar o repositorio contendo o software
-cd ~ git clone https://github.com/jenciso/bash-git-prompt.git .bash-git-prompt --depth=1 Adicionar algumas linhas dentro do arquivo .bashrc
-GIT_PROMPT_ONLY_IN_REPO=0 GIT_PROMPT_THEME=Single_line_Minimalist source ~/.bash-git-prompt/gitprompt.sh    Testando Baixar qualquer repositorio git. Ex: https://github.com/jenciso/node-express-azure e fazemos uma simples modificação</description>
+      <guid>/artigos/git/</guid>
+      <description>Git Tutoriais  https://www.atlassian.com/git/tutorials https://try.github.io/ https://www.vogella.com/tutorials/Git/article.html  Gitflow  https://medium.com/@olivier.bossel/git-flow-the-right-way-to-go-f2a65c315818  </description>
     </item>
     
   </channel>

@@ -3,17 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/tutorials/devopstools/</loc>
+    <loc>/tutorials/git/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tutorials/devopstools/git-part1/</loc>
-    <lastmod>2020-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/</loc>
+    <loc>/tutorials/git/git-bash-prompt/</loc>
   </url>
   
   <url>
@@ -22,17 +17,22 @@
   </url>
   
   <url>
-    <loc>/tutorials/devopstools/git-part2/</loc>
+    <loc>/tutorials/git/git-part1/</loc>
+    <lastmod>2020-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/git/git-part2/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tutorials/devopstools/git-part3/</loc>
-    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+    <loc>/artigos/</loc>
   </url>
   
   <url>
-    <loc>/artigos/</loc>
+    <loc>/tutorials/git/git-part3/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -63,6 +63,10 @@
   </url>
   
   <url>
+    <loc>/tags/bash/</loc>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
   </url>
   
@@ -71,15 +75,15 @@
   </url>
   
   <url>
-    <loc>/tags/docs/</loc>
+    <loc>/artigos/docker/</loc>
   </url>
   
   <url>
-    <loc>/tags/documentation/</loc>
+    <loc>/tags/docker/</loc>
   </url>
   
   <url>
-    <loc>/tutorials/devopstools/git-bash-prompt/</loc>
+    <loc>/artigos/git/</loc>
   </url>
   
   <url>

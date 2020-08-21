@@ -48,20 +48,20 @@
     </item>
     
     <item>
-      <title>docs</title>
-      <link>/tags/docs/</link>
+      <title>bash</title>
+      <link>/tags/bash/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/docs/</guid>
+      <guid>/tags/bash/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>documentation</title>
-      <link>/tags/documentation/</link>
+      <title>docker</title>
+      <link>/tags/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/documentation/</guid>
+      <guid>/tags/docker/</guid>
       <description></description>
     </item>
     
