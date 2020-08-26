@@ -2,7 +2,7 @@
 {
 	"uri": "/tutorials/git/",
 	"title": "Git",
-	"tags": ["azure"],
+	"tags": ["git"],
 	"description": "Conteudo relacionado a Git",
 	"content": "GIT - Controle de Versão "
 },
@@ -12,6 +12,13 @@
 	"tags": ["git", "bash"],
 	"description": "Instalando um git-bash-prompt para melhorar nossa visibilidade no git",
 	"content": "Intro Para ter uma melhor visibilidade do que passa em nossos projetos que estão versionados quando estamos trabalhando de forma local, podemos usar ferramentas como é o caso de git-bash-prompt\nInstalação Baixar o repositorio contendo o software\ncd ~ git clone https://github.com/jenciso/bash-git-prompt.git .bash-git-prompt --depth=1 Adicionar algumas linhas dentro do arquivo .bashrc\nGIT_PROMPT_ONLY_IN_REPO=0 GIT_PROMPT_THEME=Single_line_Minimalist source ~/.bash-git-prompt/gitprompt.sh    Testando Baixar qualquer repositorio git. Ex: https://github.com/jenciso/node-express-azure e fazemos uma simples modificação\ngit clone https://github.com/jenciso/node-express-azure cd node-express-azure rm README.md Agora podemos ver que estamos na branch master e o shell nos indica que temos um cambio em nosso repositorio.\n   "
+},
+{
+	"uri": "/tutorials/kvm/kvm-install/",
+	"title": "KVM - Instalacão",
+	"tags": ["kvm"],
+	"description": "Instalando KVM",
+	"content": "Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Passo 1: Verificar Verificar se nosso sistema suporta hardware virtualization\negrep -c '(vmx|svm)' /proc/cpuinfo  Se a saida é maior que zero, nosso sistema suporta virtualização. Esta tudo ok.\n Agora instalar kvm-ok para saber se o servidor pode rodar hardware accelerated KVM\nsudo apt install cpu-checker sudo kvm-ok   Passo 2: Instalar KVM sudo apt update sudo apt install qemu qemu-kvm libvirt-bin bridge-utils virt-manager   Passo 3: Start \u0026amp; enable libvirtd service sudo service libvirtd start sudo update-rc.d libvirtd enable service libvirtd status   Passo 4: Configurar network bridge Verificando qual é o nome da minha interfaz de rede\nnmcli device status  Observer o resultado da columna DEVICE\n Com esse dado configuramos via netplan a configuração bridge adicionando um arquivo yaml.\nsudo vi /etc/netplan/50-cloud-init.yaml Copiar um conteúdo similar. No me caso o DEVICE da minha NIC é wlp1s0:\n1network: 2 version: 2 3 ethernets: 4 wlp1s0: 5 dhcp4: yes 6 dhcp6: no 7 bridges: 8 br0: 9 interfaces: [wlp1s0] 10 dhcp4: yes 11 dhcp6: no Logo aplicamos os cambios:\nsudo netplan apply sudo networkctl status -a Aqui podemos reiniciar nosso computador para poder verificar que as configurações persistem.\nsudo reboot   Referências  https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/  "
 },
 {
 	"uri": "/tutorials/",
@@ -26,6 +33,13 @@
 	"tags": ["git"],
 	"description": "Tutorial de GIT",
 	"content": " Este tutorial esta baseado do seguinte documento: https://githowto.com\n 1. Prerequisitos  Instalar git-bash-prompt seguindo este tutorial Ter uma estacao de trabalho Linux  2. Preparação Configurando nome e endereço de e-mail\ngit config --global user.name \u0026#34;Seu Nome Completo\u0026#34; git config --global user.email \u0026#34;seu_email@sua_empresa.com\u0026#34; Opções de Instalação: términos de linhas (Linux):\ngit config --global core.autocrlf input git config --global core.safecrlf warn   3. Criando o projeto git Vamos a criar um repositório git \u0026ldquo;hello\u0026rdquo; e uma página hello.html com o seguinte conteúdo: \u0026ldquo;Hello, World\u0026rdquo;\nCrie uma página de \u0026ldquo;Hello, World\u0026rdquo; e inicialize o repositório\nmkdir hello \u0026amp;\u0026amp; cd hello echo \u0026#34;Hello, World\u0026#34; \u0026gt; hello.html git init Adicione a página ao repositório:\ngit add hello.html git commit -m \u0026#34;First Commit\u0026#34;   4. Conferindo o status do repositório Use o comando git status para checar o estado atual do repositório.\ngit status   5. Fazendo modificações Modificar a página hello.html com o seguinte conteúdo:\n\u0026lt;h1\u0026gt;Hello, World!\u0026lt;/h1\u0026gt; Conferindo o status:\ngit status   Notar que:\n O git sabe que o arquivo hello.html foi modificado, mas essas modificações ainda não sofreram commit para o repositório. A mensagem de status oferece dicas sobre o que fazer em seguida. Se você quiser adicionar essas modificações para o repositório, use git add. Para desfazer as modificações use git checkout.  6. Adicionando modificações ao stage Mande o git adicionar as modificações ao stage. Confira o status\ngit add hello.html git status   Observar:\n Modificações no hello.html foram adicionadas ao stage. Isso quer dizer que o git sabe da modificação, mas não é permanente no repositório. O próximo commit incluirá as modificações que estão no stage. Se você decidir não fazer commit da modificação, o comando status vai te lembrar que você pode usar o comando git reset para remover essas mudanças do stage.  7. Colocando em stage e fazendo commits Adicionar algo ao stage no git permite que você continue fazendo modificações no seu diretório de trabalho e, quando decidir que quer interagir com o controle de versão, permite que guarde as mudanças em pequenos commits.\nPense que você editou três arquivos (a. html, b. html e c. html). Depois disso você tem que fazer commit de todas as modificações para que as mudanças em a.html e b.html sejam um único commit, enquanto as mudanças em c.html, que não são lógicamente relacionadas com as duas outras mudanças nos outros dois arquivos, sejam enviadas em um commit diferente.\nEm teoria, você pode fazer o seguinte:\ngit add a.html git add b.html git commit -m \u0026#34;Changes for a and b\u0026#34; git add c.html git commit -m \u0026#34;Unrelated change to c\u0026#34; Separando a adição ao stage e o commit, você pode customizar o que vai em cada commit.\n8. Fazendo commit das modificações Na hora de executar o comando git commit vamos omitor o uso do flag -m, desta forma entramos na edição interativa de comentários para o commit. O git ira abrir o editor configurado a partir desta lista (em ordem de prioridade)\n Variável de ambiente GIT_EDITOR Definição de configuração core.editor Variável de ambiente VISUAL Variável de ambiente EDITOR  No me caso meu editor é \u0026lsquo;vi\u0026rsquo;. Caso deseje modificar seu editor de forma permanente, edite o arquivo ~/.gitconfig\nLogo de executar o commit, iremos colocar como comentario \u0026ldquo;Added h1 tag\u0026rdquo;\n  9. Modificações, não arquivos O git trabalha com as modificações, não com os arquivos.\n Primeira mudança: Adicionando tags padrão de páginas e executando git add hello.html. O novo conteúdo para o arquivo: hello.html será:  \u0026lt;html\u0026gt; \u0026lt;body\u0026gt;  \u0026lt;h1\u0026gt;Hello, World!\u0026lt;/h1\u0026gt; \u0026lt;/body\u0026gt; \u0026lt;/html\u0026gt; git add hello.html  Segunda mudança: Adicione os headers do HTML. Agora adicione os headers ( section) na página  \u0026lt;html\u0026gt; \u0026lt;head\u0026gt; \u0026lt;/head\u0026gt;  \u0026lt;body\u0026gt; \u0026lt;h1\u0026gt;Hello, World!\u0026lt;/h1\u0026gt; \u0026lt;/body\u0026gt; \u0026lt;/html\u0026gt; Agora excute:\ngit status   Note que o arquivo hello.html está listado duas vezes no status.\n A primeira mudança (a adição das tags padrão) está no stage e pronta para um commit. A segunda mudança (adição dos headers) não está no stage.  Se você fizesse um commit agora, os headers não teriam sido salvos no repositório.\n Commit: Faça um commit das mudanças que estão no stage (as tags padrão) e então confira novamente o status.  git commit -m \u0026#34;Added standard HTML page tags\u0026#34; git status   O comando status diz que o arquivo hello.html tem modificações não gravadas, mas não está mais em buffer.\n Adicionando a segunda modificação: Adicione a segunda modificação ao stage, depois execute o comando git status  git add . git status git commit -m \u0026#34;Added HTML header\u0026#34;   10. Histórico Usaremos o comando git log\ngit log   Histórico em uma linha:\ngit log --pretty=oneline Controlando a exibição de entradas\ngit log --pretty=oneline --max-count=2 git log --pretty=oneline --since='5 minutes ago' git log --pretty=oneline --until='5 minutes ago' git log --pretty=oneline --author=\u0026lt;your name\u0026gt; git log --pretty=oneline --all Para rever as modificações feitas na última semana\ngit log --all --pretty=format:\u0026quot;%h %cd %s (%an)\u0026quot; --since='7 days ago' Um formato bacana\ngit log --pretty=format:\u0026quot;%h %ad | %s%d [%an]\u0026quot; --graph --date=short   Vamos olhar os detalhes:\n \u0026ndash;pretty=\u0026rdquo;\u0026hellip;\u0026rdquo; define o formato da saída %h é o hash abreviado do commit %d mostra decorações do commit (ex.: head de branches ou tags) %ad é a data do commit %s é o comentário %an é o nome do autor = \u0026ndash;graph fala para o git mostrar a árvore de commits no formato de um gráfico de ASCII \u0026ndash;date=short mantém o formato de data pequeno e simples  Então, toda vez que você quiser ver um log, você terá que digitar muito. Felizmente, nós aprenderemos sobre aliases na próxima lição.\n11. Aliases Adicione as seguintes linhas no arquivo ~/.gitconfig\n[alias] co = checkout ci = commit st = status br = branch hist = log --pretty=format:\\\u0026quot;%h %ad | %s%d [%an]\\\u0026quot; --graph --date=short type = cat-file -t dump = cat-file -p Agora execute:\ngit st git hist   12. Usando versões anteriores Conseguindo os hashes das versões anteriores git hist O resultado será:\n  Confira a data do log e encontre o hash do primeiro commit. Você vai achar ele na última linha do git hist Use o código (os seus 7 primeiros caracteres são suficientes) no comando abaixo. Depois disso, cheque o conteúdo do arquivo hello.html.\ngit checkout \u0026lt;hash\u0026gt; cat hello.html   Voltando para a versão mais atual no branch master git checkout master cat hello.html   ‘master’ é o nome do branch padrão. Ao entrar em um branch pelo seu nome, você vai para a sua versão mais atual.\n13. Adicionando tags a versões Vamos chamar a versão atual do nosso programa \u0026ldquo;Hello\u0026rdquo; de versão 1 (v1).\nCriando a tag do primeiro git tag v1 Tags em versões antigas Vamos adicionar uma tag à versão anterior da nossa atual versão com o nome v1-beta. Nós vamos usar a notação ^ indicando “o pai de v1”. Se a notação v1^ gera problemas, tente usar v1~1 para referenciar a mesma versão. Essa notação significa “a primeira versão antes de v1”.\ngit checkout v1^ cat hello.html   Essa é a versão com as tags \u0026lt;html\u0026gt; e \u0026lt;body\u0026gt;, mas sem \u0026lt;head\u0026gt;. Vamos fazer dessa a versão v1-beta.\ngit tag v1-beta Acessando através do nome da tag git checkout v1 git checkout v1-beta   Vendo tags com o comando tag git tag Vendo tags nos logs git hist master --all   Você pode ver as tags (v1 e v1-beta) listadas no log juntamente com o nome do branch (master). O HEAD mostra o commit em que você está atualmente (v1-beta).\n"
+},
+{
+	"uri": "/tutorials/kvm/",
+	"title": "KVM",
+	"tags": ["kvm"],
+	"description": "Kernel-based Virtual Machine",
+	"content": "Kernel-based Virtual Machine "
 },
 {
 	"uri": "/tutorials/git/git-part2/",
@@ -79,13 +93,6 @@
 {
 	"uri": "/tags/artigos/",
 	"title": "artigos",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/tags/azure/",
-	"title": "azure",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -145,6 +152,27 @@
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "/tags/kvm/",
+	"title": "kvm",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tutorials/kvm/kvm-bridge/",
+	"title": "KVM - Bridge Setup",
+	"tags": ["kvm"],
+	"description": "Configurando KVM em modo bridge",
+	"content": "Requisitos  KVM instalado Ter uma interfaz de rede ethernet (não wireless) Ubuntu 18.04 ou superior  Procedimento Verificando qual é o nome da minha interfaz de rede\nnmcli device status  Observer o resultado da columna DEVICE\n Com esse dado configuramos via netplan a configuração bridge adicionando um arquivo yaml.\nsudo vi /etc/netplan/50-cloud-init.yaml Copiar um conteúdo similar. No me caso o DEVICE da minha NIC é enp2s0:\nnetwork: version: 2 ethernets: enp2s0:  dhcp4: yes dhcp6: no bridges: br0: interfaces: [enp2s0]  dhcp4: yes dhcp6: no Logo aplicamos os cambios:\nsudo netplan apply sudo networkctl status -a Aqui podemos reiniciar nosso computador para poder verificar que as configurações persistem.\nsudo reboot Referências  https://netplan.io/examples/ https://webby.land/2018/04/27/bridging-under-ubuntu-18-04/ https://github.com/jenciso/notes/blob/master/KVM.md https://askubuntu.com/questions/1106766/netplan-wireless-bridge-ubuntu-18 https://fabianlee.org/2019/04/01/kvm-creating-a-bridged-network-with-netplan-on-ubuntu-bionic/  "
+},
+{
+	"uri": "/tutorials/kvm/kvm-provision/",
+	"title": "KVM - Provision",
+	"tags": ["kvm"],
+	"description": "Provisionando maquinas virtuais de maneira simples",
+	"content": "Requisitos  KVM instalado Ubuntu 18.04 ou superior  Procedimento Referencias  http://blog.programster.org/kvm-creating-thinly-provisioned-guests  "
 },
 {
 	"uri": "/tags/links/",

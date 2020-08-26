@@ -12,6 +12,10 @@
   </url>
   
   <url>
+    <loc>/tutorials/kvm/kvm-install/</loc>
+  </url>
+  
+  <url>
     <loc>/tutorials/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
   </url>
@@ -19,6 +23,10 @@
   <url>
     <loc>/tutorials/git/git-part1/</loc>
     <lastmod>2020-08-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/kvm/</loc>
   </url>
   
   <url>
@@ -59,10 +67,6 @@
   </url>
   
   <url>
-    <loc>/tags/azure/</loc>
-  </url>
-  
-  <url>
     <loc>/tags/bash/</loc>
   </url>
   
@@ -92,6 +96,18 @@
   
   <url>
     <loc>/tags/gitflow/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/kvm/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/kvm/kvm-bridge/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/kvm/kvm-provision/</loc>
   </url>
   
   <url>
