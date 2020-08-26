@@ -17,7 +17,7 @@
       <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/git/</guid>
-      <description>GIT - Controle de Versão </description>
+      <description>GIT O Git é uma ferramenta de controle de versões ampliamente reconhecida como um standard no mundo TI.</description>
     </item>
     
     <item>
@@ -65,15 +65,6 @@ git checkout master Mude o hello.html Acontece de você modificar o arquivo no s
  24. Criando um Branch Vamos nomear o nosso novo branch como «style».
 git checkout -b style git status Nota:
  git checkout -b &amp;lt;branch name&amp;gt; é o atalho de git branch &amp;lt;branch name&amp;gt; seguido por git checkout &amp;lt;branch name&amp;gt; Note que o comando git status avisa que você está no branch style.  Adicione o arquivo style.css touch lib/style.</description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>/artigos/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/artigos/git/</guid>
-      <description>Git Artigos  https://www.hostinger.com.br/tutoriais/git-branch/ https://www.xpertup.com/blog/technology/git-and-github-fundamentals/ https://dev.to/usmslm102/git-cheat-sheet-4f5a  Git Tutoriais  https://www.atlassian.com/git/tutorials https://try.github.io/ https://www.vogella.com/tutorials/Git/article.html  Git Merge  https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1  Gitflow  https://medium.com/@olivier.bossel/git-flow-the-right-way-to-go-f2a65c315818  </description>
     </item>
     
   </channel>

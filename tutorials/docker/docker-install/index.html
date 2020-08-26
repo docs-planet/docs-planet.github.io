@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.74.3" />
-    <meta name="description" content="Tutorial de Gitflow">
+    <meta name="description" content="Instalando Docker">
 <meta name="author" content="Juan Enciso">
 
     <link rel="icon" href="/images/favicon.ico" type="image/png">
 
-    <title>Gitflow :: Docs Planet</title>
+    <title>Docker - Instalacão :: Docs Planet</title>
 
     
     <link href="/css/nucleus.css?1598469058" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tutorials/git/gitflow/">
+  <body class="" data-url="/tutorials/docker/docker-install/">
     <nav id="sidebar" class="">
 
 
@@ -120,7 +120,7 @@
     
     
     <li data-nav-id="/tutorials/git/" title="Git" class="dd-item 
-        parent
+        
         
         
         ">
@@ -128,7 +128,7 @@
           Git
           
             
-              <i class="fas fa-caret-down"></i>
+              <i class="fas fa-caret-right"></i>
             
           
           
@@ -235,7 +235,7 @@
  
   
     
-      <li data-nav-id="/tutorials/git/gitflow/" title="Gitflow" class="dd-item active">
+      <li data-nav-id="/tutorials/git/gitflow/" title="Gitflow" class="dd-item ">
         <a href="/tutorials/git/gitflow/">
         Gitflow
         
@@ -374,7 +374,7 @@
     
     
     <li data-nav-id="/tutorials/docker/" title="Docker" class="dd-item 
-        
+        parent
         
         
         ">
@@ -382,7 +382,7 @@
           Docker
           
             
-              <i class="fas fa-caret-right"></i>
+              <i class="fas fa-caret-down"></i>
             
           
           
@@ -405,7 +405,7 @@
  
   
     
-      <li data-nav-id="/tutorials/docker/docker-install/" title="Docker - Instalacão" class="dd-item ">
+      <li data-nav-id="/tutorials/docker/docker-install/" title="Docker - Instalacão" class="dd-item active">
         <a href="/tutorials/docker/docker-install/">
         Docker - Instalacão
         
@@ -500,7 +500,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/git/gitflow.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/docker/docker-install.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -535,7 +535,7 @@
             
           
           
-            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/git/'>Git</a> > Gitflow
+            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/docker/'>Docker</a> > Docker - Instalacão
           
         
           
@@ -552,7 +552,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#intro">Intro</a></li>
+    <li><a href="#requisitos">Requisitos</a></li>
+    <li><a href="#procedimento">Procedimento</a></li>
+    <li><a href="#referências">Referências</a></li>
   </ul>
 </nav>
     </div>
@@ -567,16 +569,67 @@
           
             <h1>
               
-              Gitflow
+              Docker - Instalacão
             </h1>
           
 
         
 
 
-<p><img src="https://bugfender.com/wp-content/uploads/2019/11/Feature-image.jpg" alt=""></p>
-<h2 id="intro">Intro</h2>
-<p>Gitflow &hellip;</p>
+<p><img src="https://w7.pngwing.com/pngs/475/563/png-transparent-docker-software-deployment-industrial-design-docker-logo-microsoft-azure-industrial-design.png" alt=""></p>
+<h2 id="requisitos">Requisitos</h2>
+<ul>
+<li>Ubuntu Linux 18.04 ou superior</li>
+</ul>
+<h2 id="procedimento">Procedimento</h2>
+<p>Apagando versões anteriores</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get remove docker docker-engine docker.io containerd runc
+</code></pre></div><p>Instalando os prerequisitos</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
+
+sudo apt-get install <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   apt-transport-https <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   ca-certificates <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   curl <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   gnupg-agent <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   software-properties-common
+</code></pre></div><p>Adicionando o repositório</p>
+<pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo add-apt-repository <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   <span style="color:#e6db74">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+</span><span style="color:#e6db74">   </span><span style="color:#66d9ef">$(</span>lsb_release -cs<span style="color:#66d9ef">)</span><span style="color:#e6db74"> \
+</span><span style="color:#e6db74">   stable&#34;</span>
+</code></pre></div><p>Instalando docker:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+</code></pre></div><p>Testando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo docker run hello-world
+</code></pre></div><hr>
+<p>
+    <asciinema-player
+        src="/casts/docker01.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="2"
+        
+        poster="npt:2:16"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="referências">Referências</h2>
+<ul>
+<li><a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></li>
+</ul>
 
 
 <footer class="footline">
@@ -651,20 +704,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -675,9 +714,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -710,58 +746,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -843,6 +827,35 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -853,6 +866,46 @@
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 

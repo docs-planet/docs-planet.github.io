@@ -11,15 +11,12 @@
     
     
     <item>
-      <title>📑 Artigos</title>
-      <link>/artigos/</link>
+      <title>📑 Links</title>
+      <link>/links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/artigos/</guid>
-      <description> Docker  Diversos artigos sobre docker
- Git  Diversos artigos sobre git
- Varios  Diversos
- </description>
+      <guid>/links/</guid>
+      <description>Git Artigos  https://www.hostinger.com.br/tutoriais/git-branch/ https://www.xpertup.com/blog/technology/git-and-github-fundamentals/ https://dev.to/usmslm102/git-cheat-sheet-4f5a  Git Tutoriais  https://www.atlassian.com/git/tutorials https://try.github.io/ https://www.vogella.com/tutorials/Git/article.html  Git Merge  https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1  Gitflow  https://medium.com/@olivier.bossel/git-flow-the-right-way-to-go-f2a65c315818  Docker Tutoriais  https://www.docker.com/101-tutorial https://docker-curriculum.com/ https://www.ionos.es/digitalguide/servidores/configuracion/tutorial-docker-instalacion-y-primeros-pasos/  CORS  https://dev.to/lydiahallie/cs-visualized-cors-5b8h  </description>
     </item>
     
   </channel>
