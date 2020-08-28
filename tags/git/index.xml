@@ -6,7 +6,7 @@
     <description>Recent content in git on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,20 @@
     <item>
       <title>Git</title>
       <link>/tutorials/git/</link>
-      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/git/</guid>
       <description>GIT O Git é uma ferramenta de controle de versões ampliamente reconhecida como um standard no mundo TI.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial - Git Básico</title>
+      <link>/tutorials/git/git-basico/</link>
+      <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/git/git-basico/</guid>
+      <description>Intro Nesse tutorial, vamos fazer operações básicas relacionadas ao Git. como initializar um repositório, adicionar arquivos, comittar as mudanças, depois modificar os arquivos, adicionar os arquivos modificados, comittar tudo de novo, e por fim algumas noções básicas relacionadas a branch e merges.
+Prerequisitos  Ter o git instalado, senão rodar: sudo apt-get install git Instalar git-bash-prompt seguindo este tutorial Ter uma estacao de trabalho Linux  1. Inicializando o repositorio Crie uma pasta chamada tutorial-git.</description>
     </item>
     
     <item>
@@ -65,6 +75,16 @@ git checkout master Mude o hello.html Acontece de você modificar o arquivo no s
  24. Criando um Branch Vamos nomear o nosso novo branch como «style».
 git checkout -b style git status Nota:
  git checkout -b &amp;lt;branch name&amp;gt; é o atalho de git branch &amp;lt;branch name&amp;gt; seguido por git checkout &amp;lt;branch name&amp;gt; Note que o comando git status avisa que você está no branch style.  Adicione o arquivo style.css touch lib/style.</description>
+    </item>
+    
+    <item>
+      <title>Gitflow</title>
+      <link>/tutorials/git/gitflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/git/gitflow/</guid>
+      <description>Intro Gitflow é um modelo de organização de branches criado por Vincent Driessen, Não é o único modelo de organização de branches, mas sem dúvida é um dos mais usados.
+Nomenclatura Gitflow estabelece algumas regras de nomenclaturas para tipos de branches enquanto, ao mesmo tempo, define o que cada tipo de branch faz. Para referência, segue uma lista dos tipos de branches definidos pelo Git Flow e suas respectivas descrições:</description>
     </item>
     
   </channel>

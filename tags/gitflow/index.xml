@@ -16,7 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/git/gitflow/</guid>
-      <description>Intro Gitflow &amp;hellip;</description>
+      <description>Intro Gitflow é um modelo de organização de branches criado por Vincent Driessen, Não é o único modelo de organização de branches, mas sem dúvida é um dos mais usados.
+Nomenclatura Gitflow estabelece algumas regras de nomenclaturas para tipos de branches enquanto, ao mesmo tempo, define o que cada tipo de branch faz. Para referência, segue uma lista dos tipos de branches definidos pelo Git Flow e suas respectivas descrições:</description>
     </item>
     
   </channel>

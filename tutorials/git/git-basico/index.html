@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.74.3" />
-    <meta name="description" content="Instalando KVM">
+    <meta name="description" content="Tutorial de GIT Básico">
 <meta name="author" content="Juan Enciso">
 
     <link rel="icon" href="/images/favicon.ico" type="image/png">
 
-    <title>KVM - Instalacão :: Docs Planet</title>
+    <title>Tutorial - Git Básico :: Docs Planet</title>
 
     
     <link href="/css/nucleus.css?1598593188" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tutorials/kvm/kvm-install/">
+  <body class="" data-url="/tutorials/git/git-basico/">
     <nav id="sidebar" class="">
 
 
@@ -120,7 +120,7 @@
     
     
     <li data-nav-id="/tutorials/git/" title="Git" class="dd-item 
-        
+        parent
         
         
         ">
@@ -128,7 +128,7 @@
           Git
           
             
-              <i class="fas fa-caret-right"></i>
+              <i class="fas fa-caret-down"></i>
             
           
           
@@ -151,7 +151,7 @@
  
   
     
-      <li data-nav-id="/tutorials/git/git-basico/" title="Tutorial - Git Básico" class="dd-item ">
+      <li data-nav-id="/tutorials/git/git-basico/" title="Tutorial - Git Básico" class="dd-item active">
         <a href="/tutorials/git/git-basico/">
         Git Básico
         
@@ -289,7 +289,7 @@
     
     
     <li data-nav-id="/tutorials/kvm/" title="KVM" class="dd-item 
-        parent
+        
         
         
         ">
@@ -297,7 +297,7 @@
           KVM
           
             
-              <i class="fas fa-caret-down"></i>
+              <i class="fas fa-caret-right"></i>
             
           
           
@@ -320,7 +320,7 @@
  
   
     
-      <li data-nav-id="/tutorials/kvm/kvm-install/" title="KVM - Instalacão" class="dd-item active">
+      <li data-nav-id="/tutorials/kvm/kvm-install/" title="KVM - Instalacão" class="dd-item ">
         <a href="/tutorials/kvm/kvm-install/">
         KVM - Instalacão
         
@@ -521,7 +521,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/kvm/kvm-install.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/git/git-basico.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -556,7 +556,7 @@
             
           
           
-            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/kvm/'>KVM</a> > KVM - Instalacão
+            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/git/'>Git</a> > Tutorial - Git Básico
           
         
           
@@ -573,16 +573,17 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#requisitos">Requisitos</a></li>
-    <li><a href="#procedimento">Procedimento</a>
-      <ul>
-        <li><a href="#passo-1-verificar">Passo 1: Verificar</a></li>
-        <li><a href="#passo-2-instalar-kvm">Passo 2: Instalar KVM</a></li>
-        <li><a href="#passo-3-start--enable-libvirtd-service">Passo 3: Start &amp; enable libvirtd service</a></li>
-        <li><a href="#passo-4-configurar-network-bridge">Passo 4: Configurar network bridge</a></li>
-      </ul>
-    </li>
-    <li><a href="#referências">Referências</a></li>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#prerequisitos">Prerequisitos</a></li>
+    <li><a href="#1-inicializando-o-repositorio">1. Inicializando o repositorio</a></li>
+    <li><a href="#2-primeiro-commit">2. Primeiro commit</a></li>
+    <li><a href="#3-fazendo-modificações">3. Fazendo modificações</a></li>
+    <li><a href="#4-navegando-pela-branch-master">4. Navegando pela branch master</a></li>
+    <li><a href="#5-criando-uma-branch">5. Criando uma branch</a></li>
+    <li><a href="#6-mudando-de-branch">6. Mudando de branch</a></li>
+    <li><a href="#7-fazendo-um-merge">7. Fazendo um merge</a></li>
+    <li><a href="#8-visualizando-as-branch">8. Visualizando as branch</a></li>
+    <li><a href="#resumo-dos-comandos-praticados">Resumo dos comandos praticados</a></li>
   </ul>
 </nav>
     </div>
@@ -597,30 +598,33 @@
           
             <h1>
               
-              KVM - Instalacão
+              Tutorial - Git Básico
             </h1>
           
 
         
 
 
-<h2 id="requisitos">Requisitos</h2>
+<p><img src="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2017/03/git-basics-big-768x478.png" alt=""></p>
+<h2 id="intro">Intro</h2>
+<p>Nesse tutorial, vamos fazer operações básicas relacionadas ao Git. como initializar um repositório, adicionar arquivos, comittar as mudanças, depois modificar os arquivos, adicionar os arquivos modificados, comittar tudo de novo, e por fim algumas noções básicas relacionadas a branch e merges.</p>
+<h2 id="prerequisitos">Prerequisitos</h2>
 <ul>
-<li>Ubuntu Linux 18.04 ou superior</li>
+<li>Ter o git instalado, senão rodar: <code>sudo apt-get install git</code></li>
+<li>Instalar git-bash-prompt seguindo este <a href="/tutorials/devopstools/git-bash-prompt/">tutorial</a></li>
+<li>Ter uma estacao de trabalho Linux</li>
 </ul>
-<h2 id="procedimento">Procedimento</h2>
-<h3 id="passo-1-verificar">Passo 1: Verificar</h3>
-<p>Verificar se nosso sistema suporta hardware virtualization</p>
-<pre><code>egrep -c '(vmx|svm)' /proc/cpuinfo
-</code></pre><blockquote>
-<p>Se a saida é maior que zero, nosso sistema suporta virtualização. Esta tudo ok.</p>
-</blockquote>
-<p>Agora instalar <code>kvm-ok</code> para saber se o servidor pode rodar hardware accelerated KVM</p>
-<pre><code>sudo apt install cpu-checker
-sudo kvm-ok
-</code></pre><p>
+<h2 id="1-inicializando-o-repositorio">1. Inicializando o repositorio</h2>
+<p>Crie uma pasta chamada <code>tutorial-git</code>. Entre nela e rode o comando <code>git init</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~
+mkdir projetos
+cd projetos
+mkdir tutorial-git
+cd tutorial-git
+git init
+</code></pre></div><p>
     <asciinema-player
-        src="/casts/kvm01.cast"
+        src="/casts/git01.cast"
         cols="110"
         rows="28"
         
@@ -639,83 +643,14 @@ sudo kvm-ok
     ></asciinema-player>
 </p>
 
-<h3 id="passo-2-instalar-kvm">Passo 2: Instalar KVM</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt update
-sudo apt install qemu qemu-kvm libvirt-bin  bridge-utils  virt-manager
-</code></pre></div><p>
+<h2 id="2-primeiro-commit">2. Primeiro commit</h2>
+<p>Agora, experimente criar um arquivo chamado <code>test.txt</code>, com uma única linha contendo  <code>Hello World</code>. Em seguida, execute o comando <code>git add test.txt</code> seguido de <code>git commit -m 'First commit'</code>.</p>
+<p>Como esse é o seu primeiro commit e o Git não sabe nada sobre você, é necessário adicionar algumas informações (o Git emitirá um erro sempre que você tentar comittar sem essas informações devidamente registradas), como nome e e-mail, para que o Git saiba quem está fazendo o commit e poder registrar essa informação no repositório.</p>
+<p>Para ajustar isso, execute o comando <code>git config --global user.name '[seu nome]'</code> para configurar o seu nome (substitua [seu nome] pelo seu nome nesse comando) e <code>git config --global user.email '[seu e-mail]'</code> para configurar o seu e-mail (substitua [seu e-mail] pelo seu e-mail nesse comando)</p>
+<p>Após executar esses dois comandos, execute novamente o comando <code>git commit -m 'First commit'</code>. Agora sim, seu primeiro commit estará registrado!</p>
+<p>
     <asciinema-player
-        src="/casts/kvm02.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="2"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h3 id="passo-3-start--enable-libvirtd-service">Passo 3: Start &amp; enable libvirtd service</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo service libvirtd start
-sudo update-rc.d libvirtd enable
-service libvirtd status
-</code></pre></div><p>
-    <asciinema-player
-        src="/casts/kvm03.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="2"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h3 id="passo-4-configurar-network-bridge">Passo 4: Configurar network bridge</h3>
-<p>Verificando qual é o nome da minha interfaz de rede</p>
-<pre><code>nmcli device status
-</code></pre><blockquote>
-<p>Observer o resultado da columna DEVICE</p>
-</blockquote>
-<p>Com esse dado configuramos via netplan a configuração bridge adicionando um arquivo yaml.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo vi /etc/netplan/50-cloud-init.yaml
-</code></pre></div><p>Copiar um conteúdo similar. No me caso o DEVICE da minha NIC é <code>wlp1s0</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">network</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#66d9ef">version</span>: <span style="color:#ae81ff">2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#66d9ef">ethernets</span>:
-<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#66d9ef">wlp1s0</span>:
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>      <span style="color:#66d9ef">dhcp4</span>: yes
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>      <span style="color:#66d9ef">dhcp6</span>: no
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#66d9ef">bridges</span>:
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#66d9ef">br0</span>:
-<span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>      <span style="color:#66d9ef">interfaces</span>: [wlp1s0]
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      <span style="color:#66d9ef">dhcp4</span>: yes
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>      <span style="color:#66d9ef">dhcp6</span>: no
-</code></pre></div><p>Logo aplicamos os cambios:</p>
-<pre><code>sudo netplan apply
-sudo networkctl status -a
-</code></pre><p>Aqui podemos reiniciar nosso computador para poder verificar que as configurações persistem.</p>
-<pre><code>sudo reboot
-</code></pre><p>
-    <asciinema-player
-        src="/casts/kvm04.cast"
+        src="/casts/git02.cast"
         cols="110"
         rows="28"
         
@@ -734,40 +669,316 @@ sudo networkctl status -a
     ></asciinema-player>
 </p>
 
-<h2 id="referências">Referências</h2>
+<p>Note que o Git registrará, junto ao commit, o arquivo recém criado. Se você quiser ver como está o log da branch atual, execute o comando <code>git log</code>.</p>
+<p>
+    <asciinema-player
+        src="/casts/git03.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:12"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="3-fazendo-modificações">3. Fazendo modificações</h2>
+<p>Em seguida, modifique o arquivo, adicionando uma nova linha com o conteúdo &ldquo;How are you?&rdquo;. Novamente, execute o comando <code>git add test.txt</code>, mas agora seguido do comando <code>git commit -m 'Second commit'</code> (note que agora o Git não pede mais seu e-mail e nome), e com isso a modificação feita no arquivo será salva pelo git.</p>
+<p>
+    <asciinema-player
+        src="/casts/git04.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:41"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Agora, se você rodar o &ldquo;git log&rdquo; novamente, verá que há um novo registro na lista, correspondente ao segundo commit. Como você pode ver abaixo:</p>
+<p>
+    <asciinema-player
+        src="/casts/git05.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:07"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="4-navegando-pela-branch-master">4. Navegando pela branch master</h2>
+<p>Verifique o conteúdo do arquivo <code>test.txt</code>. experimente agora rodar o comando <code>git checkout master^</code> (sim, com o acento circunflexo no final), agora, abra novamente o arquivo <code>test.txt</code> no editor. Você verá que o conteúdo original do primeiro commit foi restaurado.</p>
+<p>
+    <asciinema-player
+        src="/casts/git06.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:30"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Agora execute <code>git diff master</code> para verificar as diferenças. Após fazer esses testes, use <code>git checkout master</code> para restaurar a visualização para o segundo commit.</p>
+<p>
+    <asciinema-player
+        src="/casts/git07.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:24"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="5-criando-uma-branch">5. Criando uma branch</h2>
+<p>Agora, vamos experimentar criar uma branch. Para fazer isso, execute o comando <code>git branch nova-branch</code> e após isso execute o comando <code>git checkout nova-branch</code>. Para constatar a mudança de branches, execute o comando <code>git status</code>, que mostra um status geral do repositório</p>
+<p>
+    <asciinema-player
+        src="/casts/git08.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:18"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Nessa nova branch, chamada <em>nova-branch</em>, você ainda está com uma cópia dos commits da branch original <em>master</em>, e ambas as branchs são iguais, pois você ainda não fez nenhum commit na nova branch. Experimente alterar o arquivo, adicionando uma nova linha com o conteúdo &ldquo;I&rsquo;m fine&rdquo; e execute os comandos <code>git add test.txt</code> e <code>git commit -m 'Third commit'</code>. Agora, rode o comando <code>git log</code> para ver os commits registrados na branch.</p>
+<p>
+    <asciinema-player
+        src="/casts/git09.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:44"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="6-mudando-de-branch">6. Mudando de branch</h2>
+<p>Agora, vamos experimentar executar o comando <code>git checkout master</code> para voltar a branch master e ver como estão as coisas por lá. Estando na branch master, execute novamente o comando <code>git log</code>, e constate que o commit &ldquo;Third commit&rdquo; não está presente no log (pois afinal esse commit está presente apenas na branch nova-branch.</p>
+<p>
+    <asciinema-player
+        src="/casts/git10.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:12"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Ainda na branch master, experimente criar um arquivo chamado <code>test2.txt</code> com o conteúdo &ldquo;Hello World 2&rdquo;, adicioná-lo ao Git executando <code>git add test2.txt</code> e commite a mudança executando <code>git commit -m 'Fourth commit'</code></p>
+<p>
+    <asciinema-player
+        src="/casts/git11.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:32"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Se você executar o comando &ldquo;git log&rdquo; agora, verá que estão cadastrados na branch os commits &ldquo;First commit&rdquo;, &ldquo;Second commit&rdquo; e&hellip;.&ldquo;Fourth commit&rdquo;</p>
+<p>
+    <asciinema-player
+        src="/casts/git12.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:32"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="7-fazendo-um-merge">7. Fazendo um merge</h2>
+<p>Agora, vamos juntar o &ldquo;Third Commit&rdquo;, que adiciona mais uma alteração no arquivo test.txt e que existe apenas na branch nova-branch - com a branch master, aplicando assim a alteração correspondente feita pelo test.txt e mantendo o arquivo test2.txt inalterado.</p>
+<p>Para isso, precisamos fazer o &ldquo;merge&rdquo; das duas branches. Ainda na branch master, execute o comando <code>git merge nova-branch</code> (nesse procedimento, o git vai abrir o merge commit em um editor de texto para você poder alterá-lo, apenas salve o arquivo e feche o editor de texto para continuar) e logo em seguida execute o comando <code>git log</code></p>
+<blockquote>
+<p>(note que, agora, você precisa apertar a tecla &ldquo;q&rdquo; para sair da visualização do comando git log)</p>
+</blockquote>
+<p>
+    <asciinema-player
+        src="/casts/git13.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1"
+        
+        poster="npt:0:19"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<p>Um aspecto interessante para você notar é que o arquivo test2.txt, criado pelo commit &ldquo;Fourth Commit&rdquo;, foi mantido inalterado pelo merge, pois nenhum commit existente na branch nova-branch altera o arquivo. Além disso, se você observar bem a ordem dos commits no comando <code>git log</code>, verá que o &ldquo;Third Commit&rdquo; aparece antes do &ldquo;Fourth Commit&rdquo;, pois o Git sabe a ordem em que os commits devem ser aplicados.</p>
+<h2 id="8-visualizando-as-branch">8. Visualizando as branch</h2>
+<p>Para terminar o tutorial, execute o comando <code>git log --graph</code>. Ele vai mostrar como o Git entende a ordem dos commits e inclusive uma visualização bem intuitiva feita em ASCII com a branch nova-branch.</p>
+<p>
+    <asciinema-player
+        src="/casts/git14.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1"
+        
+        poster="npt:0:18"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h2 id="resumo-dos-comandos-praticados">Resumo dos comandos praticados</h2>
 <ul>
-<li><a href="https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/">https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/</a></li>
+<li><code>git init</code> - Inicializa um repositório git, criando uma pasta oculta chamada &ldquo;.git&rdquo; com os arquivos usados internamente pelo Git;</li>
+<li><code>git add [arquivo]</code> - Adiciona as modificações no arquivo (ou pasta) [arquivo] à &ldquo;staged area&rdquo; do Git, no qual os arquivos que vão ser comittados ficam registrados temporariamente. Note que se você fizer posterior modificações no arquivo, você terá que executar o comando novamente para adicionar as novas modificações à &ldquo;staged area&rdquo; do Git;</li>
+<li><code>git commit -m &quot;[mensagem]&quot;</code> - Registra um commit com as modificações registradas na &ldquo;staged area&rdquo; e com a mensagem &ldquo;[mensagem]&rdquo;, armazenando também informações como nome e e-mail do autor do commit a partir das configurações salvas anteriormente na base de configurações do Git;</li>
+<li><code>git config --global user.name &quot;[seu nome]&quot;</code> - Salva o nome &ldquo;[seu nome]&rdquo; na base de configurações global do Git;</li>
+<li><code>git config --global user.email &quot;[seu e-mail]&quot;</code> - Salva o e-mail &ldquo;[seu e-mail]&rdquo; na base de configurações global do Git;</li>
+<li><code>git log</code> - Mostra os commits registrados na branch atual;</li>
+<li><code>git checkout [alvo]</code> - Faz o Git mudar o ponteiro HEAD (ou seja, o que se refere ao estado atual do repositório, que você vê) para [alvo], que pode ser o nome de uma branch, o hash de um commit, ou pode ser algumas referências especiais, como:
+<ul>
+<li>master^ - Muda para o penúltimo commit da branch master;</li>
+<li>[branch] - Muda para a branch [branch];</li>
+</ul>
+</li>
+<li><code>git diff [alvo]</code> - Faz o git mostrar as diferenças entre o commit do ponteiro HEAD (que você está vendo no momento) e [alvo], que pode ser uma branch, o hash de um commit, ou pode ser algumas referências especiais (como no caso do git checkout);</li>
+<li><code>git branch [branch]</code> - Cria uma nova branch com o nome [branch], copiando todos os commits da branch no qual você está até o commit referido pelo ponteiro HEAD;</li>
+<li><code>git merge [branch]</code> - &ldquo;Junta&rdquo; a branch atual no qual você está com a branch de nome [branch], criando um merge commit ao final do processo;</li>
+<li><code>git log --graph</code> - Mostra os commits registrados na branch atual, mostrando ao lado esquerdo a conexão entre um commit e outro.</li>
+</ul>
+<p>Referências:</p>
+<ul>
+<li><a href="http://fjorgemota.com/git-sistema-de-controle-de-versoes-distribuido/">http://fjorgemota.com/git-sistema-de-controle-de-versoes-distribuido/</a></li>
 </ul>
 
 
 <footer class="footline">
+	
+	    <i class='fas fa-user'></i> <a href="mailto:juan.enciso@gmail.com">Juan Enciso</a>  <i class='fas fa-calendar'></i> 27/08/2020
+	    </div>
 	
 </footer>
 
         
         </div> 
         
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "docs-planet-github-io" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
 
       </div>
 
@@ -812,8 +1023,6 @@ sudo networkctl status -a
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -827,6 +1036,26 @@ sudo networkctl status -a
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -903,6 +1132,22 @@ sudo networkctl status -a
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -919,47 +1164,10 @@ sudo networkctl status -a
             
         
                     
-            
-        
-                    
                         
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 

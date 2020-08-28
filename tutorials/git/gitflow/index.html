@@ -12,22 +12,22 @@
     <title>Gitflow :: Docs Planet</title>
 
     
-    <link href="/css/nucleus.css?1598469058" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1598469058" rel="stylesheet">
-    <link href="/css/hybrid.css?1598469058" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1598469058" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1598469058" rel="stylesheet">
-    <link href="/css/auto-complete.css?1598469058" rel="stylesheet">
-    <link href="/css/theme.css?1598469058" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1598469058" rel="stylesheet">
+    <link href="/css/nucleus.css?1598593188" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1598593188" rel="stylesheet">
+    <link href="/css/hybrid.css?1598593188" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1598593188" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1598593188" rel="stylesheet">
+    <link href="/css/auto-complete.css?1598593188" rel="stylesheet">
+    <link href="/css/theme.css?1598593188" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1598593188" rel="stylesheet">
     
-    <link href="/css/theme-custom-docs.css?1598469058" rel="stylesheet">
+    <link href="/css/theme-custom-docs.css?1598593188" rel="stylesheet">
     
     
     
     <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
     
-    <script src="/js/jquery-3.3.1.min.js?1598469058"></script>
+    <script src="/js/jquery-3.3.1.min.js?1598593188"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times" style="color:#e2e2e2;"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1598469058"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1598469058"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1598593188"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1598593188"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1598469058"></script>
+<script type="text/javascript" src="/js/search.js?1598593188"></script>
 
     
   </div>
@@ -141,6 +141,27 @@
           
           
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/git/git-basico/" title="Tutorial - Git Básico" class="dd-item ">
+        <a href="/tutorials/git/git-basico/">
+        Git Básico
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -553,6 +574,13 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#intro">Intro</a></li>
+    <li><a href="#nomenclatura">Nomenclatura</a></li>
+    <li><a href="#tutorial-básico-de-git-flow">Tutorial básico de git flow</a>
+      <ul>
+        <li><a href="#1-instalacão">1. Instalacão</a></li>
+        <li><a href="#2-inicializando-git-flow">2. Inicializando git-flow</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -576,7 +604,82 @@
 
 <p><img src="https://bugfender.com/wp-content/uploads/2019/11/Feature-image.jpg" alt=""></p>
 <h2 id="intro">Intro</h2>
-<p>Gitflow &hellip;</p>
+<p>Gitflow é um modelo de organização de branches criado por Vincent Driessen, Não é o único modelo de organização de branches, mas sem dúvida é um dos mais usados.</p>
+<h2 id="nomenclatura">Nomenclatura</h2>
+<p>Gitflow estabelece algumas regras de nomenclaturas para tipos de branches enquanto, ao mesmo tempo, define o que cada tipo de branch faz. Para referência, segue uma lista dos tipos de branches definidos pelo Git Flow e suas respectivas descrições:</p>
+<ul>
+<li>
+<p><strong>Branch master</strong> - É a branch que contém código em nível de produção, ou seja, o código mais maduro existente na sua aplicação. Todo o código novo produzido eventualmente é juntado com a branch master, em algum momento do desenvolvimento;</p>
+</li>
+<li>
+<p><strong>Branch develop</strong> - É a branch que contém código em nível preparatório para o próximo deploy. Ou seja, quando features são terminadas, elas são juntadas com a branch develop, testadas (em conjunto, no caso de mais de uma feature), e somente depois as atualizações da branch develop passam por mais um processo para então ser juntadas com a branch master;</p>
+</li>
+<li>
+<p><strong>Branches feature/[*]</strong> - São branches no qual são desenvolvidos recursos novos para o projeto em questão. Essas branches tem por convenção nome começando com feature/ (exemplo: feature/new-layout) e são criadas a partir da branch develop (pois um recurso pode depender diretamente de outro recurso em algumas situações), e, ao final, são juntadas com a branch develop;</p>
+</li>
+<li>
+<p><strong>Branches hotfix/[*]</strong> - São branches no qual são realizadas correções de bugs críticos encontrados em ambiente de produção, e que por isso são criadas a partir da branch master, e são juntadas diretamente com a branch master e com a branch develop (pois os próximos deploys também devem receber correções de bugs críticos, certo?). Por convenção, essas branches tem o nome começando com hotfix/ e terminando com o próximo sub-número de versão (exemplo: hotfix/2.1.1), normalmente seguindo as regras de algum padrão de versionamento, como semversion.</p>
+</li>
+<li>
+<p><strong>Branches release/[*]</strong> - São branches com um nível de confiança maior do que a branch develop, e que se encontram em nível de preparação para ser juntada com a branch master e com a branch develop (para caso tenha ocorrido alguma correção de bug na branch release/* em questão). Note que, nessas branches, bugs encontrados durante os testes das features que vão para produção podem ser corrigidos mais tranquilamente, antes de irem efetivamente para produção. Por convenção, essas branches tem o nome começando com release/ e terminando com o número da próxima versão do software (seguindo o exemplo do hotfix, dado acima, seria algo como release/2.2.0), normalmente seguindo as regras do versionamento semântico.</p>
+</li>
+</ul>
+<p>Um aspecto interessante do Git Flow é que, quando você mistura uma branch release/ ou hotfix/ com a branch master, ele automaticamente cria git tags correspondentes aos merge commits da mistura, facilitando o trabalho de, por exemplo, mudar para uma versão mais antiga, e organizando todo o trabalho.</p>
+<h2 id="tutorial-básico-de-git-flow">Tutorial básico de git flow</h2>
+<p>Para esse tutorial básico de git flow, vou assumir que você está com o repositório criado no <a href="../git-basico">tutorial basico de git</a></p>
+<h3 id="1-instalacão">1. Instalacão</h3>
+<p>Gitflow é uma extensão ao Git, para instalar ele, simplesmente execute <code>sudo apt-get install git-flow</code></p>
+<p>
+    <asciinema-player
+        src="/casts/tmppv3s_6c4-ascii.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:01"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
+<h3 id="2-inicializando-git-flow">2. Inicializando git-flow</h3>
+<p>Agora, na pasta do repositório criado no tutorial básico de git, execute os comandos para deixar o repositorio somente com a branch <code>master</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git branch -a
+git branch -d nova-branch
+</code></pre></div><p>Logo inicializamos o git flow:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git flow init -d
+</code></pre></div><blockquote>
+<p>a opcão -d, permite configurar o git flow com os valores default.</p>
+</blockquote>
+<p>
+    <asciinema-player
+        src="/casts/tmp6vglj6iw-ascii.cast"
+        cols="110"
+        rows="28"
+        
+        preload="1"
+        
+        start-at="0"
+        speed="1.5"
+        
+        poster="npt:0:21"
+        
+        theme="monokai"
+        
+        
+        
+        
+    ></asciinema-player>
+</p>
+
 
 
 <footer class="footline">
@@ -667,6 +770,22 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -880,19 +999,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1598469058"></script>
-    <script src="/js/perfect-scrollbar.min.js?1598469058"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1598469058"></script>
-    <script src="/js/jquery.sticky.js?1598469058"></script>
-    <script src="/js/featherlight.min.js?1598469058"></script>
-    <script src="/js/highlight.pack.js?1598469058"></script>
+    <script src="/js/clipboard.min.js?1598593188"></script>
+    <script src="/js/perfect-scrollbar.min.js?1598593188"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1598593188"></script>
+    <script src="/js/jquery.sticky.js?1598593188"></script>
+    <script src="/js/featherlight.min.js?1598593188"></script>
+    <script src="/js/highlight.pack.js?1598593188"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1598469058"></script>
-    <script src="/js/learn.js?1598469058"></script>
-    <script src="/js/hugo-learn.js?1598469058"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1598593188"></script>
+    <script src="/js/learn.js?1598593188"></script>
+    <script src="/js/hugo-learn.js?1598593188"></script>
 
-    <link href="/mermaid/mermaid.css?1598469058" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1598469058"></script>
+    <link href="/mermaid/mermaid.css?1598593188" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1598593188"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
