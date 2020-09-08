@@ -94,6 +94,16 @@ git checkout -b style git status Nota:
     </item>
     
     <item>
+      <title>Configurações iniciais</title>
+      <link>/artigos/init-config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/artigos/init-config/</guid>
+      <description>Configuração de Sudoers Use sudo sem precisar digitar a senha
+echo &amp;quot;`whoami` ALL=(ALL) NOPASSWD:ALL&amp;quot; | sudo tee /etc/sudoers.d/admins Criando par de chaves ssh ssh-keygen   </description>
+    </item>
+    
+    <item>
       <title>Credits</title>
       <link>/credits/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -133,7 +143,18 @@ network: version: 2 ethernets: enp2s0:  dhcp4: yes dhcp6: no bridges: br0: inter
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/kvm/kvm-provision/</guid>
-      <description>Requisitos  KVM instalado Ubuntu 18.04 ou superior  Procedimento Referencias  http://blog.programster.org/kvm-creating-thinly-provisioned-guests  </description>
+      <description>Requisitos  KVM instalado Ubuntu 18.04 ou superior Usar uma conta com privilegios de root (sudo)  Instalação cd ~ git clone https://github.com/jenciso/kvm-provision Preparação Precisamos baixar uma imagem base para poder usar na criacação de VM&amp;rsquo;s. Usaremos a image Centos 7 ja preperada para trabalhar com cloud-init. Colocaremos esta imagem na pasta boot do libvirt. Execute o seguinte comando:
+sudo curl -fSL -C - http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2 \  -o /var/lib/libvirt/boot/CentOS-7-x86_64-GenericCloud.qcow2 Para poder executar alguns comandos do kvm, precisamos adicionar nosso usuario ao grupo libvirt, e para que os cambios sejam efetivados temos q sair da sessao e volver ingressar</description>
+    </item>
+    
+    <item>
+      <title>Semantic Version</title>
+      <link>/artigos/semversion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/artigos/semversion/</guid>
+      <description>Intro O versionamento semântico hoje é um dos padrões de versionamento mais usados e conhecidos.
+Tem o objetivo de evitar que atualizações de dependência quebrem o seu software indevidamente, enquanto permitindo que você tenha uma noção do status de estabilidade do software (se é &amp;ldquo;seguro&amp;rdquo; usar em produção, por exemplo) e possa identificar se uma nova versão possui apenas novos recursos ou se possui apenas correções de bugs, por exemplo.</description>
     </item>
     
   </channel>

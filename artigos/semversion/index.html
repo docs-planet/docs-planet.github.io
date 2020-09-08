@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.74.3" />
-    <meta name="description" content="Instalando KVM">
+    <meta name="description" content="Versionamento Semantico">
 <meta name="author" content="Juan Enciso">
 
     <link rel="icon" href="/images/favicon.ico" type="image/png">
 
-    <title>KVM - Instalacão :: Docs Planet</title>
+    <title>Semantic Version :: Docs Planet</title>
 
     
     <link href="/css/nucleus.css?1599606374" rel="stylesheet">
@@ -25,8 +25,6 @@
     
     
     
-    <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
-    
     <script src="/js/jquery-3.3.1.min.js?1599606374"></script>
 
     <style>
@@ -41,7 +39,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tutorials/kvm/kvm-install/">
+  <body class="" data-url="/artigos/semversion/">
     <nav id="sidebar" class="">
 
 
@@ -88,7 +86,7 @@
     
     
     <li data-nav-id="/tutorials/" title="💻 Tutoriais" class="dd-item 
-        parent
+        
         
         
         ">
@@ -289,7 +287,7 @@
     
     
     <li data-nav-id="/tutorials/kvm/" title="KVM" class="dd-item 
-        parent
+        
         
         
         ">
@@ -297,7 +295,7 @@
           KVM
           
             
-              <i class="fas fa-caret-down"></i>
+              <i class="fas fa-caret-right"></i>
             
           
           
@@ -320,7 +318,7 @@
  
   
     
-      <li data-nav-id="/tutorials/kvm/kvm-install/" title="KVM - Instalacão" class="dd-item active">
+      <li data-nav-id="/tutorials/kvm/kvm-install/" title="KVM - Instalacão" class="dd-item ">
         <a href="/tutorials/kvm/kvm-install/">
         KVM - Instalacão
         
@@ -466,7 +464,7 @@
     
     
     <li data-nav-id="/artigos/" title="✍ Artigos" class="dd-item 
-        
+        parent
         
         
         ">
@@ -514,7 +512,7 @@
  
   
     
-      <li data-nav-id="/artigos/semversion/" title="Semantic Version" class="dd-item ">
+      <li data-nav-id="/artigos/semversion/" title="Semantic Version" class="dd-item active">
         <a href="/artigos/semversion/">
         Semantic Version
         
@@ -600,7 +598,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/kvm/kvm-install.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/artigos/semversion.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -631,13 +629,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/kvm/'>KVM</a> > KVM - Instalacão
-          
-        
+            <a href='/'>Docs Planet</a> > <a href='/artigos/'>✍ Artigos</a> > Semantic Version
           
         
           
@@ -652,15 +644,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#requisitos">Requisitos</a></li>
-    <li><a href="#procedimento">Procedimento</a>
-      <ul>
-        <li><a href="#passo-1-verificar">Passo 1: Verificar</a></li>
-        <li><a href="#passo-2-instalar-kvm">Passo 2: Instalar KVM</a></li>
-        <li><a href="#passo-3-start--enable-libvirtd-service">Passo 3: Start &amp; enable libvirtd service</a></li>
-      </ul>
-    </li>
-    <li><a href="#referências">Referências</a></li>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#regras">Regras</a></li>
+    <li><a href="#mas-o-que-é-semantic-version">Mas o que é Semantic Version?</a></li>
   </ul>
 </nav>
     </div>
@@ -675,101 +661,20 @@
           
             <h1>
               
-              KVM - Instalacão
+              Semantic Version
             </h1>
           
 
         
 
 
-<h2 id="requisitos">Requisitos</h2>
-<ul>
-<li>Ubuntu Linux 18.04 ou superior</li>
-</ul>
-<h2 id="procedimento">Procedimento</h2>
-<h3 id="passo-1-verificar">Passo 1: Verificar</h3>
-<p>Verificar se nosso sistema suporta hardware virtualization</p>
-<pre><code>egrep -c '(vmx|svm)' /proc/cpuinfo
-</code></pre><blockquote>
-<p>Se a saida é maior que zero, nosso sistema suporta virtualização. Esta tudo ok.</p>
-</blockquote>
-<p>Agora instalar <code>kvm-ok</code> para saber se o servidor pode rodar hardware accelerated KVM</p>
-<pre><code>sudo apt install cpu-checker
-sudo kvm-ok
-</code></pre><p>
-    <asciinema-player
-        src="/casts/kvm01.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="1.5"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h3 id="passo-2-instalar-kvm">Passo 2: Instalar KVM</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt update
-sudo apt install qemu qemu-kvm libvirt-bin  bridge-utils  virt-manager
-</code></pre></div><p>
-    <asciinema-player
-        src="/casts/kvm02.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="2"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h3 id="passo-3-start--enable-libvirtd-service">Passo 3: Start &amp; enable libvirtd service</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo service libvirtd start
-sudo update-rc.d libvirtd enable
-service libvirtd status
-</code></pre></div><p>
-    <asciinema-player
-        src="/casts/kvm03.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="2"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h2 id="referências">Referências</h2>
-<ul>
-<li><a href="https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/">https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/</a></li>
-</ul>
+<p><img src="https://forums.ubports.com/assets/uploads/files/1539724648555-c4f00cf3-507c-4db6-bbb8-be949563f74f-image.png" alt=""></p>
+<h2 id="intro">Intro</h2>
+<p>O versionamento semântico hoje é um dos padrões de versionamento mais usados e conhecidos.</p>
+<p>Tem o objetivo de evitar que atualizações de dependência <strong>quebrem</strong> o seu software indevidamente, enquanto permitindo que você tenha uma noção do status de estabilidade do software (se é &ldquo;seguro&rdquo; usar em produção, por exemplo) e possa identificar se uma nova versão possui apenas novos recursos ou se possui apenas correções de bugs, por exemplo.</p>
+<h2 id="regras">Regras</h2>
+<p>Todo padrão tem regras, e com o versionamento semântico não poderia ser diferente. Existem 11 regras bem definidas e documentadas no <a href="https://semver.org/lang/pt-BR/">site oficial</a></p>
+<h2 id="mas-o-que-é-semantic-version">Mas o que é Semantic Version?</h2>
 
 
 <footer class="footline">
@@ -779,27 +684,6 @@ service libvirtd status
         
         </div> 
         
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "docs-planet-github-io" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
 
       </div>
 
@@ -828,6 +712,8 @@ service libvirtd status
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -844,9 +730,6 @@ service libvirtd status
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -854,22 +737,6 @@ service libvirtd status
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -951,59 +818,6 @@ service libvirtd status
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -1016,41 +830,6 @@ service libvirtd status
                     
                     
 
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1103,6 +882,22 @@ service libvirtd status
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1110,6 +905,97 @@ service libvirtd status
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1155,8 +1041,6 @@ service libvirtd status
     </script>
     
 
-
-    <script src="/js/asciinema-player.js"></script>
 
   </body>
 </html>

@@ -39,6 +39,10 @@
   </url>
   
   <url>
+    <loc>/artigos/</loc>
+  </url>
+  
+  <url>
     <loc>/tutorials/git/git-part2/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
   </url>
@@ -80,6 +84,10 @@
   </url>
   
   <url>
+    <loc>/artigos/init-config/</loc>
+  </url>
+  
+  <url>
     <loc>/credits/</loc>
   </url>
   
@@ -100,6 +108,10 @@
   </url>
   
   <url>
+    <loc>/tags/init/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/kvm/</loc>
   </url>
   
@@ -109,6 +121,14 @@
   
   <url>
     <loc>/tutorials/kvm/kvm-provision/</loc>
+  </url>
+  
+  <url>
+    <loc>/artigos/semversion/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/semversion/</loc>
   </url>
   
   <url>

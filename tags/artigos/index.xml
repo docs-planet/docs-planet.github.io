@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>✍ Artigos</title>
+      <link>/artigos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/artigos/</guid>
+      <description>Artigos Um conjunto de documentos que acrescentaram conhecimento para uso diario</description>
+    </item>
+    
+    <item>
       <title>📑 Links</title>
       <link>/links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

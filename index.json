@@ -32,7 +32,7 @@
 	"title": "KVM - Instalacão",
 	"tags": ["kvm"],
 	"description": "Instalando KVM",
-	"content": "Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Passo 1: Verificar Verificar se nosso sistema suporta hardware virtualization\negrep -c '(vmx|svm)' /proc/cpuinfo  Se a saida é maior que zero, nosso sistema suporta virtualização. Esta tudo ok.\n Agora instalar kvm-ok para saber se o servidor pode rodar hardware accelerated KVM\nsudo apt install cpu-checker sudo kvm-ok   Passo 2: Instalar KVM sudo apt update sudo apt install qemu qemu-kvm libvirt-bin bridge-utils virt-manager   Passo 3: Start \u0026amp; enable libvirtd service sudo service libvirtd start sudo update-rc.d libvirtd enable service libvirtd status   Passo 4: Configurar network bridge Verificando qual é o nome da minha interfaz de rede\nnmcli device status  Observer o resultado da columna DEVICE\n Com esse dado configuramos via netplan a configuração bridge adicionando um arquivo yaml.\nsudo vi /etc/netplan/50-cloud-init.yaml Copiar um conteúdo similar. No me caso o DEVICE da minha NIC é wlp1s0:\n1network: 2 version: 2 3 ethernets: 4 wlp1s0: 5 dhcp4: yes 6 dhcp6: no 7 bridges: 8 br0: 9 interfaces: [wlp1s0] 10 dhcp4: yes 11 dhcp6: no Logo aplicamos os cambios:\nsudo netplan apply sudo networkctl status -a Aqui podemos reiniciar nosso computador para poder verificar que as configurações persistem.\nsudo reboot   Referências  https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/  "
+	"content": "Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Passo 1: Verificar Verificar se nosso sistema suporta hardware virtualization\negrep -c '(vmx|svm)' /proc/cpuinfo  Se a saida é maior que zero, nosso sistema suporta virtualização. Esta tudo ok.\n Agora instalar kvm-ok para saber se o servidor pode rodar hardware accelerated KVM\nsudo apt install cpu-checker sudo kvm-ok   Passo 2: Instalar KVM sudo apt update sudo apt install qemu qemu-kvm libvirt-bin bridge-utils virt-manager   Passo 3: Start \u0026amp; enable libvirtd service sudo service libvirtd start sudo update-rc.d libvirtd enable service libvirtd status   Referências  https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/  "
 },
 {
 	"uri": "/tutorials/",
@@ -54,6 +54,13 @@
 	"tags": ["kvm"],
 	"description": "Kernel-based Virtual Machine",
 	"content": "Kernel-based Virtual Machine Com o KVM podemos criar máquinas virtuais de maneira bem simples. O que nos permitirá criar ambientes de laboratorio numa simples máquina Linux\n"
+},
+{
+	"uri": "/artigos/",
+	"title": "✍ Artigos",
+	"tags": ["artigos"],
+	"description": "Diversos artigos",
+	"content": "Artigos Um conjunto de documentos que acrescentaram conhecimento para uso diario\n"
 },
 {
 	"uri": "/tutorials/git/git-part2/",
@@ -119,6 +126,13 @@
 	"content": ""
 },
 {
+	"uri": "/artigos/init-config/",
+	"title": "Configurações iniciais",
+	"tags": ["init"],
+	"description": "Primeiros passos para configurar sua estacao de trabalho",
+	"content": "Configuração de Sudoers Use sudo sem precisar digitar a senha\necho \u0026quot;`whoami` ALL=(ALL) NOPASSWD:ALL\u0026quot; | sudo tee /etc/sudoers.d/admins Criando par de chaves ssh ssh-keygen   "
+},
+{
 	"uri": "/credits/",
 	"title": "Credits",
 	"tags": [],
@@ -154,6 +168,13 @@
 	"content": ""
 },
 {
+	"uri": "/tags/init/",
+	"title": "init",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "/tags/kvm/",
 	"title": "kvm",
 	"tags": [],
@@ -172,7 +193,21 @@
 	"title": "KVM - Provision",
 	"tags": ["kvm"],
 	"description": "Provisionando maquinas virtuais de maneira simples",
-	"content": "Requisitos  KVM instalado Ubuntu 18.04 ou superior  Procedimento Referencias  http://blog.programster.org/kvm-creating-thinly-provisioned-guests  "
+	"content": "Requisitos  KVM instalado Ubuntu 18.04 ou superior Usar uma conta com privilegios de root (sudo)  Instalação cd ~ git clone https://github.com/jenciso/kvm-provision Preparação Precisamos baixar uma imagem base para poder usar na criacação de VM\u0026rsquo;s. Usaremos a image Centos 7 ja preperada para trabalhar com cloud-init. Colocaremos esta imagem na pasta boot do libvirt. Execute o seguinte comando:\nsudo curl -fSL -C - http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2 \\  -o /var/lib/libvirt/boot/CentOS-7-x86_64-GenericCloud.qcow2 Para poder executar alguns comandos do kvm, precisamos adicionar nosso usuario ao grupo libvirt, e para que os cambios sejam efetivados temos q sair da sessao e volver ingressar\nsudo usermod -a -G libvirt `whoami` logout Começando Criando uma VM (Virtual Machine)\n./new-vm.sh centos7  Esta VM irá ter a IP: 192.168.122.10. O user é centos e o password será SuperSecret2012.  Entrando na VM via console:\nsudo virsh console centos7  Para sair use: Ctrl + ]\n Entrando via SSH\nssh centos@192.168.122.10 Apagando a VM\n./del-vm.sh centos7  Elimina todo o conteudo das maquinas, inclusive os discos duros\n Copiando suas Chaves SSH (Opcional) Nossa chave SSH publica pode ser colocada no parametro SSH_KEY_0, de tal maneira que consigamos acessar ao servidor virtual sem precisar user/password.\nSe ainda não criou um par de chaves ssh para seu usuario, siga este procedimento. Logo disso, voce ira ter o arquivo ~/.ssh/id_rsa.pub. Copie e cole o conteúdo desse arquivo dentro do arquivo config.conf exatamente como o valor da variavel SSH_KEY_0.\nExemplo:\nSSH_KEY_0=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYN0xPPa9KV0pZ5vNyet5e5fvWHNCgOTJ5ON9SHef3d Repita os passos mostrados anteriormente para criar uma maquina com o nome centos7 e verifique o acesso\nAppendix Criando uma VM com uma configuração determinada. Crie a VM demo01 com 1GB de RAM, 2 VCPUs e com a IP 192.168.122.12\n./new-vm.sh -n demo01 -m 1024 -c 2 -i 192.168.122.12 Usando um novo password para suas VM\u0026rsquo;s Cambiando o password default para este valor: MySuperPassword, precisamos executar o comando:\nopenssl passwd -1 -salt SaltSalt MySuperPassword Com a saida desse comando, defina a variavel PASSWORD:\nPASSWORD='$1$SaltSalt$jjGsH9DHuY/4Vda.6JZVH1'\n Dessa forma, a proxima VM ira ter o password MySuperPassword para o user centos\n Aumentando o tamanho do disco duro: É só editar a variavel:\nDISK_SIZE=40G\n Aquilo ira criar uma VM com 40GB de espaco de disco\n Adicionando um novo disco Caso a VM tenha como nome centos7 e queramos ter um novo disco adicional de 60GB.\n./add-disk.sh -n centos7 -d vdb -s 60G Liste todas as VM\u0026rsquo;s criadas virsh list --all Gestione as VM\u0026rsquo;s em modo grafico virt-manager Ira carregar o seguinte gestor de VMs\n Demo   Referencias  http://blog.programster.org/kvm-creating-thinly-provisioned-guests  "
+},
+{
+	"uri": "/artigos/semversion/",
+	"title": "Semantic Version",
+	"tags": ["semversion"],
+	"description": "Versionamento Semantico",
+	"content": "Intro O versionamento semântico hoje é um dos padrões de versionamento mais usados e conhecidos.\nTem o objetivo de evitar que atualizações de dependência quebrem o seu software indevidamente, enquanto permitindo que você tenha uma noção do status de estabilidade do software (se é \u0026ldquo;seguro\u0026rdquo; usar em produção, por exemplo) e possa identificar se uma nova versão possui apenas novos recursos ou se possui apenas correções de bugs, por exemplo.\nRegras Todo padrão tem regras, e com o versionamento semântico não poderia ser diferente. Existem 11 regras bem definidas e documentadas no site oficial\nMas o que é Semantic Version? "
+},
+{
+	"uri": "/tags/semversion/",
+	"title": "semversion",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "/tags/tutoriais/",
