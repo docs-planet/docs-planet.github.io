@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ansible on Docs Planet</title>
+    <link>/tutorials/ansible/</link>
+    <description>Recent content in Ansible on Docs Planet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tutorials/ansible/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ansible - Instalacão</title>
+      <link>/tutorials/ansible/ansible-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/ansible/ansible-install/</guid>
+      <description>Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Instalacão sudo apt update sudo apt install software-properties-common sudo apt-add-repository --yes --update ppa:ansible/ansible sudo apt install ansible Configuração Crie uma pasta para a configuração do Ansible e para colocar seus playbooks
+mkdir ~/ansible Crie um arquivo ~/.ansible.cfg
+cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; &amp;gt; ~/.ansible.cfg [defaults] inventory = ~/ansible/hosts roles_path = ~/ansible/roles host_key_checking = False [privilege_escalation] become=True become_method=sudo become_user=root EOF Testando ansible --version     Referências  https://docs.</description>
+    </item>
+    
+  </channel>
+</rss>
