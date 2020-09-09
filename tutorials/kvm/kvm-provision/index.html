@@ -12,22 +12,22 @@
     <title>KVM - Provision :: Docs Planet</title>
 
     
-    <link href="/css/nucleus.css?1599618578" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1599618578" rel="stylesheet">
-    <link href="/css/hybrid.css?1599618578" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1599618578" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1599618578" rel="stylesheet">
-    <link href="/css/auto-complete.css?1599618578" rel="stylesheet">
-    <link href="/css/theme.css?1599618578" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1599618578" rel="stylesheet">
+    <link href="/css/nucleus.css?1599618993" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1599618993" rel="stylesheet">
+    <link href="/css/hybrid.css?1599618993" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1599618993" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1599618993" rel="stylesheet">
+    <link href="/css/auto-complete.css?1599618993" rel="stylesheet">
+    <link href="/css/theme.css?1599618993" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1599618993" rel="stylesheet">
     
-    <link href="/css/theme-custom-docs.css?1599618578" rel="stylesheet">
+    <link href="/css/theme-custom-docs.css?1599618993" rel="stylesheet">
     
     
     
     <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
     
-    <script src="/js/jquery-3.3.1.min.js?1599618578"></script>
+    <script src="/js/jquery-3.3.1.min.js?1599618993"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times" style="color:#e2e2e2;"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1599618578"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1599618578"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1599618993"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1599618993"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1599618578"></script>
+<script type="text/javascript" src="/js/search.js?1599618993"></script>
 
     
   </div>
@@ -655,14 +655,16 @@
     <li><a href="#requisitos">Requisitos</a></li>
     <li><a href="#instalação">Instalação</a></li>
     <li><a href="#preparação">Preparação</a></li>
-    <li><a href="#começando">Começando</a>
+    <li><a href="#começando">Começando</a></li>
+    <li><a href="#mais-comandos">Mais comandos</a>
       <ul>
-        <li></li>
-      </ul>
-    </li>
-    <li><a href="#appendix">Appendix</a>
-      <ul>
-        <li></li>
+        <li><a href="#copiando-suas-chaves-ssh">Copiando suas Chaves SSH</a></li>
+        <li><a href="#criando-uma-vm-com-uma-configuração-específica">Criando uma VM com uma configuração específica</a></li>
+        <li><a href="#usando-um-novo-password-para-suas-vms">Usando um novo password para suas VM&rsquo;s</a></li>
+        <li><a href="#aumentando-o-tamanho-do-disco-duro">Aumentando o tamanho do disco duro</a></li>
+        <li><a href="#adicionando-um-novo-disco">Adicionando um novo disco</a></li>
+        <li><a href="#listar-todas-as-vms-criadas">Listar todas as VM&rsquo;s criadas</a></li>
+        <li><a href="#gestione-as-vms-em-modo-grafico">Gestione as VM&rsquo;s em modo grafico</a></li>
       </ul>
     </li>
     <li><a href="#demo">Demo</a></li>
@@ -721,19 +723,17 @@ logout
 </code></pre></div><p>Apagando a VM</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">./del-vm.sh centos7
 </code></pre></div><blockquote>
-<p>Elimina todo o conteudo das maquinas, inclusive os discos duros</p>
+<p>Apaga a VM e todo seu conteúdo, inclusive os discos duros</p>
 </blockquote>
-<h4 id="copiando-suas-chaves-ssh-opcional">Copiando suas Chaves SSH (Opcional)</h4>
+<h2 id="mais-comandos">Mais comandos</h2>
+<h3 id="copiando-suas-chaves-ssh">Copiando suas Chaves SSH</h3>
 <p>Nossa chave SSH publica pode ser colocada no parametro <code>SSH_KEY_0</code>, de tal maneira que consigamos acessar ao servidor virtual sem precisar user/password.</p>
 <p>Se ainda não criou um par de chaves ssh para seu usuario, siga este <a href="/artigos/init-config/#criando-par-de-chaves-ssh">procedimento</a>. Logo disso, voce ira ter o arquivo <code>~/.ssh/id_rsa.pub</code>. Copie e cole o conteúdo desse arquivo dentro do arquivo <code>config.conf</code> exatamente como o valor da variavel <code>SSH_KEY_0</code>.</p>
-<p>Exemplo:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">SSH_KEY_0<span style="color:#f92672">=</span>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYN0xPPa9KV0pZ5vNyet5e5fvWHNCgOTJ5ON9SHef3d
-</code></pre></div><p>Repita os passos mostrados anteriormente para criar uma maquina com o nome <code>centos7</code> e verifique o acesso</p>
-<h2 id="appendix">Appendix</h2>
-<h4 id="criando-uma-vm-com-uma-configuração-determinada">Criando uma VM com uma configuração determinada.</h4>
+</code></pre></div><h3 id="criando-uma-vm-com-uma-configuração-específica">Criando uma VM com uma configuração específica</h3>
 <p>Crie a VM <code>demo01</code> com 1GB de RAM, 2 VCPUs e com a IP 192.168.122.12</p>
 <pre><code class="language-console" data-lang="console">./new-vm.sh -n demo01 -m 1024 -c 2 -i 192.168.122.12
-</code></pre><h4 id="usando-um-novo-password-para-suas-vms">Usando um novo password para suas VM&rsquo;s</h4>
+</code></pre><h3 id="usando-um-novo-password-para-suas-vms">Usando um novo password para suas VM&rsquo;s</h3>
 <p>Cambiando o password default para este valor: <code>MySuperPassword</code>, precisamos executar o comando:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">openssl passwd -1 -salt SaltSalt MySuperPassword
 </code></pre></div><p>Com a saida desse comando, defina a variavel PASSWORD:</p>
@@ -741,18 +741,18 @@ logout
 <blockquote>
 <p>Dessa forma, a proxima VM ira ter o password <em>MySuperPassword</em> para o user centos</p>
 </blockquote>
-<h4 id="aumentando-o-tamanho-do-disco-duro">Aumentando o tamanho do disco duro:</h4>
+<h3 id="aumentando-o-tamanho-do-disco-duro">Aumentando o tamanho do disco duro</h3>
 <p>É só editar a variavel:</p>
 <p><code>DISK_SIZE=40G</code></p>
 <blockquote>
 <p>Aquilo ira criar uma VM com 40GB de espaco de disco</p>
 </blockquote>
-<h4 id="adicionando-um-novo-disco">Adicionando um novo disco</h4>
+<h3 id="adicionando-um-novo-disco">Adicionando um novo disco</h3>
 <p>Caso a VM tenha como nome <code>centos7</code> e queramos ter um novo disco adicional de 60GB.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">./add-disk.sh -n centos7 -d vdb -s 60G
-</code></pre></div><h4 id="liste-todas-as-vms-criadas">Liste todas as VM&rsquo;s criadas</h4>
+</code></pre></div><h3 id="listar-todas-as-vms-criadas">Listar todas as VM&rsquo;s criadas</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">virsh list --all
-</code></pre></div><h4 id="gestione-as-vms-em-modo-grafico">Gestione as VM&rsquo;s em modo grafico</h4>
+</code></pre></div><h3 id="gestione-as-vms-em-modo-grafico">Gestione as VM&rsquo;s em modo grafico</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">virt-manager
 </code></pre></div><p>Ira carregar o seguinte gestor de VMs</p>
 <p><img src="https://i.imgur.com/gUHgiht.png" alt=""></p>
@@ -1153,19 +1153,19 @@ logout
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1599618578"></script>
-    <script src="/js/perfect-scrollbar.min.js?1599618578"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1599618578"></script>
-    <script src="/js/jquery.sticky.js?1599618578"></script>
-    <script src="/js/featherlight.min.js?1599618578"></script>
-    <script src="/js/highlight.pack.js?1599618578"></script>
+    <script src="/js/clipboard.min.js?1599618993"></script>
+    <script src="/js/perfect-scrollbar.min.js?1599618993"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1599618993"></script>
+    <script src="/js/jquery.sticky.js?1599618993"></script>
+    <script src="/js/featherlight.min.js?1599618993"></script>
+    <script src="/js/highlight.pack.js?1599618993"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1599618578"></script>
-    <script src="/js/learn.js?1599618578"></script>
-    <script src="/js/hugo-learn.js?1599618578"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1599618993"></script>
+    <script src="/js/learn.js?1599618993"></script>
+    <script src="/js/hugo-learn.js?1599618993"></script>
 
-    <link href="/mermaid/mermaid.css?1599618578" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1599618578"></script>
+    <link href="/mermaid/mermaid.css?1599618993" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1599618993"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
