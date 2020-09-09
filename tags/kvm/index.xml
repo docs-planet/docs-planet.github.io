@@ -16,11 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/docker/docker-install/</guid>
-      <description>Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Apagando versões anteriores
-sudo apt-get remove docker docker-engine docker.io containerd runc Instalando os prerequisitos
-sudo apt-get update sudo apt-get install \  apt-transport-https \  ca-certificates \  curl \  gnupg-agent \  software-properties-common Adicionando o repositório
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \  &amp;#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs)\ stable&amp;#34; Instalando docker:
-sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.</description>
+      <description>Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Instalando docker sudo apt-get remove docker docker-engine docker.io containerd runc sudo apt-get update sudo apt-get install \  apt-transport-https \  ca-certificates \  curl \  gnupg-agent \  software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \  &amp;#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs)\ stable&amp;#34; sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.io sudo docker run hello-world     Instalando docker-compose sudo curl -L &amp;#34;https://github.</description>
     </item>
     
     <item>
@@ -51,7 +47,7 @@ sudo apt install cpu-checker sudo kvm-ok   Passo 2: Instalar KVM sudo apt update
       
       <guid>/tutorials/kvm/kvm-bridge/</guid>
       <description>Requisitos  KVM instalado Ter uma interfaz de rede ethernet (não wireless) Ubuntu 18.04 ou superior  Procedimento Verificando qual é o nome da minha interfaz de rede
-nmcli device status  Observer o resultado da columna DEVICE
+nmcli device status  Observe o resultado da columna DEVICE
  Com esse dado configuramos via netplan a configuração bridge adicionando um arquivo yaml.
 sudo vi /etc/netplan/50-cloud-init.yaml Copiar um conteúdo similar. No me caso o DEVICE da minha NIC é enp2s0:
 network: version: 2 ethernets: enp2s0:  dhcp4: yes dhcp6: no bridges: br0: interfaces: [enp2s0]  dhcp4: yes dhcp6: no Logo aplicamos os cambios:</description>

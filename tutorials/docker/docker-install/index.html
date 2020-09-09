@@ -12,22 +12,22 @@
     <title>Docker - Instalacão :: Docs Planet</title>
 
     
-    <link href="/css/nucleus.css?1599606374" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1599606374" rel="stylesheet">
-    <link href="/css/hybrid.css?1599606374" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1599606374" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1599606374" rel="stylesheet">
-    <link href="/css/auto-complete.css?1599606374" rel="stylesheet">
-    <link href="/css/theme.css?1599606374" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1599606374" rel="stylesheet">
+    <link href="/css/nucleus.css?1599617525" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1599617525" rel="stylesheet">
+    <link href="/css/hybrid.css?1599617525" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1599617525" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1599617525" rel="stylesheet">
+    <link href="/css/auto-complete.css?1599617525" rel="stylesheet">
+    <link href="/css/theme.css?1599617525" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1599617525" rel="stylesheet">
     
-    <link href="/css/theme-custom-docs.css?1599606374" rel="stylesheet">
+    <link href="/css/theme-custom-docs.css?1599617525" rel="stylesheet">
     
     
     
     <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
     
-    <script src="/js/jquery-3.3.1.min.js?1599606374"></script>
+    <script src="/js/jquery-3.3.1.min.js?1599617525"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times" style="color:#e2e2e2;"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1599606374"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1599606374"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1599617525"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1599617525"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1599606374"></script>
+<script type="text/javascript" src="/js/search.js?1599617525"></script>
 
     
   </div>
@@ -653,7 +653,12 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#requisitos">Requisitos</a></li>
-    <li><a href="#procedimento">Procedimento</a></li>
+    <li><a href="#procedimento">Procedimento</a>
+      <ul>
+        <li><a href="#instalando-docker">Instalando docker</a></li>
+        <li><a href="#instalando-docker-compose">Instalando docker-compose</a></li>
+      </ul>
+    </li>
     <li><a href="#referências">Referências</a></li>
   </ul>
 </nav>
@@ -676,16 +681,15 @@
         
 
 
-<p><img src="https://w7.pngwing.com/pngs/475/563/png-transparent-docker-software-deployment-industrial-design-docker-logo-microsoft-azure-industrial-design.png" alt=""></p>
+<p><img src="https://deploybot.com/assets/blog/Using-Docker-Containersposting.png?width=300px" alt=""></p>
 <h2 id="requisitos">Requisitos</h2>
 <ul>
 <li>Ubuntu Linux 18.04 ou superior</li>
 </ul>
 <h2 id="procedimento">Procedimento</h2>
-<p>Apagando versões anteriores</p>
+<h3 id="instalando-docker">Instalando docker</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get remove docker docker-engine docker.io containerd runc
-</code></pre></div><p>Instalando os prerequisitos</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
 
 sudo apt-get install <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   apt-transport-https <span style="color:#ae81ff">\
@@ -693,17 +697,14 @@ sudo apt-get install <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   curl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   gnupg-agent <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   software-properties-common
-</code></pre></div><p>Adicionando o repositório</p>
-<pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo add-apt-repository <span style="color:#ae81ff">\
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo add-apt-repository <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   <span style="color:#e6db74">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
 </span><span style="color:#e6db74">   </span><span style="color:#66d9ef">$(</span>lsb_release -cs<span style="color:#66d9ef">)</span><span style="color:#e6db74"> \
 </span><span style="color:#e6db74">   stable&#34;</span>
-</code></pre></div><p>Instalando docker:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
-</code></pre></div><p>Testando:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo docker run hello-world
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo docker run hello-world
 </code></pre></div><hr>
 <p>
     <asciinema-player
@@ -726,7 +727,20 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
     ></asciinema-player>
 </p>
 
-<h2 id="referências">Referências</h2>
+<hr>
+<h3 id="instalando-docker-compose">Instalando docker-compose</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.27.0/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+docker-compose --version
+</code></pre></div><p>Dando permissões para seu usuario rodar o comando docker</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo usermod -a -G docker <span style="color:#66d9ef">$(</span>id -nu<span style="color:#66d9ef">)</span>
+reboot
+</code></pre></div><h2 id="referências">Referências</h2>
 <ul>
 <li><a href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></li>
 </ul>
@@ -1097,19 +1111,19 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1599606374"></script>
-    <script src="/js/perfect-scrollbar.min.js?1599606374"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1599606374"></script>
-    <script src="/js/jquery.sticky.js?1599606374"></script>
-    <script src="/js/featherlight.min.js?1599606374"></script>
-    <script src="/js/highlight.pack.js?1599606374"></script>
+    <script src="/js/clipboard.min.js?1599617525"></script>
+    <script src="/js/perfect-scrollbar.min.js?1599617525"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1599617525"></script>
+    <script src="/js/jquery.sticky.js?1599617525"></script>
+    <script src="/js/featherlight.min.js?1599617525"></script>
+    <script src="/js/highlight.pack.js?1599617525"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1599606374"></script>
-    <script src="/js/learn.js?1599606374"></script>
-    <script src="/js/hugo-learn.js?1599606374"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1599617525"></script>
+    <script src="/js/learn.js?1599617525"></script>
+    <script src="/js/hugo-learn.js?1599617525"></script>
 
-    <link href="/mermaid/mermaid.css?1599606374" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1599606374"></script>
+    <link href="/mermaid/mermaid.css?1599617525" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1599617525"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

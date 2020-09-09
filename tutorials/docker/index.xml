@@ -16,11 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/tutorials/docker/docker-install/</guid>
-      <description>Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Apagando versões anteriores
-sudo apt-get remove docker docker-engine docker.io containerd runc Instalando os prerequisitos
-sudo apt-get update sudo apt-get install \  apt-transport-https \  ca-certificates \  curl \  gnupg-agent \  software-properties-common Adicionando o repositório
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \  &amp;#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs)\ stable&amp;#34; Instalando docker:
-sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.</description>
+      <description>Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Instalando docker sudo apt-get remove docker docker-engine docker.io containerd runc sudo apt-get update sudo apt-get install \  apt-transport-https \  ca-certificates \  curl \  gnupg-agent \  software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \  &amp;#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs)\ stable&amp;#34; sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.io sudo docker run hello-world     Instalando docker-compose sudo curl -L &amp;#34;https://github.</description>
     </item>
     
   </channel>
