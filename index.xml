@@ -29,7 +29,7 @@ Prerequisitos  Ter o git instalado, senão rodar: sudo apt-get install git Insta
       <guid>/tutorials/ansible/ansible-install/</guid>
       <description>Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Instalacão sudo apt update sudo apt install software-properties-common sudo apt-add-repository --yes --update ppa:ansible/ansible sudo apt install ansible Configuração Crie uma pasta para a configuração do Ansible e para colocar seus playbooks
 mkdir ~/ansible Crie um arquivo ~/.ansible.cfg
-cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; &amp;gt; ~/.ansible.cfg [defaults] inventory = ~/ansible/hosts roles_path = ~/ansible/roles host_key_checking = False [privilege_escalation] become=True become_method=sudo become_user=root EOF Testando ansible --version     Referências  https://docs.</description>
+cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; &amp;gt; ~/.ansible.cfg [defaults] inventory=~/ansible/hosts roles_path= ~/ansible/roles retry_files_enabled=False host_key_checking=False remote_user=centos [privilege_escalation] become=True become_method=sudo become_user=root EOF Testando ansible --version ansible-config view     Referências  https://docs.</description>
     </item>
     
     <item>
@@ -78,6 +78,19 @@ git config --global core.autocrlf input git config --global core.safecrlf warn  
     </item>
     
     <item>
+      <title>KVM - Bridge Setup</title>
+      <link>/tutorials/kvm/kvm-bridge/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/kvm/kvm-bridge/</guid>
+      <description>Requisitos  KVM instalado Ter uma interfaz de rede ethernet (não wireless) Ubuntu 18.04 ou superior  Procedimento Verificando qual é o nome da minha interfaz de rede
+nmcli device status  Observe o resultado da columna DEVICE
+ Com esse dado configuramos via netplan a configuração bridge adicionando um arquivo yaml.
+sudo vi /etc/netplan/50-cloud-init.yaml Copiar um conteúdo similar. No me caso o DEVICE da minha NIC é enp2s0:
+network: version: 2 ethernets: enp2s0:  dhcp4: yes dhcp6: no bridges: br0: interfaces: [enp2s0]  dhcp4: yes dhcp6: no Logo aplicamos os cambios:</description>
+    </item>
+    
+    <item>
       <title>Git (Parte 2)</title>
       <link>/tutorials/git/git-part2/</link>
       <pubDate>Mon, 10 Aug 2020 00:00:00 +0000</pubDate>
@@ -86,6 +99,16 @@ git config --global core.autocrlf input git config --global core.safecrlf warn  
       <description>Este tutorial é a continuação do tutorial Git (Part 1)
  14. Descartando mudanças locais (antes do stage) Acessando o branch Master Verifique que você esta no último commit do branch master antes de continuar.
 git checkout master Mude o hello.html Acontece de você modificar o arquivo no seu diretório de trabalho local e às vezes querer descartar as mudanças que você fez commit. É aqui que o comando checkout vai te ajudar.</description>
+    </item>
+    
+    <item>
+      <title>KVM - Provision</title>
+      <link>/tutorials/kvm/kvm-provision/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/kvm/kvm-provision/</guid>
+      <description>Requisitos  KVM instalado Ubuntu 18.04 ou superior Usar uma conta com privilegios de root (sudo)  Instalação cd ~ git clone https://github.com/jenciso/kvm-provision Preparação Precisamos baixar uma imagem base para poder usar na criacação de VM&amp;rsquo;s. Usaremos a image Centos 7 ja preperada para trabalhar com cloud-init. Colocaremos esta imagem na pasta boot do libvirt. Execute o seguinte comando:
+sudo curl -fSL -C - http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2 \  -o /var/lib/libvirt/boot/CentOS-7-x86_64-GenericCloud.qcow2 Para poder executar alguns comandos do kvm, precisamos adicionar nosso usuario ao grupo libvirt, e para que os cambios sejam efetivados temos q sair da sessao e volver ingressar</description>
     </item>
     
     <item>
@@ -98,6 +121,16 @@ git checkout master Mude o hello.html Acontece de você modificar o arquivo no s
  24. Criando um Branch Vamos nomear o nosso novo branch como «style».
 git checkout -b style git status Nota:
  git checkout -b &amp;lt;branch name&amp;gt; é o atalho de git branch &amp;lt;branch name&amp;gt; seguido por git checkout &amp;lt;branch name&amp;gt; Note que o comando git status avisa que você está no branch style.  Adicione o arquivo style.css touch lib/style.</description>
+    </item>
+    
+    <item>
+      <title>Instalando Windows 2012 sobre KVM</title>
+      <link>/tutorials/kvm/kvm-windows2012/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/kvm/kvm-windows2012/</guid>
+      <description>Instalacão Consiga uma imagem ISO do windows 2012 e copie ela na pasta do /var/lib/libvirt/images
+sudo mv Downloads/9600.17050.WINBLUE_REFRESH.140317-1640_X64FRE_SERVER_EVAL_EN-US-IR3_SSS_X64FREE_EN-US_DV9.ISO /var/lib/libvirt/images Logo execute virt-manager</description>
     </item>
     
     <item>
@@ -122,6 +155,16 @@ Mateus Abdala @MateusAbdala
     </item>
     
     <item>
+      <title>Criando certificados wildcard Let&#39;s Encrypt</title>
+      <link>/artigos/wildcard-certificate-letsencrypt-cloudflare/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/artigos/wildcard-certificate-letsencrypt-cloudflare/</guid>
+      <description>Steps 1. Obter as credenciais do Cloudflare API Pegar o Global API Key:
+2. Salvando as credenciais sudo mkdir -p /root/.secrets cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; | sudo tee /root/.secrets/cloudflare.ini dns_cloudflare_email = &amp;#34;youremail@example.com&amp;#34; dns_cloudflare_api_key = &amp;#34;4003c330b45f4fbcab420eaf66b49c5cbcab4&amp;#34; EOF 3. Instalando certbot e cloudflare DNS authenticator plugin sudo apt-get update sudo apt-get install software-properties-common sudo add-apt-repository universe sudo add-apt-repository ppa:certbot/certbot sudo apt-get update sudo apt-get install certbot python-certbot-nginx python3-certbot-dns-cloudflare 4. Rodar o Certbot com o cloudflare authenticator sudo certbot certonly \  --dns-cloudflare \  --dns-cloudflare-credentials /root/.</description>
+    </item>
+    
+    <item>
       <title>Gitflow</title>
       <link>/tutorials/git/gitflow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -129,29 +172,6 @@ Mateus Abdala @MateusAbdala
       <guid>/tutorials/git/gitflow/</guid>
       <description>Intro Gitflow é um modelo de organização de branches criado por Vincent Driessen, Não é o único modelo de organização de branches, mas sem dúvida é um dos mais usados.
 Nomenclatura Gitflow estabelece algumas regras de nomenclaturas para tipos de branches enquanto, ao mesmo tempo, define o que cada tipo de branch faz. Para referência, segue uma lista dos tipos de branches definidos pelo Git Flow e suas respectivas descrições:</description>
-    </item>
-    
-    <item>
-      <title>KVM - Bridge Setup</title>
-      <link>/tutorials/kvm/kvm-bridge/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tutorials/kvm/kvm-bridge/</guid>
-      <description>Requisitos  KVM instalado Ter uma interfaz de rede ethernet (não wireless) Ubuntu 18.04 ou superior  Procedimento Verificando qual é o nome da minha interfaz de rede
-nmcli device status  Observe o resultado da columna DEVICE
- Com esse dado configuramos via netplan a configuração bridge adicionando um arquivo yaml.
-sudo vi /etc/netplan/50-cloud-init.yaml Copiar um conteúdo similar. No me caso o DEVICE da minha NIC é enp2s0:
-network: version: 2 ethernets: enp2s0:  dhcp4: yes dhcp6: no bridges: br0: interfaces: [enp2s0]  dhcp4: yes dhcp6: no Logo aplicamos os cambios:</description>
-    </item>
-    
-    <item>
-      <title>KVM - Provision</title>
-      <link>/tutorials/kvm/kvm-provision/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tutorials/kvm/kvm-provision/</guid>
-      <description>Requisitos  KVM instalado Ubuntu 18.04 ou superior Usar uma conta com privilegios de root (sudo)  Instalação cd ~ git clone https://github.com/jenciso/kvm-provision Preparação Precisamos baixar uma imagem base para poder usar na criacação de VM&amp;rsquo;s. Usaremos a image Centos 7 ja preperada para trabalhar com cloud-init. Colocaremos esta imagem na pasta boot do libvirt. Execute o seguinte comando:
-sudo curl -fSL -C - http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2 \  -o /var/lib/libvirt/boot/CentOS-7-x86_64-GenericCloud.qcow2 Para poder executar alguns comandos do kvm, precisamos adicionar nosso usuario ao grupo libvirt, e para que os cambios sejam efetivados temos q sair da sessao e volver ingressar</description>
     </item>
     
     <item>

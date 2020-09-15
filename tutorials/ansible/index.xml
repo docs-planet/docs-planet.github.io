@@ -18,7 +18,7 @@
       <guid>/tutorials/ansible/ansible-install/</guid>
       <description>Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Instalacão sudo apt update sudo apt install software-properties-common sudo apt-add-repository --yes --update ppa:ansible/ansible sudo apt install ansible Configuração Crie uma pasta para a configuração do Ansible e para colocar seus playbooks
 mkdir ~/ansible Crie um arquivo ~/.ansible.cfg
-cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; &amp;gt; ~/.ansible.cfg [defaults] inventory = ~/ansible/hosts roles_path = ~/ansible/roles host_key_checking = False [privilege_escalation] become=True become_method=sudo become_user=root EOF Testando ansible --version     Referências  https://docs.</description>
+cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; &amp;gt; ~/.ansible.cfg [defaults] inventory=~/ansible/hosts roles_path= ~/ansible/roles retry_files_enabled=False host_key_checking=False remote_user=centos [privilege_escalation] become=True become_method=sudo become_user=root EOF Testando ansible --version ansible-config view     Referências  https://docs.</description>
     </item>
     
   </channel>

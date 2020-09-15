@@ -12,22 +12,22 @@
     <title>Ansible - Instalacão :: Docs Planet</title>
 
     
-    <link href="/css/nucleus.css?1599622839" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1599622839" rel="stylesheet">
-    <link href="/css/hybrid.css?1599622839" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1599622839" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1599622839" rel="stylesheet">
-    <link href="/css/auto-complete.css?1599622839" rel="stylesheet">
-    <link href="/css/theme.css?1599622839" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1599622839" rel="stylesheet">
+    <link href="/css/nucleus.css?1600138585" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1600138585" rel="stylesheet">
+    <link href="/css/hybrid.css?1600138585" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1600138585" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1600138585" rel="stylesheet">
+    <link href="/css/auto-complete.css?1600138585" rel="stylesheet">
+    <link href="/css/theme.css?1600138585" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1600138585" rel="stylesheet">
     
-    <link href="/css/theme-custom-docs.css?1599622839" rel="stylesheet">
+    <link href="/css/theme-custom-docs.css?1600138585" rel="stylesheet">
     
     
     
     <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
     
-    <script src="/js/jquery-3.3.1.min.js?1599622839"></script>
+    <script src="/js/jquery-3.3.1.min.js?1600138585"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -49,7 +49,7 @@
   <div id="header-wrapper">
     <div id="header">
       <td valign="top" align="left">
-   <img style="cursor:pointer" onclick="window.location='/'" alt="" src="/images/logo.png" width="100%">
+   <img style="cursor:pointer" onclick="window.location='/'" alt="" src="/images/logo-tt.png" width="100%">
 </td>
 
     </div>
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times" style="color:#e2e2e2;"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1599622839"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1599622839"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1600138585"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1600138585"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1599622839"></script>
+<script type="text/javascript" src="/js/search.js?1600138585"></script>
 
     
   </div>
@@ -374,6 +374,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/kvm/kvm-windows2012/" title="Instalando Windows 2012 sobre KVM" class="dd-item ">
+        <a href="/tutorials/kvm/kvm-windows2012/">
+        kVM - VM Win2012
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -578,6 +599,27 @@
  
   
     
+      <li data-nav-id="/artigos/wildcard-certificate-letsencrypt-cloudflare/" title="Criando certificados wildcard Let&#39;s Encrypt" class="dd-item ">
+        <a href="/artigos/wildcard-certificate-letsencrypt-cloudflare/">
+        Wildcard Let&#39;s Encrypt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/artigos/semversion/" title="Semantic Version" class="dd-item ">
         <a href="/artigos/semversion/">
         Semantic Version
@@ -763,9 +805,11 @@ sudo apt install ansible
 </code></pre></div><p>Crie um arquivo <code>~/.ansible.cfg</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39; &gt; ~/.ansible.cfg
 </span><span style="color:#e6db74">[defaults]
-</span><span style="color:#e6db74">inventory         = ~/ansible/hosts
-</span><span style="color:#e6db74">roles_path        = ~/ansible/roles
-</span><span style="color:#e6db74">host_key_checking = False
+</span><span style="color:#e6db74">inventory=~/ansible/hosts
+</span><span style="color:#e6db74">roles_path= ~/ansible/roles
+</span><span style="color:#e6db74">retry_files_enabled=False
+</span><span style="color:#e6db74">host_key_checking=False
+</span><span style="color:#e6db74">remote_user=centos
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">[privilege_escalation]
 </span><span style="color:#e6db74">become=True
@@ -773,11 +817,12 @@ sudo apt install ansible
 </span><span style="color:#e6db74">become_user=root
 </span><span style="color:#e6db74">EOF</span>
 </code></pre></div><h3 id="testando">Testando</h3>
-<pre><code>ansible --version
-</code></pre><hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ansible --version
+ansible-config view
+</code></pre></div><hr>
 <p>
     <asciinema-player
-        src="/casts/tmp38k3hpwz-ascii.cast"
+        src="/casts/tmpkza8f56t-ascii.cast"
         cols="110"
         rows="28"
         
@@ -1046,59 +1091,6 @@ sudo apt install ansible
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -1118,6 +1110,75 @@ sudo apt install ansible
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
                     
@@ -1133,6 +1194,22 @@ sudo apt install ansible
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1200,19 +1277,19 @@ sudo apt install ansible
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1599622839"></script>
-    <script src="/js/perfect-scrollbar.min.js?1599622839"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1599622839"></script>
-    <script src="/js/jquery.sticky.js?1599622839"></script>
-    <script src="/js/featherlight.min.js?1599622839"></script>
-    <script src="/js/highlight.pack.js?1599622839"></script>
+    <script src="/js/clipboard.min.js?1600138585"></script>
+    <script src="/js/perfect-scrollbar.min.js?1600138585"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1600138585"></script>
+    <script src="/js/jquery.sticky.js?1600138585"></script>
+    <script src="/js/featherlight.min.js?1600138585"></script>
+    <script src="/js/highlight.pack.js?1600138585"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1599622839"></script>
-    <script src="/js/learn.js?1599622839"></script>
-    <script src="/js/hugo-learn.js?1599622839"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1600138585"></script>
+    <script src="/js/learn.js?1600138585"></script>
+    <script src="/js/hugo-learn.js?1600138585"></script>
 
-    <link href="/mermaid/mermaid.css?1599622839" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1599622839"></script>
+    <link href="/mermaid/mermaid.css?1600138585" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1600138585"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

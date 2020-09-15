@@ -45,5 +45,15 @@ network: version: 2 ethernets: enp2s0:  dhcp4: yes dhcp6: no bridges: br0: inter
 sudo curl -fSL -C - http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2 \  -o /var/lib/libvirt/boot/CentOS-7-x86_64-GenericCloud.qcow2 Para poder executar alguns comandos do kvm, precisamos adicionar nosso usuario ao grupo libvirt, e para que os cambios sejam efetivados temos q sair da sessao e volver ingressar</description>
     </item>
     
+    <item>
+      <title>Instalando Windows 2012 sobre KVM</title>
+      <link>/tutorials/kvm/kvm-windows2012/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/kvm/kvm-windows2012/</guid>
+      <description>Instalacão Consiga uma imagem ISO do windows 2012 e copie ela na pasta do /var/lib/libvirt/images
+sudo mv Downloads/9600.17050.WINBLUE_REFRESH.140317-1640_X64FRE_SERVER_EVAL_EN-US-IR3_SSS_X64FREE_EN-US_DV9.ISO /var/lib/libvirt/images Logo execute virt-manager</description>
+    </item>
+    
   </channel>
 </rss>

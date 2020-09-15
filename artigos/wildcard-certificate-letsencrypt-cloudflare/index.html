@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.74.3" />
-    <meta name="description" content="Instalando KVM">
+    <meta name="description" content="Como criar certificados wildcard Let&#39;s Encrypt usando o servico DNS da Cloudflare">
 <meta name="author" content="Juan Enciso">
 
     <link rel="icon" href="/images/favicon.ico" type="image/png">
 
-    <title>KVM - Instalacão :: Docs Planet</title>
+    <title>Criando certificados wildcard Let&#39;s Encrypt :: Docs Planet</title>
 
     
     <link href="/css/nucleus.css?1600138585" rel="stylesheet">
@@ -25,8 +25,6 @@
     
     
     
-    <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
-    
     <script src="/js/jquery-3.3.1.min.js?1600138585"></script>
 
     <style>
@@ -41,7 +39,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tutorials/kvm/kvm-install/">
+  <body class="" data-url="/artigos/wildcard-certificate-letsencrypt-cloudflare/">
     <nav id="sidebar" class="">
 
 
@@ -88,7 +86,7 @@
     
     
     <li data-nav-id="/tutorials/" title="💻 Tutoriais" class="dd-item 
-        parent
+        
         
         
         ">
@@ -289,7 +287,7 @@
     
     
     <li data-nav-id="/tutorials/kvm/" title="KVM" class="dd-item 
-        parent
+        
         
         
         ">
@@ -297,7 +295,7 @@
           KVM
           
             
-              <i class="fas fa-caret-down"></i>
+              <i class="fas fa-caret-right"></i>
             
           
           
@@ -320,7 +318,7 @@
  
   
     
-      <li data-nav-id="/tutorials/kvm/kvm-install/" title="KVM - Instalacão" class="dd-item active">
+      <li data-nav-id="/tutorials/kvm/kvm-install/" title="KVM - Instalacão" class="dd-item ">
         <a href="/tutorials/kvm/kvm-install/">
         KVM - Instalacão
         
@@ -551,7 +549,7 @@
     
     
     <li data-nav-id="/artigos/" title="✍ Artigos" class="dd-item 
-        
+        parent
         
         
         ">
@@ -599,7 +597,7 @@
  
   
     
-      <li data-nav-id="/artigos/wildcard-certificate-letsencrypt-cloudflare/" title="Criando certificados wildcard Let&#39;s Encrypt" class="dd-item ">
+      <li data-nav-id="/artigos/wildcard-certificate-letsencrypt-cloudflare/" title="Criando certificados wildcard Let&#39;s Encrypt" class="dd-item active">
         <a href="/artigos/wildcard-certificate-letsencrypt-cloudflare/">
         Wildcard Let&#39;s Encrypt
         
@@ -706,7 +704,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/kvm/kvm-install.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/artigos/wildcard-certificate-letsencrypt-cloudflare.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -737,13 +735,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/kvm/'>KVM</a> > KVM - Instalacão
-          
-        
+            <a href='/'>Docs Planet</a> > <a href='/artigos/'>✍ Artigos</a> > Criando certificados wildcard Let's Encrypt
           
         
           
@@ -758,15 +750,17 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#requisitos">Requisitos</a></li>
-    <li><a href="#procedimento">Procedimento</a>
+    <li><a href="#steps">Steps</a>
       <ul>
-        <li><a href="#passo-1-verificar">Passo 1: Verificar</a></li>
-        <li><a href="#passo-2-instalar-kvm">Passo 2: Instalar KVM</a></li>
-        <li><a href="#passo-3-start--enable-libvirtd-service">Passo 3: Start &amp; enable libvirtd service</a></li>
+        <li><a href="#1-obter-as-credenciais-do-cloudflare-api">1. Obter as credenciais do Cloudflare API</a></li>
+        <li><a href="#2-salvando-as-credenciais">2. Salvando as credenciais</a></li>
+        <li><a href="#3-instalando-certbot-e-cloudflare-dns-authenticator-plugin">3. Instalando certbot e cloudflare DNS authenticator plugin</a></li>
+        <li><a href="#4-rodar-o-certbot-com-o-cloudflare-authenticator">4. Rodar o Certbot com o cloudflare authenticator</a></li>
+        <li><a href="#5-verifique-seu-certificado">5. Verifique seu certificado</a></li>
+        <li><a href="#6-renovacão-automática">6. Renovacão automática</a></li>
       </ul>
     </li>
-    <li><a href="#referências">Referências</a></li>
+    <li><a href="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -781,100 +775,52 @@
           
             <h1>
               
-              KVM - Instalacão
+              Criando certificados wildcard Let&#39;s Encrypt
             </h1>
           
 
         
 
 
-<h2 id="requisitos">Requisitos</h2>
-<ul>
-<li>Ubuntu Linux 18.04 ou superior</li>
-</ul>
-<h2 id="procedimento">Procedimento</h2>
-<h3 id="passo-1-verificar">Passo 1: Verificar</h3>
-<p>Verificar se nosso sistema suporta hardware virtualization</p>
-<pre><code>egrep -c '(vmx|svm)' /proc/cpuinfo
-</code></pre><blockquote>
-<p>Se a saida é maior que zero, nosso sistema suporta virtualização. Esta tudo ok.</p>
+<h2 id="steps">Steps</h2>
+<h3 id="1-obter-as-credenciais-do-cloudflare-api">1. Obter as credenciais do Cloudflare API</h3>
+<p>Pegar o Global API Key:</p>
+<p><img src="https://i.imgur.com/JKE1mJa.png" alt=""></p>
+<h3 id="2-salvando-as-credenciais">2. Salvando as credenciais</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo mkdir -p /root/.secrets
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39; | sudo tee /root/.secrets/cloudflare.ini
+</span><span style="color:#e6db74">dns_cloudflare_email = &#34;youremail@example.com&#34;
+</span><span style="color:#e6db74">dns_cloudflare_api_key = &#34;4003c330b45f4fbcab420eaf66b49c5cbcab4&#34;
+</span><span style="color:#e6db74">EOF</span>
+</code></pre></div><h3 id="3-instalando-certbot-e-cloudflare-dns-authenticator-plugin">3. Instalando certbot e cloudflare DNS authenticator plugin</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository universe
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install certbot python-certbot-nginx python3-certbot-dns-cloudflare
+</code></pre></div><h3 id="4-rodar-o-certbot-com-o-cloudflare-authenticator">4. Rodar o Certbot com o cloudflare authenticator</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo certbot certonly <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --dns-cloudflare <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --dns-cloudflare-credentials /root/.secrets/cloudflare.ini <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -d docs-planet.site,*.docs-planet.site <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --preferred-challenges dns-01
+</code></pre></div><blockquote>
+<p>Aquilo criará a pasta <code>/etc/letsencrypt/live/docs-planet.site/</code> contendo todos certificados.</p>
 </blockquote>
-<p>Agora instalar <code>kvm-ok</code> para saber se o servidor pode rodar hardware accelerated KVM</p>
-<pre><code>sudo apt install cpu-checker
-sudo kvm-ok
-</code></pre><p>
-    <asciinema-player
-        src="/casts/kvm01.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="1.5"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h3 id="passo-2-instalar-kvm">Passo 2: Instalar KVM</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt update
-sudo apt install qemu qemu-kvm libvirt-bin  bridge-utils  virt-manager
-</code></pre></div><p>
-    <asciinema-player
-        src="/casts/kvm02.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="2"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h3 id="passo-3-start--enable-libvirtd-service">Passo 3: Start &amp; enable libvirtd service</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo service libvirtd start
-sudo update-rc.d libvirtd enable
-service libvirtd status
-</code></pre></div><p>
-    <asciinema-player
-        src="/casts/kvm03.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="2"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h2 id="referências">Referências</h2>
+<h3 id="5-verifique-seu-certificado">5. Verifique seu certificado</h3>
+<p>Copie o conteúdo do arquivo <code>/etc/letsencrypt/live/docs-planet.site/fullchain.pem</code> e visitar o site <a href="https://www.sslshopper.com/certificate-decoder.html">https://www.sslshopper.com/certificate-decoder.html</a> para verificar q o certificado esteja OK</p>
+<p>Ou executar este comando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo openssl x509 -in /etc/letsencrypt/live/docs-planet.site/fullchain.pem -text -noout
+</code></pre></div><h3 id="6-renovacão-automática">6. Renovacão automática</h3>
+<p>É só criar um linha no crontab</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">10</span> * * * sudo certbot renew --noninteractive
+</code></pre></div><h2 id="referencias">Referencias</h2>
 <ul>
-<li><a href="https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/">https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/</a></li>
+<li><a href="https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx">https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx</a></li>
+<li><a href="https://www.bjornjohansen.com/wildcard-certificate-letsencrypt-cloudflare">https://www.bjornjohansen.com/wildcard-certificate-letsencrypt-cloudflare</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-retrieve-let-s-encrypt-ssl-wildcard-certificates-using-cloudflare-validation-on-centos-7">https://www.digitalocean.com/community/tutorials/how-to-retrieve-let-s-encrypt-ssl-wildcard-certificates-using-cloudflare-validation-on-centos-7</a></li>
+<li><a href="https://www.cyberciti.biz/faq/issue-lets-encrypt-wildcard-certificate-with-acme-sh-and-cloudflare-dns/">https://www.cyberciti.biz/faq/issue-lets-encrypt-wildcard-certificate-with-acme-sh-and-cloudflare-dns/</a></li>
 </ul>
 
 
@@ -885,27 +831,6 @@ service libvirtd status
         
         </div> 
         
-<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "docs-planet-github-io" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
 
       </div>
 
@@ -934,6 +859,8 @@ service libvirtd status
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -950,9 +877,6 @@ service libvirtd status
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -960,22 +884,6 @@ service libvirtd status
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1057,28 +965,10 @@ service libvirtd status
             
         
                     
-            
-        
-                    
                         
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1091,13 +981,42 @@ service libvirtd status
             
         
                     
+            
+        
+                    
                         
             
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -1217,6 +1136,7 @@ service libvirtd status
             
                 
                     
+                    
                 
                 
 
@@ -1229,6 +1149,9 @@ service libvirtd status
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1246,6 +1169,7 @@ service libvirtd status
             
                 
                     
+                    
                 
                 
 
@@ -1261,6 +1185,9 @@ service libvirtd status
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1325,8 +1252,6 @@ service libvirtd status
     </script>
     
 
-
-    <script src="/js/asciinema-player.js"></script>
 
   </body>
 </html>

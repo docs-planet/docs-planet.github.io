@@ -18,7 +18,7 @@
       <guid>/tutorials/ansible/ansible-install/</guid>
       <description>Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Instalacão sudo apt update sudo apt install software-properties-common sudo apt-add-repository --yes --update ppa:ansible/ansible sudo apt install ansible Configuração Crie uma pasta para a configuração do Ansible e para colocar seus playbooks
 mkdir ~/ansible Crie um arquivo ~/.ansible.cfg
-cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; &amp;gt; ~/.ansible.cfg [defaults] inventory = ~/ansible/hosts roles_path = ~/ansible/roles host_key_checking = False [privilege_escalation] become=True become_method=sudo become_user=root EOF Testando ansible --version     Referências  https://docs.</description>
+cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; &amp;gt; ~/.ansible.cfg [defaults] inventory=~/ansible/hosts roles_path= ~/ansible/roles retry_files_enabled=False host_key_checking=False remote_user=centos [privilege_escalation] become=True become_method=sudo become_user=root EOF Testando ansible --version ansible-config view     Referências  https://docs.</description>
     </item>
     
     <item>
@@ -72,6 +72,16 @@ network: version: 2 ethernets: enp2s0:  dhcp4: yes dhcp6: no bridges: br0: inter
       <guid>/tutorials/kvm/kvm-provision/</guid>
       <description>Requisitos  KVM instalado Ubuntu 18.04 ou superior Usar uma conta com privilegios de root (sudo)  Instalação cd ~ git clone https://github.com/jenciso/kvm-provision Preparação Precisamos baixar uma imagem base para poder usar na criacação de VM&amp;rsquo;s. Usaremos a image Centos 7 ja preperada para trabalhar com cloud-init. Colocaremos esta imagem na pasta boot do libvirt. Execute o seguinte comando:
 sudo curl -fSL -C - http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2 \  -o /var/lib/libvirt/boot/CentOS-7-x86_64-GenericCloud.qcow2 Para poder executar alguns comandos do kvm, precisamos adicionar nosso usuario ao grupo libvirt, e para que os cambios sejam efetivados temos q sair da sessao e volver ingressar</description>
+    </item>
+    
+    <item>
+      <title>Instalando Windows 2012 sobre KVM</title>
+      <link>/tutorials/kvm/kvm-windows2012/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/kvm/kvm-windows2012/</guid>
+      <description>Instalacão Consiga uma imagem ISO do windows 2012 e copie ela na pasta do /var/lib/libvirt/images
+sudo mv Downloads/9600.17050.WINBLUE_REFRESH.140317-1640_X64FRE_SERVER_EVAL_EN-US-IR3_SSS_X64FREE_EN-US_DV9.ISO /var/lib/libvirt/images Logo execute virt-manager</description>
     </item>
     
   </channel>

@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.74.3" />
-    <meta name="description" content="Instalando KVM">
+    <meta name="description" content="Instalando windows 2012 sobre KVM">
 <meta name="author" content="Juan Enciso">
 
     <link rel="icon" href="/images/favicon.ico" type="image/png">
 
-    <title>KVM - Instalacão :: Docs Planet</title>
+    <title>Instalando Windows 2012 sobre KVM :: Docs Planet</title>
 
     
     <link href="/css/nucleus.css?1600138585" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tutorials/kvm/kvm-install/">
+  <body class="" data-url="/tutorials/kvm/kvm-windows2012/">
     <nav id="sidebar" class="">
 
 
@@ -320,7 +320,7 @@
  
   
     
-      <li data-nav-id="/tutorials/kvm/kvm-install/" title="KVM - Instalacão" class="dd-item active">
+      <li data-nav-id="/tutorials/kvm/kvm-install/" title="KVM - Instalacão" class="dd-item ">
         <a href="/tutorials/kvm/kvm-install/">
         KVM - Instalacão
         
@@ -383,7 +383,7 @@
  
   
     
-      <li data-nav-id="/tutorials/kvm/kvm-windows2012/" title="Instalando Windows 2012 sobre KVM" class="dd-item ">
+      <li data-nav-id="/tutorials/kvm/kvm-windows2012/" title="Instalando Windows 2012 sobre KVM" class="dd-item active">
         <a href="/tutorials/kvm/kvm-windows2012/">
         kVM - VM Win2012
         
@@ -706,7 +706,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/kvm/kvm-install.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/kvm/kvm-windows2012.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -741,7 +741,7 @@
             
           
           
-            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/kvm/'>KVM</a> > KVM - Instalacão
+            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/kvm/'>KVM</a> > Instalando Windows 2012 sobre KVM
           
         
           
@@ -758,15 +758,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#requisitos">Requisitos</a></li>
-    <li><a href="#procedimento">Procedimento</a>
-      <ul>
-        <li><a href="#passo-1-verificar">Passo 1: Verificar</a></li>
-        <li><a href="#passo-2-instalar-kvm">Passo 2: Instalar KVM</a></li>
-        <li><a href="#passo-3-start--enable-libvirtd-service">Passo 3: Start &amp; enable libvirtd service</a></li>
-      </ul>
-    </li>
-    <li><a href="#referências">Referências</a></li>
+    <li><a href="#instalacão">Instalacão</a></li>
   </ul>
 </nav>
     </div>
@@ -781,101 +773,18 @@
           
             <h1>
               
-              KVM - Instalacão
+              Instalando Windows 2012 sobre KVM
             </h1>
           
 
         
 
 
-<h2 id="requisitos">Requisitos</h2>
-<ul>
-<li>Ubuntu Linux 18.04 ou superior</li>
-</ul>
-<h2 id="procedimento">Procedimento</h2>
-<h3 id="passo-1-verificar">Passo 1: Verificar</h3>
-<p>Verificar se nosso sistema suporta hardware virtualization</p>
-<pre><code>egrep -c '(vmx|svm)' /proc/cpuinfo
-</code></pre><blockquote>
-<p>Se a saida é maior que zero, nosso sistema suporta virtualização. Esta tudo ok.</p>
-</blockquote>
-<p>Agora instalar <code>kvm-ok</code> para saber se o servidor pode rodar hardware accelerated KVM</p>
-<pre><code>sudo apt install cpu-checker
-sudo kvm-ok
-</code></pre><p>
-    <asciinema-player
-        src="/casts/kvm01.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="1.5"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h3 id="passo-2-instalar-kvm">Passo 2: Instalar KVM</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt update
-sudo apt install qemu qemu-kvm libvirt-bin  bridge-utils  virt-manager
-</code></pre></div><p>
-    <asciinema-player
-        src="/casts/kvm02.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="2"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h3 id="passo-3-start--enable-libvirtd-service">Passo 3: Start &amp; enable libvirtd service</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo service libvirtd start
-sudo update-rc.d libvirtd enable
-service libvirtd status
-</code></pre></div><p>
-    <asciinema-player
-        src="/casts/kvm03.cast"
-        cols="110"
-        rows="28"
-        
-        preload="1"
-        
-        start-at="0"
-        speed="2"
-        
-        poster="npt:0:01"
-        
-        theme="monokai"
-        
-        
-        
-        
-    ></asciinema-player>
-</p>
-
-<h2 id="referências">Referências</h2>
-<ul>
-<li><a href="https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/">https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/</a></li>
-</ul>
+<h2 id="instalacão">Instalacão</h2>
+<p>Consiga uma imagem ISO do <a href="https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2012-r2">windows 2012</a> e copie ela na pasta do <code>/var/lib/libvirt/images</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo mv Downloads/9600.17050.WINBLUE_REFRESH.140317-1640_X64FRE_SERVER_EVAL_EN-US-IR3_SSS_X64FREE_EN-US_DV9.ISO /var/lib/libvirt/images
+</code></pre></div><p>Logo execute <code>virt-manager</code></p>
+<p><img src="https://i.imgur.com/8fQvJmE.png" alt=""></p>
 
 
 <footer class="footline">
@@ -1079,23 +988,6 @@ service libvirtd status
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1142,6 +1034,23 @@ service libvirtd status
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1149,6 +1058,9 @@ service libvirtd status
             
             
                 
+                    
+                        
+                        
                     
                 
                 

@@ -43,6 +43,10 @@
   </url>
   
   <url>
+    <loc>/tutorials/kvm/kvm-bridge/</loc>
+  </url>
+  
+  <url>
     <loc>/artigos/</loc>
   </url>
   
@@ -52,8 +56,16 @@
   </url>
   
   <url>
+    <loc>/tutorials/kvm/kvm-provision/</loc>
+  </url>
+  
+  <url>
     <loc>/tutorials/git/git-part3/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/kvm/kvm-windows2012/</loc>
   </url>
   
   <url>
@@ -96,11 +108,23 @@
   </url>
   
   <url>
+    <loc>/tags/cloudflare/</loc>
+  </url>
+  
+  <url>
     <loc>/artigos/init-config/</loc>
   </url>
   
   <url>
     <loc>/credits/</loc>
+  </url>
+  
+  <url>
+    <loc>/artigos/wildcard-certificate-letsencrypt-cloudflare/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/dns/</loc>
   </url>
   
   <url>
@@ -128,14 +152,6 @@
   </url>
   
   <url>
-    <loc>/tutorials/kvm/kvm-bridge/</loc>
-  </url>
-  
-  <url>
-    <loc>/tutorials/kvm/kvm-provision/</loc>
-  </url>
-  
-  <url>
     <loc>/artigos/semversion/</loc>
   </url>
   
@@ -144,7 +160,15 @@
   </url>
   
   <url>
+    <loc>/tags/ssl/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/tutoriais/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/windows/</loc>
   </url>
   
   <url>
