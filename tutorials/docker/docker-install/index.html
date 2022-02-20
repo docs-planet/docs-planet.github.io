@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="description" content="Instalando Docker">
 <meta name="author" content="Juan Enciso">
 
@@ -12,22 +12,22 @@
     <title>Docker - Instalacão :: Docs Planet</title>
 
     
-    <link href="/css/nucleus.css?1600138585" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1600138585" rel="stylesheet">
-    <link href="/css/hybrid.css?1600138585" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1600138585" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1600138585" rel="stylesheet">
-    <link href="/css/auto-complete.css?1600138585" rel="stylesheet">
-    <link href="/css/theme.css?1600138585" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1600138585" rel="stylesheet">
+    <link href="/css/nucleus.css?1645387560" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1645387560" rel="stylesheet">
+    <link href="/css/hybrid.css?1645387560" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1645387560" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1645387560" rel="stylesheet">
+    <link href="/css/auto-complete.css?1645387560" rel="stylesheet">
+    <link href="/css/theme.css?1645387560" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1645387560" rel="stylesheet">
     
-    <link href="/css/theme-custom-docs.css?1600138585" rel="stylesheet">
+    <link href="/css/theme-custom-docs.css?1645387560" rel="stylesheet">
     
     
     
     <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
     
-    <script src="/js/jquery-3.3.1.min.js?1600138585"></script>
+    <script src="/js/jquery-3.3.1.min.js?1645387560"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times" style="color:#e2e2e2;"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1600138585"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1600138585"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1645387560"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1645387560"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1600138585"></script>
+<script type="text/javascript" src="/js/search.js?1645387560"></script>
 
     
   </div>
@@ -459,6 +459,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/ansible/ansible-webserver/" title="Apache Provision" class="dd-item ">
+        <a href="/tutorials/ansible/ansible-webserver/">
+        Apache Provision
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -602,6 +623,27 @@
       <li data-nav-id="/artigos/wildcard-certificate-letsencrypt-cloudflare/" title="Criando certificados wildcard Let&#39;s Encrypt" class="dd-item ">
         <a href="/artigos/wildcard-certificate-letsencrypt-cloudflare/">
         Wildcard Let&#39;s Encrypt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/artigos/gitlab-install/" title="Gitlab Install" class="dd-item ">
+        <a href="/artigos/gitlab-install/">
+        Gitlab Install
         
         </a>
     </li>
@@ -794,8 +836,8 @@
 </ul>
 <h2 id="procedimento">Procedimento</h2>
 <h3 id="instalando-docker">Instalando docker</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get remove docker docker-engine docker.io containerd runc
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get remove docker docker-engine docker.io containerd runc
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
 
 sudo apt-get install <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   apt-transport-https <span style="color:#ae81ff">\
@@ -803,14 +845,14 @@ sudo apt-get install <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   curl <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   gnupg-agent <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   software-properties-common
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo add-apt-repository <span style="color:#ae81ff">\
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo add-apt-repository <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   <span style="color:#e6db74">&#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
 </span><span style="color:#e6db74">   </span><span style="color:#66d9ef">$(</span>lsb_release -cs<span style="color:#66d9ef">)</span><span style="color:#e6db74"> \
 </span><span style="color:#e6db74">   stable&#34;</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo docker run hello-world
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo docker run hello-world
 </code></pre></div><hr>
 <p>
     <asciinema-player
@@ -835,7 +877,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 <hr>
 <h3 id="instalando-docker-compose">Instalando docker-compose</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.27.0/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.27.0/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  -o /usr/local/bin/docker-compose
 
 sudo chmod +x /usr/local/bin/docker-compose
@@ -844,7 +886,7 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 docker-compose --version
 </code></pre></div><p>Dando permissões para seu usuario rodar o comando docker</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo usermod -a -G docker <span style="color:#66d9ef">$(</span>id -nu<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo usermod -a -G docker <span style="color:#66d9ef">$(</span>id -nu<span style="color:#66d9ef">)</span>
 reboot
 </code></pre></div><h2 id="referências">Referências</h2>
 <ul>
@@ -1144,28 +1186,10 @@ reboot
             
         
                     
-            
-        
-                    
                         
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1181,6 +1205,40 @@ reboot
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
                     
@@ -1199,6 +1257,22 @@ reboot
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1282,19 +1356,19 @@ reboot
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1600138585"></script>
-    <script src="/js/perfect-scrollbar.min.js?1600138585"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1600138585"></script>
-    <script src="/js/jquery.sticky.js?1600138585"></script>
-    <script src="/js/featherlight.min.js?1600138585"></script>
-    <script src="/js/highlight.pack.js?1600138585"></script>
+    <script src="/js/clipboard.min.js?1645387560"></script>
+    <script src="/js/perfect-scrollbar.min.js?1645387560"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1645387560"></script>
+    <script src="/js/jquery.sticky.js?1645387560"></script>
+    <script src="/js/featherlight.min.js?1645387560"></script>
+    <script src="/js/highlight.pack.js?1645387560"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1600138585"></script>
-    <script src="/js/learn.js?1600138585"></script>
-    <script src="/js/hugo-learn.js?1600138585"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1645387560"></script>
+    <script src="/js/learn.js?1645387560"></script>
+    <script src="/js/hugo-learn.js?1645387560"></script>
 
-    <link href="/mermaid/mermaid.css?1600138585" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1600138585"></script>
+    <link href="/mermaid/mermaid.css?1645387560" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1645387560"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

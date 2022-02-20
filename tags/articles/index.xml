@@ -5,11 +5,7 @@
     <link>/tags/articles/</link>
     <description>Recent content in articles on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/tags/articles/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/tags/articles/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>📑 Links</title>
       <link>/links/</link>

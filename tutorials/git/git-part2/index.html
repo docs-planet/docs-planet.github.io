@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="description" content="Tutorial de GIT">
 <meta name="author" content="Juan Enciso">
 
@@ -12,22 +12,22 @@
     <title>Git (Parte 2) :: Docs Planet</title>
 
     
-    <link href="/css/nucleus.css?1600138585" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1600138585" rel="stylesheet">
-    <link href="/css/hybrid.css?1600138585" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1600138585" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1600138585" rel="stylesheet">
-    <link href="/css/auto-complete.css?1600138585" rel="stylesheet">
-    <link href="/css/theme.css?1600138585" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1600138585" rel="stylesheet">
+    <link href="/css/nucleus.css?1645387560" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1645387560" rel="stylesheet">
+    <link href="/css/hybrid.css?1645387560" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1645387560" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1645387560" rel="stylesheet">
+    <link href="/css/auto-complete.css?1645387560" rel="stylesheet">
+    <link href="/css/theme.css?1645387560" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1645387560" rel="stylesheet">
     
-    <link href="/css/theme-custom-docs.css?1600138585" rel="stylesheet">
+    <link href="/css/theme-custom-docs.css?1645387560" rel="stylesheet">
     
     
     
     <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
     
-    <script src="/js/jquery-3.3.1.min.js?1600138585"></script>
+    <script src="/js/jquery-3.3.1.min.js?1645387560"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times" style="color:#e2e2e2;"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1600138585"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1600138585"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1645387560"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1645387560"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1600138585"></script>
+<script type="text/javascript" src="/js/search.js?1645387560"></script>
 
     
   </div>
@@ -459,6 +459,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/ansible/ansible-webserver/" title="Apache Provision" class="dd-item ">
+        <a href="/tutorials/ansible/ansible-webserver/">
+        Apache Provision
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -602,6 +623,27 @@
       <li data-nav-id="/artigos/wildcard-certificate-letsencrypt-cloudflare/" title="Criando certificados wildcard Let&#39;s Encrypt" class="dd-item ">
         <a href="/artigos/wildcard-certificate-letsencrypt-cloudflare/">
         Wildcard Let&#39;s Encrypt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/artigos/gitlab-install/" title="Gitlab Install" class="dd-item ">
+        <a href="/artigos/gitlab-install/">
+        Gitlab Install
         
         </a>
     </li>
@@ -832,11 +874,11 @@
 <h2 id="14-descartando-mudanças-locais-antes-do-stage">14. Descartando mudanças locais (antes do stage)</h2>
 <h4 id="acessando-o-branch-master">Acessando o branch Master</h4>
 <p>Verifique que você esta no último commit do branch master antes de continuar.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout master
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout master
 </code></pre></div><h4 id="mude-o-hellohtml">Mude o hello.html</h4>
 <p>Acontece de você modificar o arquivo no seu diretório de trabalho local e às vezes querer descartar as mudanças que você fez commit. É aqui que o comando checkout vai te ajudar.</p>
 <p>Faça mudanças ao arquivo hello.html na forma de um comentário indesejado.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
@@ -845,7 +887,7 @@
 </span>  &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>Confira o status</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git status
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git status
 </code></pre></div><p>
     <asciinema-player
         src="/casts/git-basico18.cast"
@@ -868,7 +910,7 @@
 </p>
 
 <h4 id="desfazendo-as-mudanças-no-diretório-de-trabalho">Desfazendo as mudanças no diretório de trabalho</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat hello.html
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat hello.html
 git checkout hello.html
 git status
 cat hello.html
@@ -897,7 +939,7 @@ cat hello.html
 <h2 id="15-descartando-mudanças-no-stage-antes-do-commit">15. Descartando mudanças no stage (antes do commit)</h2>
 <h4 id="edite-o-arquivo-e-adicione-as-mudanças-ao-stage">Edite o arquivo e adicione as mudanças ao stage</h4>
 <p>Faça mudanças ao arquivo <code>hello.html</code> na forma de um comentário indesejado.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
 <span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#75715e">&lt;!-- This is an unwanted but staged comment --&gt;</span>
 </span>  &lt;/<span style="color:#f92672">head</span>&gt;
@@ -906,7 +948,7 @@ cat hello.html
   &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>E logo adicione o arquivo ao stage.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add hello.html
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add hello.html
 git status
 </code></pre></div><p>
     <asciinema-player
@@ -931,7 +973,7 @@ git status
 
 <h4 id="revertendo-a-zona-de-buffer">Revertendo a zona de buffer</h4>
 <p>Felizmente, o status informado nos mostra exatamente o que devemos fazer para cancelar mudanças no stage.</p>
-<pre><code>git reset HEAD hello.html
+<pre tabindex="0"><code>git reset HEAD hello.html
 </code></pre><p>
     <asciinema-player
         src="/casts/git-basico21.cast"
@@ -956,7 +998,7 @@ git status
 <p>O comando <code>reset</code> retorna a zona do buffer para HEAD. Isso limpa a zona do buffer das mudanças que nós acabamos de adicionar ao stage.</p>
 <p>O comando <code>reset</code> (padrão) não altera o diretório de trabalho. Logo, o diretório de trabalho ainda tem os comentários indesejados. Nós podemos usar o comando checkout do tutorial anterior para remover as mudanças do repositório de trabalho.</p>
 <h4 id="mudando-para-a-versão-do-commit">Mudando para a versão do commit</h4>
-<pre><code>git checkout hello.html
+<pre tabindex="0"><code>git checkout hello.html
 git status
 </code></pre><p>
     <asciinema-player
@@ -985,7 +1027,7 @@ git status
 <p>Para desfazer o commit, vamos criar um novo commit desfazendo as modificações não desejadas.</p>
 <h4 id="edite-o-arquivo-e-faça-um-commit">Edite o arquivo e faça um commit</h4>
 <p>Substitua o arquivo <code>hello.html</code> com o seguinte.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
@@ -993,11 +1035,11 @@ git status
 <span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#75715e">&lt;!-- This is an unwanted but committed change --&gt;</span>
 </span>  &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><pre><code>git add hello.html
+</code></pre></div><pre tabindex="0"><code>git add hello.html
 git commit -m &quot;Oops, we didn't want this commit&quot;
 </code></pre><h4 id="faça-um-commit-com-as-novas-modificações-que-desfazem-as-modificações-anteriores">Faça um commit com as novas modificações que desfazem as modificações anteriores</h4>
 <p>Para desfazer o commit, precisamos criar um commit que deleta as modificações feitas pelo commit indesejado.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git revert HEAD
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git revert HEAD
 </code></pre></div><p>
     <asciinema-player
         src="/casts/git-basico23.cast"
@@ -1021,7 +1063,7 @@ git commit -m &quot;Oops, we didn't want this commit&quot;
 
 <p>Voce tb poderia haver usado o comando <code>git revert HEAD --no-edit</code>. O comando <code>--no-edit</code> pode ser ignorado. Ele era desnecessário para gerar as informações de saída sem abrir o editor.</p>
 <h4 id="confira-o-log">Confira o log</h4>
-<pre><code>git hist
+<pre tabindex="0"><code>git hist
 </code></pre><p>
     <asciinema-player
         src="/casts/git-basico24.cast"
@@ -1056,7 +1098,7 @@ git commit -m &quot;Oops, we didn't want this commit&quot;
 <li>Opcionalmente resetar o dirétorio de trabalho para que ele equipare-se ao commit especificado</li>
 </ol>
 <h4 id="cheque-nosso-histórico">Cheque nosso histórico</h4>
-<pre><code>git hist
+<pre tabindex="0"><code>git hist
 </code></pre><p>
     <asciinema-player
         src="/casts/git-basico25.cast"
@@ -1081,10 +1123,10 @@ git commit -m &quot;Oops, we didn't want this commit&quot;
 <p>Nós vemos que os dois últimos commits desse branch são &ldquo;Oops&rdquo; and &ldquo;Revert Oops&rdquo;. Vamos removê-los com o comando reset.</p>
 <h4 id="marque-esse-branch-primeiro">Marque esse branch primeiro</h4>
 <p>Vamos marcar nosso último commit com tag, para que possamos achá-lo após remover commits.</p>
-<pre><code>git tag oops
+<pre tabindex="0"><code>git tag oops
 </code></pre><h4 id="resete-o-commit-para-o-oops-anterior">Resete o commit para o Oops anterior</h4>
 <p>No log de histórico (veja acima), o commit com tag «v1» está fazendo commit sobre um commit anterior incorreto. Vamos resetar o branch para aquele ponto. Como o branch tem uma tag, podemos usar o nome da tag no comando reset (se não possuir uma tag, podemos usar o valor hash).</p>
-<pre><code>git reset --hard v1
+<pre tabindex="0"><code>git reset --hard v1
 git hist
 </code></pre><p>
     <asciinema-player
@@ -1109,7 +1151,7 @@ git hist
 
 <h4 id="nada-é-perdido-para-sempre">Nada é perdido para sempre</h4>
 <p>O que acontece com os commits errados? Eles ainda estão no repositório. Na verdade, ainda podemos nos referir a eles. No início da lição, criamos a tag «oops» para o commit cancelado. Vamos dar uma olhada em all (todos) commits.</p>
-<pre><code>git hist --all
+<pre tabindex="0"><code>git hist --all
 </code></pre><p>
     <asciinema-player
         src="/casts/git-basico27.cast"
@@ -1137,7 +1179,7 @@ git hist
 <p>Apesar disso, outros usuários que compartilham o branch podem ficar confusos se o branch compartilhado fica armazenado em repositórios remotos.</p>
 <h2 id="18-removendo-a-tag-oops">18. Removendo a tag oops</h2>
 <p>A tag oops já fez o seu trabalho. Vamos removê-la e permitir que o garbage collector delete o commit referenciado.</p>
-<pre><code>git tag -d oops
+<pre tabindex="0"><code>git tag -d oops
 git hist --all
 </code></pre><p>
     <asciinema-player
@@ -1163,7 +1205,7 @@ git hist --all
 <h2 id="19-mudando-commits">19. Mudando commits</h2>
 <h4 id="mude-a-página-e-faça-um-commit">Mude a página e faça um commit</h4>
 <p>Coloque um comentário de autor na página.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">&lt;!-- Author: Juan Enciso --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">&lt;!-- Author: Juan Enciso --&gt;</span>
 </span>&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
@@ -1171,11 +1213,11 @@ git hist --all
     &lt;<span style="color:#f92672">h1</span>&gt;Hello, World!&lt;/<span style="color:#f92672">h1</span>&gt;
   &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><pre><code>git add hello.html
+</code></pre></div><pre tabindex="0"><code>git add hello.html
 git commit -m &quot;Add an author comment&quot;
 </code></pre><h4 id="oops-precisa-do-e-mail">Oops&hellip; precisa do e-mail</h4>
 <p>Depois de fazer o commit, você percebe que todo bom comentário deveria incluir o e-mail do autor. Edite a página hello para fornecer um e-mail.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">&lt;!-- Author: Juan Enciso (juan.enciso@gmail.com) --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">&lt;!-- Author: Juan Enciso (juan.enciso@gmail.com) --&gt;</span>
 </span>&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
@@ -1185,7 +1227,7 @@ git commit -m &quot;Add an author comment&quot;
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><h4 id="mude-o-commit-anterior">Mude o commit anterior</h4>
 <p>Nós não queremos criar outro commit apenas para o e-mail. Vamos mudar o commit anterior e adicionar o endereço de e-mail.</p>
-<pre><code>git add hello.html
+<pre tabindex="0"><code>git add hello.html
 git commit --amend -m &quot;Add an author/email comment&quot;
 </code></pre><p>
     <asciinema-player
@@ -1209,7 +1251,7 @@ git commit --amend -m &quot;Add an author/email comment&quot;
 </p>
 
 <h4 id="olhar-o-histórico">Olhar o histórico</h4>
-<pre><code>git hist
+<pre tabindex="0"><code>git hist
 </code></pre><p>
     <asciinema-player
         src="/casts/git-basico30.cast"
@@ -1235,7 +1277,7 @@ git commit --amend -m &quot;Add an author/email comment&quot;
 <h2 id="20-movendo-arquivos">20. Movendo arquivos</h2>
 <h4 id="mova-o-arquivo-hellohtml-para-a-pasta-lib">Mova o arquivo hello.html para a pasta lib.</h4>
 <p>Agora criaremos a estrutura do nosso repositório. Vamos mover a página no diretório lib</p>
-<pre><code>mkdir lib
+<pre tabindex="0"><code>mkdir lib
 git mv hello.html lib
 git status
 </code></pre><p>Movendo arquivos com git, nós notificamos o git sobre duas coisas</p>
@@ -1248,13 +1290,13 @@ git status
 <p>Um fato positivo sobre o git é que você não precisa se lembrar de controle de versão no momento em que você faz o commit do código. O que poderia acontecer se nós estivéssemos usando a linha de comando do sistema operacional ao invés do comando git para mover arquivos?</p>
 <p>O próximo set de comandos é idêntico às nossas últimas ações. É necessário mais trabalho para o mesmo resultado.</p>
 <p>Nós podemos fazer:</p>
-<pre><code>mkdir lib
+<pre tabindex="0"><code>mkdir lib
 mv hello.html lib
 git add lib/hello.html
 git rm hello.html
 </code></pre><h4 id="faça-commit-do-novo-diretório">Faça commit do novo diretório</h4>
 <p>Vamos fazer commit dessa mudança.</p>
-<pre><code>git commit -m &quot;Moved hello.html to lib&quot;
+<pre tabindex="0"><code>git commit -m &quot;Moved hello.html to lib&quot;
 </code></pre><p>
     <asciinema-player
         src="/casts/git-basico31.cast"
@@ -1279,13 +1321,13 @@ git rm hello.html
 <h2 id="21-mais-informação-sobre-a-estrutura">21. Mais informação sobre a estrutura</h2>
 <h4 id="adicionando-indexhtml">Adicionando index.html</h4>
 <p>Vamos adicionar um arquivo <code>index.html</code> ao nosso repositório. O arquivo a seguir é perfeito para esse propósito.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
     &lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lib/hello.html&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span> /&gt;
   &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>Adicione o arquivo e faça um commit.</p>
-<pre><code>git add index.html
+<pre tabindex="0"><code>git add index.html
 git commit -m &quot;Added index.html.&quot;
 </code></pre><p>Agora quando você abrir <code>index.html</code>, você deverá ver uma parte da página hello em uma pequena janela.</p>
 <p>
@@ -1309,7 +1351,7 @@ git commit -m &quot;Added index.html.&quot;
     ></asciinema-player>
 </p>
 
-<pre><code>firefox index.html
+<pre tabindex="0"><code>firefox index.html
 </code></pre><p><img src="https://i.imgur.com/FHxL1jk.png" alt=""></p>
 <h2 id="22-dentro-do-git-diretório-git">22. Dentro do Git: diretório .git</h2>
 <h4 id="o-diretório-git">O diretório .git</h4>
@@ -1336,7 +1378,7 @@ git commit -m &quot;Added index.html.&quot;
 </p>
 
 <h4 id="banco-de-dados-de-objetos">Banco de Dados de Objetos</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ls -C .git/objects/&lt;dir&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ls -C .git/objects/&lt;dir&gt;
 </code></pre></div><p>Você deve ver várias pastas nomeadas com dois caracteres. As duas primeiras letras do hash sha1 do objeto armazenado no git são o nome dos seus diretórios.</p>
 <p>Vamos dar uma olhada em uma das pastas nomeadas com dois caracteres. Devem ter arquivos com nomes de 38 caracteres. Esses arquivos contém os objetos armazenados no git. Eles são comprimidos e encriptados, então é impossível ver seu conteúdo diretamente. Vamos dar uma olhada melhor no diretório Git.</p>
 <p>
@@ -1361,7 +1403,7 @@ git commit -m &quot;Added index.html.&quot;
 </p>
 
 <h4 id="arquivo-config">Arquivo Config</h4>
-<pre><code>cat .git/config
+<pre tabindex="0"><code>cat .git/config
 </code></pre><p>
     <asciinema-player
         src="/casts/git-basico35.cast"
@@ -1384,7 +1426,7 @@ git commit -m &quot;Added index.html.&quot;
 </p>
 
 <h4 id="branches-e-tags">Branches e tags</h4>
-<pre><code>ls .git/refs
+<pre tabindex="0"><code>ls .git/refs
 ls .git/refs/heads
 ls .git/refs/tags
 cat .git/refs/tags/v1
@@ -1412,7 +1454,7 @@ cat .git/refs/tags/v1
 <p>Arquivos no subdiretório de tags devem ser familiares pra você. Cada arquivo corresponde a tag anteriormente criada usando o comando git tag. Seu conteúdo não é nada mais que um hash de um commit associado à tag.</p>
 <p>A pasta heads é quase idêntica e é usada não para tags, mas para branches. No momento, nós só temos um branch e tudo que você vê nessa pasta é um branch master.</p>
 <h4 id="arquivo-head">Arquivo HEAD</h4>
-<pre><code>cat .git/HEAD
+<pre tabindex="0"><code>cat .git/HEAD
 </code></pre><p>
     <asciinema-player
         src="/casts/git-basico37.cast"
@@ -1437,7 +1479,7 @@ cat .git/refs/tags/v1
 <p>Existe uma referência para o branch atual no arquivo HEAD. Nesse momento, ela tem que ser para o branch master.</p>
 <h2 id="23-dentro-do-git-trabalhando-diretamente-com-objetos-do-git">23. Dentro do Git: Trabalhando diretamente com objetos do git</h2>
 <h4 id="procurando-pelo-último-commit">Procurando pelo último commit</h4>
-<pre><code>git hist --max-count=1
+<pre tabindex="0"><code>git hist --max-count=1
 </code></pre><p>
     <asciinema-player
         src="/casts/git-basico38.cast"
@@ -1461,7 +1503,7 @@ cat .git/refs/tags/v1
 
 <h4 id="exibição-do-último-commit">Exibição do último commit</h4>
 <p>Com a hash SHA1, tal como acima&hellip;</p>
-<pre><code>git cat-file -t &lt;hash&gt;
+<pre tabindex="0"><code>git cat-file -t &lt;hash&gt;
 git cat-file -p &lt;hash&gt;
 </code></pre><p>
     <asciinema-player
@@ -1486,7 +1528,7 @@ git cat-file -p &lt;hash&gt;
 
 <h4 id="busca-em-árvore">Busca em árvore</h4>
 <p>Nós podemos exibir a árvore referenciada no commit. Isso deveria ser uma descrição do arquivo no nosso projeto (para um commit específico). Use a hash SHA1 da string da árvore listada acima.</p>
-<pre><code>git cat-file -p &lt;treehash&gt;
+<pre tabindex="0"><code>git cat-file -p &lt;treehash&gt;
 </code></pre><p>
     <asciinema-player
         src="/casts/git-basico40.cast"
@@ -1509,7 +1551,7 @@ git cat-file -p &lt;hash&gt;
 </p>
 
 <h4 id="exibir-diretório-da-lib-e-exibir-o-arquivo-hellohtml">Exibir diretório da lib e Exibir o arquivo hello.html</h4>
-<pre><code>git cat-file -p &lt;libhash&gt;
+<pre tabindex="0"><code>git cat-file -p &lt;libhash&gt;
 git cat-file -p &lt;hellohash&gt;
 </code></pre><p>
     <asciinema-player
@@ -1815,6 +1857,22 @@ git cat-file -p &lt;hellohash&gt;
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1865,6 +1923,22 @@ git cat-file -p &lt;hellohash&gt;
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1948,19 +2022,19 @@ git cat-file -p &lt;hellohash&gt;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1600138585"></script>
-    <script src="/js/perfect-scrollbar.min.js?1600138585"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1600138585"></script>
-    <script src="/js/jquery.sticky.js?1600138585"></script>
-    <script src="/js/featherlight.min.js?1600138585"></script>
-    <script src="/js/highlight.pack.js?1600138585"></script>
+    <script src="/js/clipboard.min.js?1645387560"></script>
+    <script src="/js/perfect-scrollbar.min.js?1645387560"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1645387560"></script>
+    <script src="/js/jquery.sticky.js?1645387560"></script>
+    <script src="/js/featherlight.min.js?1645387560"></script>
+    <script src="/js/highlight.pack.js?1645387560"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1600138585"></script>
-    <script src="/js/learn.js?1600138585"></script>
-    <script src="/js/hugo-learn.js?1600138585"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1645387560"></script>
+    <script src="/js/learn.js?1645387560"></script>
+    <script src="/js/hugo-learn.js?1645387560"></script>
 
-    <link href="/mermaid/mermaid.css?1600138585" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1600138585"></script>
+    <link href="/mermaid/mermaid.css?1645387560" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1645387560"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -5,11 +5,7 @@
     <link>/artigos/</link>
     <description>Recent content in ✍ Artigos on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/artigos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/artigos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configurações iniciais</title>
       <link>/artigos/init-config/</link>
@@ -26,8 +22,23 @@ echo &amp;quot;`whoami` ALL=(ALL) NOPASSWD:ALL&amp;quot; | sudo tee /etc/sudoers
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/artigos/wildcard-certificate-letsencrypt-cloudflare/</guid>
-      <description>Steps 1. Obter as credenciais do Cloudflare API Pegar o Global API Key:
-2. Salvando as credenciais sudo mkdir -p /root/.secrets cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; | sudo tee /root/.secrets/cloudflare.ini dns_cloudflare_email = &amp;#34;youremail@example.com&amp;#34; dns_cloudflare_api_key = &amp;#34;4003c330b45f4fbcab420eaf66b49c5cbcab4&amp;#34; EOF 3. Instalando certbot e cloudflare DNS authenticator plugin sudo apt-get update sudo apt-get install software-properties-common sudo add-apt-repository universe sudo add-apt-repository ppa:certbot/certbot sudo apt-get update sudo apt-get install certbot python-certbot-nginx python3-certbot-dns-cloudflare 4. Rodar o Certbot com o cloudflare authenticator sudo certbot certonly \  --dns-cloudflare \  --dns-cloudflare-credentials /root/.</description>
+      <description>Steps Prerequisites:
+ Ubuntu 20.04  1. Obter as credenciais do Cloudflare API Pegar o Global API Key:
+2. Salvando as credenciais sudo mkdir -p /root/.secrets cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; | sudo tee /root/.secrets/cloudflare.ini dns_cloudflare_email = &amp;#34;youremail@example.com&amp;#34; dns_cloudflare_api_key = &amp;#34;4003c330b45f4fbcab420eaf66b49c5cbcab4&amp;#34; EOF 3. Instalando certbot e cloudflare DNS authenticator plugin sudo apt-get update sudo apt-get install software-properties-common sudo add-apt-repository universe sudo apt-get update sudo apt-get install certbot python3-certbot-dns-cloudflare 4. Rodar o Certbot com o cloudflare authenticator sudo certbot certonly \  --dns-cloudflare \  --dns-cloudflare-credentials /root/.</description>
+    </item>
+    
+    <item>
+      <title>Gitlab Install</title>
+      <link>/artigos/gitlab-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/artigos/gitlab-install/</guid>
+      <description>Intro Como Instalar Gitlab
+Instalacão Provisionar um servidor com 4GB RAM
+cd kvm-provision ./new-vm.sh -n gitlab -m 4096 -c 2 -i 192.168.122.41 Acessar ao servidor
+ssh centos@192.168.122.41 Instalar os pacotes necessarios
+sudo yum install -y curl policycoreutils-python openssh-server openssh-clients firewalld sudo systemctl enable sshd sudo systemctl start sshd Habilitar o firewalld
+sudo systemctl start firewalld sudo firewall-cmd --permanent --add-service=http sudo firewall-cmd --permanent --add-service=https sudo systemctl reload firewalld Adicionar o repo</description>
     </item>
     
     <item>

@@ -1,178 +1,102 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/tutorials/git/</loc>
     <lastmod>2020-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/git/git-basico/</loc>
     <lastmod>2020-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/ansible/ansible-install/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/docker/docker-install/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/git/git-bash-prompt/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/kvm/kvm-install/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/</loc>
     <lastmod>2020-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/git/git-part1/</loc>
     <lastmod>2020-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/kvm/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/kvm/kvm-bridge/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/artigos/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/git/git-part2/</loc>
     <lastmod>2020-08-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/kvm/kvm-provision/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/git/git-part3/</loc>
     <lastmod>2020-08-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/kvm/kvm-windows2012/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/</loc>
     <lastmod>2020-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/git/</loc>
     <lastmod>2020-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/</loc>
     <lastmod>2020-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/ansible/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/ansible/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/tutorials/ansible/ansible-webserver/</loc>
+  </url><url>
     <loc>/tags/articles/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/artigos/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/bash/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/cloudflare/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/artigos/init-config/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/credits/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/artigos/wildcard-certificate-letsencrypt-cloudflare/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/dns/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/docker/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/docker/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tutorials/git/gitflow/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/gitflow/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/tags/gitlab/</loc>
+  </url><url>
+    <loc>/artigos/gitlab-install/</loc>
+  </url><url>
     <loc>/tags/init/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/kvm/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/artigos/semversion/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/semversion/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/ssl/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/tutoriais/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/tags/windows/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/links/</loc>
   </url>
-  
 </urlset>

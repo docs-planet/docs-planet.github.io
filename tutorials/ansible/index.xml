@@ -5,11 +5,7 @@
     <link>/tutorials/ansible/</link>
     <description>Recent content in Ansible on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/tutorials/ansible/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/tutorials/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible - Instalacão</title>
       <link>/tutorials/ansible/ansible-install/</link>
@@ -19,6 +15,16 @@
       <description>Requisitos  Ubuntu Linux 18.04 ou superior  Procedimento Instalacão sudo apt update sudo apt install software-properties-common sudo apt-add-repository --yes --update ppa:ansible/ansible sudo apt install ansible Configuração Crie uma pasta para a configuração do Ansible e para colocar seus playbooks
 mkdir ~/ansible Crie um arquivo ~/.ansible.cfg
 cat &amp;lt;&amp;lt; &amp;#39;EOF&amp;#39; &amp;gt; ~/.ansible.cfg [defaults] inventory=~/ansible/hosts roles_path= ~/ansible/roles retry_files_enabled=False host_key_checking=False remote_user=centos [privilege_escalation] become=True become_method=sudo become_user=root EOF Testando ansible --version ansible-config view     Referências  https://docs.</description>
+    </item>
+    
+    <item>
+      <title>Apache Provision</title>
+      <link>/tutorials/ansible/ansible-webserver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/ansible/ansible-webserver/</guid>
+      <description>Intro Este tutorial tem o seguinte desafio
+ Criar 2 VMs e fazer o deploy do apache web server via um playbook ansible. Colocar um arquivo index.html no diretorio /var/www/html em cada servidor. Este arquivo ira conter o necessario para mostrar a mensagem: &amp;ldquo;Olá Mundo&amp;rdquo;. Obtenha a IP address de cada servidor e o nome da interface de rede associada. Criar uma VM adicional e coloque ela num grupo diferente chamado &amp;ldquo;hlg&amp;rdquo;, as anteriores VMs irao estar no grupo prd.</description>
     </item>
     
   </channel>

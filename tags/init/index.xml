@@ -5,11 +5,7 @@
     <link>/tags/init/</link>
     <description>Recent content in init on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/tags/init/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/tags/init/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configurações iniciais</title>
       <link>/artigos/init-config/</link>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="generator" content="Hugo 0.88.1" />
     <meta name="description" content="Instalando um git-bash-prompt para melhorar nossa visibilidade no git">
 <meta name="author" content="Juan Enciso">
 
@@ -12,22 +12,22 @@
     <title>Git Bash Prompt :: Docs Planet</title>
 
     
-    <link href="/css/nucleus.css?1600138585" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1600138585" rel="stylesheet">
-    <link href="/css/hybrid.css?1600138585" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1600138585" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1600138585" rel="stylesheet">
-    <link href="/css/auto-complete.css?1600138585" rel="stylesheet">
-    <link href="/css/theme.css?1600138585" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1600138585" rel="stylesheet">
+    <link href="/css/nucleus.css?1645387560" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1645387560" rel="stylesheet">
+    <link href="/css/hybrid.css?1645387560" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1645387560" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1645387560" rel="stylesheet">
+    <link href="/css/auto-complete.css?1645387560" rel="stylesheet">
+    <link href="/css/theme.css?1645387560" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1645387560" rel="stylesheet">
     
-    <link href="/css/theme-custom-docs.css?1600138585" rel="stylesheet">
+    <link href="/css/theme-custom-docs.css?1645387560" rel="stylesheet">
     
     
     
     <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
     
-    <script src="/js/jquery-3.3.1.min.js?1600138585"></script>
+    <script src="/js/jquery-3.3.1.min.js?1645387560"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times" style="color:#e2e2e2;"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1600138585"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1600138585"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1645387560"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1645387560"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1600138585"></script>
+<script type="text/javascript" src="/js/search.js?1645387560"></script>
 
     
   </div>
@@ -459,6 +459,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tutorials/ansible/ansible-webserver/" title="Apache Provision" class="dd-item ">
+        <a href="/tutorials/ansible/ansible-webserver/">
+        Apache Provision
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -602,6 +623,27 @@
       <li data-nav-id="/artigos/wildcard-certificate-letsencrypt-cloudflare/" title="Criando certificados wildcard Let&#39;s Encrypt" class="dd-item ">
         <a href="/artigos/wildcard-certificate-letsencrypt-cloudflare/">
         Wildcard Let&#39;s Encrypt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/artigos/gitlab-install/" title="Gitlab Install" class="dd-item ">
+        <a href="/artigos/gitlab-install/">
+        Gitlab Install
         
         </a>
     </li>
@@ -787,10 +829,10 @@
 <p>Para ter uma melhor visibilidade do que passa em nossos projetos que estão versionados quando estamos trabalhando de forma local, podemos usar ferramentas como é o caso de <a href="https://github.com/magicmonty/bash-git-prompt">git-bash-prompt</a></p>
 <h2 id="instalação">Instalação</h2>
 <p>Baixar o repositorio contendo o software</p>
-<pre><code class="language-console" data-lang="console">cd ~
+<pre tabindex="0"><code class="language-console" data-lang="console">cd ~
 git clone https://github.com/jenciso/bash-git-prompt.git .bash-git-prompt --depth=1
 </code></pre><p>Adicionar algumas linhas dentro do arquivo <code>.bashrc</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">GIT_PROMPT_ONLY_IN_REPO<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">GIT_PROMPT_ONLY_IN_REPO<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
 GIT_PROMPT_THEME<span style="color:#f92672">=</span>Single_line_Minimalist
 source ~/.bash-git-prompt/gitprompt.sh
 </code></pre></div><hr>
@@ -817,7 +859,7 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 <h2 id="testando">Testando</h2>
 <p>Baixar qualquer repositorio git. Ex: <a href="https://github.com/jenciso/node-express-azure">https://github.com/jenciso/node-express-azure</a> e fazemos uma simples modificação</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/jenciso/node-express-azure
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/jenciso/node-express-azure
 cd node-express-azure
 rm README.md
 </code></pre></div><p>Agora podemos ver que estamos na branch <code>master</code> e o shell nos indica que temos um cambio em nosso repositorio.</p>
@@ -1141,6 +1183,22 @@ rm README.md
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1191,6 +1249,22 @@ rm README.md
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1274,19 +1348,19 @@ rm README.md
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1600138585"></script>
-    <script src="/js/perfect-scrollbar.min.js?1600138585"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1600138585"></script>
-    <script src="/js/jquery.sticky.js?1600138585"></script>
-    <script src="/js/featherlight.min.js?1600138585"></script>
-    <script src="/js/highlight.pack.js?1600138585"></script>
+    <script src="/js/clipboard.min.js?1645387560"></script>
+    <script src="/js/perfect-scrollbar.min.js?1645387560"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1645387560"></script>
+    <script src="/js/jquery.sticky.js?1645387560"></script>
+    <script src="/js/featherlight.min.js?1645387560"></script>
+    <script src="/js/highlight.pack.js?1645387560"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1600138585"></script>
-    <script src="/js/learn.js?1600138585"></script>
-    <script src="/js/hugo-learn.js?1600138585"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1645387560"></script>
+    <script src="/js/learn.js?1645387560"></script>
+    <script src="/js/hugo-learn.js?1645387560"></script>
 
-    <link href="/mermaid/mermaid.css?1600138585" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1600138585"></script>
+    <link href="/mermaid/mermaid.css?1645387560" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1645387560"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

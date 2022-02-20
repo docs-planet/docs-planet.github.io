@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gitlab on Docs Planet</title>
+    <link>/tags/gitlab/</link>
+    <description>Recent content in gitlab on Docs Planet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gitlab Install</title>
+      <link>/artigos/gitlab-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/artigos/gitlab-install/</guid>
+      <description>Intro Como Instalar Gitlab
+Instalacão Provisionar um servidor com 4GB RAM
+cd kvm-provision ./new-vm.sh -n gitlab -m 4096 -c 2 -i 192.168.122.41 Acessar ao servidor
+ssh centos@192.168.122.41 Instalar os pacotes necessarios
+sudo yum install -y curl policycoreutils-python openssh-server openssh-clients firewalld sudo systemctl enable sshd sudo systemctl start sshd Habilitar o firewalld
+sudo systemctl start firewalld sudo firewall-cmd --permanent --add-service=http sudo firewall-cmd --permanent --add-service=https sudo systemctl reload firewalld Adicionar o repo</description>
+    </item>
+    
+  </channel>
+</rss>

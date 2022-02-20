@@ -5,11 +5,7 @@
     <link>/tags/ansible/</link>
     <description>Recent content in ansible on Docs Planet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible</title>
       <link>/tutorials/ansible/</link>
@@ -17,6 +13,16 @@
       
       <guid>/tutorials/ansible/</guid>
       <description>Ansible </description>
+    </item>
+    
+    <item>
+      <title>Apache Provision</title>
+      <link>/tutorials/ansible/ansible-webserver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tutorials/ansible/ansible-webserver/</guid>
+      <description>Intro Este tutorial tem o seguinte desafio
+ Criar 2 VMs e fazer o deploy do apache web server via um playbook ansible. Colocar um arquivo index.html no diretorio /var/www/html em cada servidor. Este arquivo ira conter o necessario para mostrar a mensagem: &amp;ldquo;Olá Mundo&amp;rdquo;. Obtenha a IP address de cada servidor e o nome da interface de rede associada. Criar uma VM adicional e coloque ela num grupo diferente chamado &amp;ldquo;hlg&amp;rdquo;, as anteriores VMs irao estar no grupo prd.</description>
     </item>
     
   </channel>

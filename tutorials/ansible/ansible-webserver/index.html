@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.88.1" />
-    <meta name="description" content="Tutoriais diversos">
+    <meta name="description" content="Provisionamente de servidor web apache via ansible">
 <meta name="author" content="Juan Enciso">
 
     <link rel="icon" href="/images/favicon.ico" type="image/png">
 
-    <title>💻 Tutoriais :: Docs Planet</title>
+    <title>Apache Provision :: Docs Planet</title>
 
     
     <link href="/css/nucleus.css?1645387560" rel="stylesheet">
@@ -39,7 +39,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tutorials/">
+  <body class="" data-url="/tutorials/ansible/ansible-webserver/">
     <nav id="sidebar" class="">
 
 
@@ -87,7 +87,7 @@
     
     <li data-nav-id="/tutorials/" title="💻 Tutoriais" class="dd-item 
         parent
-        active
+        
         
         ">
       <a href="/tutorials/">
@@ -414,7 +414,7 @@
     
     
     <li data-nav-id="/tutorials/ansible/" title="Ansible" class="dd-item 
-        
+        parent
         
         
         ">
@@ -422,7 +422,7 @@
           Ansible
           
             
-              <i class="fas fa-caret-right"></i>
+              <i class="fas fa-caret-down"></i>
             
           
           
@@ -466,7 +466,7 @@
  
   
     
-      <li data-nav-id="/tutorials/ansible/ansible-webserver/" title="Apache Provision" class="dd-item ">
+      <li data-nav-id="/tutorials/ansible/ansible-webserver/" title="Apache Provision" class="dd-item active">
         <a href="/tutorials/ansible/ansible-webserver/">
         Apache Provision
         
@@ -746,7 +746,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/ansible/ansible-webserver.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -761,6 +761,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -771,7 +773,19 @@
             
           
           
-            <a href='/'>Docs Planet</a> > 💻 Tutoriais
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Docs Planet</a> > <a href='/tutorials/'>💻 Tutoriais</a> > <a href='/tutorials/ansible/'>Ansible</a> > Apache Provision
+          
+        
+          
+        
           
         
           
@@ -780,33 +794,146 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a>
+      <ul>
+        <li><a href="#provision">Provision</a></li>
+        <li><a href="#playbook">Playbook</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Apache Provision
+            </h1>
           
 
         
 
 
+<h2 id="intro">Intro</h2>
+<p>Este tutorial tem o seguinte desafio</p>
+<ul>
+<li>Criar 2 VMs e fazer o deploy do apache web server via um playbook ansible.</li>
+<li>Colocar um arquivo index.html no diretorio /var/www/html em cada servidor. Este arquivo ira conter o necessario para mostrar a mensagem: &ldquo;Olá Mundo&rdquo;.</li>
+<li>Obtenha a IP address de cada servidor e o nome da interface de rede associada.</li>
+<li>Criar uma VM adicional e coloque ela num grupo diferente chamado &ldquo;hlg&rdquo;, as anteriores VMs irao estar no grupo prd.</li>
+<li>Mude o playbook para agora mostrar a mensagem: &ldquo;Olá Mundo - $ambiente&rdquo;. Aonde $ambiente ira variar de acordo ao grupo de servidor.</li>
+</ul>
+<h3 id="provision">Provision</h3>
+<p>Criando VMs para o ambiente de PRD</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">./new-vm.sh -n web-prd01 -m <span style="color:#ae81ff">1024</span> -c <span style="color:#ae81ff">2</span> -i 192.168.122.21
+./new-vm.sh -n web-prd02 -m <span style="color:#ae81ff">1024</span> -c <span style="color:#ae81ff">2</span> -i 192.168.122.22
+</code></pre></div><h3 id="playbook">Playbook</h3>
+<p>Criando o inventory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#66d9ef">[webservers]</span>
+<span style="color:#a6e22e">192.168.122.21</span>
+<span style="color:#a6e22e">192.168.122.22</span>
+</code></pre></div><p>Criando a primeira versao do playbook</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install and start apache</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">web</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
 
-	<h1 id="tutoriais">Tutoriais</h1>
-<p><img src="https://como-funciona.com/wp-content/uploads/2019/01/c%C3%B3mo-funciona-un-tutorial.jpg?width=700px" alt=""></p>
-<p>Os tutoriais foram classificados por tópicos. Todos eles tem como objetivo ser simples e bem praticos.</p>
+  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd package is present</span>
+      <span style="color:#f92672">yum</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</code></pre></div><p>Rodando o playbook</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ansible-playbook  site.yml -i inventory
+</code></pre></div><p>Criando a segunda versao:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install and start apache</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">web</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+
+  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd package is present</span>
+      <span style="color:#f92672">yum</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">latest index.html file is present</span>
+      <span style="color:#f92672">template</span>:
+        <span style="color:#f92672">src</span>: <span style="color:#ae81ff">files/index.html</span>
+        <span style="color:#f92672">dest</span>: <span style="color:#ae81ff">/var/www/html/</span>
+</code></pre></div><p>Rodando o playbook</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ansible-playbook  site.yml -i inventory
+</code></pre></div><p>Criando a terceira versao:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install and start apache</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">web</span>
+  <span style="color:#f92672">become</span>: <span style="color:#66d9ef">yes</span>
+
+  <span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd package is present</span>
+      <span style="color:#f92672">yum</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">latest index.html file is present</span>
+      <span style="color:#f92672">template</span>:
+        <span style="color:#f92672">src</span>: <span style="color:#ae81ff">files/index.html</span>
+        <span style="color:#f92672">dest</span>: <span style="color:#ae81ff">/var/www/html/</span>
+
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd | started</span>
+      <span style="color:#f92672">service</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">httpd</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">started</span>
+</code></pre></div><p>Rodando o playbook</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ansible-playbook  site.yml -i inventory
+</code></pre></div><p>Criando a VM para o ambiente de HLG</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">./new-vm.sh -n web-hlg01 -m <span style="color:#ae81ff">1024</span> -c <span style="color:#ae81ff">2</span> -i 192.168.122.23
+</code></pre></div><p>Modificando o esquema</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ tree
+.
+├── group_vars
+│   ├── all
+│   │   └── main.yml
+│   ├── hlg
+│   │   └── main.yml
+│   └── prd
+│       └── main.yml
+├── inventory
+├── README.md
+├── roles
+│   └── apache
+│       ├── tasks
+│       │   └── main.yml
+│       └── templates
+│           └── index.html
+└── site.yml
+
+<span style="color:#ae81ff">8</span> directories, <span style="color:#ae81ff">8</span> files
+</code></pre></div><p>Arquivo index.html</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;
+  Ola Mundo - {{ ambiente }}
+&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>Projeto final: <a href="https://github.com/jenciso/ansible-apache.git">https://github.com/jenciso/ansible-apache.git</a></p>
 
 
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1049,6 +1176,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1061,6 +1189,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1078,6 +1209,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1096,6 +1228,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1259,3 +1394,4 @@
 
   </body>
 </html>
+

@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.88.1" />
-    <meta name="description" content="Tutoriais diversos">
+    <meta name="description" content="Formas de instalar Gitlab CE">
 <meta name="author" content="Juan Enciso">
 
     <link rel="icon" href="/images/favicon.ico" type="image/png">
 
-    <title>💻 Tutoriais :: Docs Planet</title>
+    <title>Gitlab Install :: Docs Planet</title>
 
     
     <link href="/css/nucleus.css?1645387560" rel="stylesheet">
@@ -39,7 +39,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tutorials/">
+  <body class="" data-url="/artigos/gitlab-install/">
     <nav id="sidebar" class="">
 
 
@@ -86,8 +86,8 @@
     
     
     <li data-nav-id="/tutorials/" title="💻 Tutoriais" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/tutorials/">
@@ -570,7 +570,7 @@
     
     
     <li data-nav-id="/artigos/" title="✍ Artigos" class="dd-item 
-        
+        parent
         
         
         ">
@@ -639,7 +639,7 @@
  
   
     
-      <li data-nav-id="/artigos/gitlab-install/" title="Gitlab Install" class="dd-item ">
+      <li data-nav-id="/artigos/gitlab-install/" title="Gitlab Install" class="dd-item active">
         <a href="/artigos/gitlab-install/">
         Gitlab Install
         
@@ -746,7 +746,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/tutorials/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docs-planet/website/edit/master/content/artigos/gitlab-install.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -761,6 +761,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -771,7 +773,13 @@
             
           
           
-            <a href='/'>Docs Planet</a> > 💻 Tutoriais
+            
+            
+          
+          
+            <a href='/'>Docs Planet</a> > <a href='/artigos/'>✍ Artigos</a> > Gitlab Install
+          
+        
           
         
           
@@ -780,33 +788,123 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a>
+      <ul>
+        <li><a href="#instalacão">Instalacão</a></li>
+        <li><a href="#configurar-sem-https">Configurar sem https</a></li>
+        <li><a href="#configurando-com-https-e-integracao-active-directory">Configurando com https e integracao Active Directory</a></li>
+        <li><a href="#referencias">Referencias</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Gitlab Install
+            </h1>
           
 
         
 
 
+<h2 id="intro">Intro</h2>
+<p>Como Instalar Gitlab</p>
+<h3 id="instalacão">Instalacão</h3>
+<p>Provisionar um servidor com 4GB RAM</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd kvm-provision
+./new-vm.sh -n gitlab -m <span style="color:#ae81ff">4096</span> -c <span style="color:#ae81ff">2</span> -i 192.168.122.41
+</code></pre></div><p>Acessar ao servidor</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ssh centos@192.168.122.41
+</code></pre></div><p>Instalar os pacotes necessarios</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo yum install -y curl policycoreutils-python openssh-server openssh-clients firewalld
+sudo systemctl enable sshd
+sudo systemctl start sshd
+</code></pre></div><p>Habilitar o firewalld</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo systemctl start firewalld
+sudo firewall-cmd --permanent --add-service<span style="color:#f92672">=</span>http
+sudo firewall-cmd --permanent --add-service<span style="color:#f92672">=</span>https
+sudo systemctl reload firewalld
+</code></pre></div><p>Adicionar o repo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash
+</code></pre></div><h3 id="configurar-sem-https">Configurar sem https</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo EXTERNAL_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://gitlab.docs-planet.site&#34;</span> yum install -y gitlab-ce
+</code></pre></div><p>Verificar os logs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tail -f /var/log/gitlab/gitlab-rails/production.log
+</code></pre></div><p>Acessar no site: <a href="http://gitlab.docs-planet.site">http://gitlab.docs-planet.site</a>.</p>
+<ul>
+<li>Configurar o seguinte password: <code>SuperSecret2012</code> para o usuario root.</li>
+</ul>
+<h3 id="configurando-com-https-e-integracao-active-directory">Configurando com https e integracao Active Directory</h3>
+<p>Com os seguintes certificados gerados via <a href="/artigos/wildcard-certificate-letsencrypt-cloudflare/">Let&rsquo;s encrypt</a></p>
+<ul>
+<li>certificate-bundle.crt</li>
+<li>private.key</li>
+</ul>
+<p>Movimente eles dentro da pasta: <code>/etc/gitlab/ssl</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mv certificate-bundle.crt /etc/gitlab/ssl/gitlab.docs-planet.site.crt
+mv private.key /etc/gitlab/ssl/gitlab.docs-planet.site.key
+</code></pre></div><p>Use este modelo de arquivo <code>gitlab.rb</code> para configurar o Gitlab com integracao AD e https. Este arquivo deve ficar no diretorio: <code>/etc/gitlab/</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">external_url &#34;https://gitlab.docs-planet.site/&#34;</span>
 
-	<h1 id="tutoriais">Tutoriais</h1>
-<p><img src="https://como-funciona.com/wp-content/uploads/2019/01/c%C3%B3mo-funciona-un-tutorial.jpg?width=700px" alt=""></p>
-<p>Os tutoriais foram classificados por tópicos. Todos eles tem como objetivo ser simples e bem praticos.</p>
+<span style="color:#a6e22e">gitlab_rails[&#39;time_zone&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;America/Sao_Paulo&#39;</span>
+
+<span style="color:#a6e22e">nginx[&#39;client_max_body_size&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;250m&#39;</span>
+<span style="color:#a6e22e">nginx[&#39;redirect_http_to_https&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;True&#39;</span>
+<span style="color:#a6e22e">nginx[&#39;ssl_certificate&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/etc/gitlab/ssl/gitlab.docs-planet.site.crt&#34;</span>
+<span style="color:#a6e22e">nginx[&#39;ssl_certificate_key&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/etc/gitlab/ssl/gitlab.docs-planet.site.key&#34;</span>
+
+<span style="color:#a6e22e">gitlab_rails[&#39;ldap_enabled&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+
+<span style="color:#a6e22e">gitlab_rails[&#39;ldap_servers&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">{</span>
+<span style="color:#a6e22e">&#39;main&#39;</span> <span style="color:#f92672">=</span><span style="color:#e6db74">&gt; {
+</span><span style="color:#e6db74">  &#39;label&#39; =&gt; &#39;Gitlab AD&#39;,
+</span><span style="color:#e6db74">  &#39;host&#39; =&gt;  &#39;ad.docs-planet.site&#39;,
+</span><span style="color:#e6db74">  &#39;port&#39; =&gt; 389,
+</span><span style="color:#e6db74">  &#39;uid&#39; =&gt; &#39;sAMAccountName&#39;,
+</span><span style="color:#e6db74">  &#39;encryption&#39; =&gt; &#39;plain&#39;,
+</span><span style="color:#e6db74">  &#39;verify_certificates&#39; =&gt; false,
+</span><span style="color:#e6db74">  &#39;bind_dn&#39; =&gt; &#39;Administrator@internal.docs-planet.site&#39;,
+</span><span style="color:#e6db74">  &#39;password&#39; =&gt; &#39;SuperSecret2012&#39;,
+</span><span style="color:#e6db74">  &#39;active_directory&#39; =&gt; true,
+</span><span style="color:#e6db74">  &#39;base&#39; =&gt; &#39;OU=USERS,OU=CORE,DC=internal,DC=docs-planet,DC=site&#39;,
+</span><span style="color:#e6db74">  &#39;group_base&#39; =&gt; &#39;OU=GROUPS,OU=CORE,DC=internal,DC=docs-planet,DC=site&#39;,
+</span><span style="color:#e6db74">  &#39;admin_group&#39; =&gt; &#39;Global Admins&#39;
+</span><span style="color:#e6db74">  }</span>
+<span style="color:#a6e22e">}</span>
+
+<span style="color:#a6e22e">gitlab_rails[&#39;gitlab_signup_enabled&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+<span style="color:#a6e22e">gitlab_rails[&#39;smtp_enable&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">true</span>
+<span style="color:#a6e22e">gitlab_rails[&#39;smtp_address&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;relay.docs-planet.site&#34;</span>
+<span style="color:#a6e22e">gitlab_rails[&#39;smtp_port&#39;]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">25</span>
+</code></pre></div><p>Reconfigure o Gitlab</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gitlab-ctl reconfigure
+</code></pre></div><p>Acesse agora na URL <a href="https://gitlab.docs-planet.site">https://gitlab.docs-planet.site</a></p>
+<h3 id="referencias">Referencias</h3>
+<ul>
+<li><a href="https://about.gitlab.com/install/#centos-7?version=ce">https://about.gitlab.com/install/#centos-7?version=ce</a></li>
+<li><a href="https://docs.gitlab.com/omnibus/settings/nginx.html#manually-configuring-https">https://docs.gitlab.com/omnibus/settings/nginx.html#manually-configuring-https</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-install-gitlab-server-with-docker-on-ubuntu-1804/">https://www.howtoforge.com/tutorial/how-to-install-gitlab-server-with-docker-on-ubuntu-1804/</a></li>
+</ul>
 
 
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -838,6 +936,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -854,9 +954,6 @@
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -864,22 +961,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -912,70 +993,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -1089,6 +1106,86 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1132,6 +1229,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1144,6 +1242,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1177,6 +1278,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1192,6 +1294,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1259,3 +1364,4 @@
 
   </body>
 </html>
+
